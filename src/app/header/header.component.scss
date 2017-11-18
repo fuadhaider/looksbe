@@ -1,0 +1,22 @@
+@import "../app-config.component";
+@import "header-config.component";
+
+header#flex-header {
+  background: $header-color;
+  @include display-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  padding: 0 2vw;
+  a {
+    text-decoration: none;
+    color: $icon-color;
+    font-size: $menu-font-size;
+    margin: 0 0.5vh;
+  }
+  #search-icon, #message-icon, #notification-icon, #login-icon {
+    font-size: $menu-font-size;
+  }
+  a:first-child {
+    margin-right: auto;
+  }
+}

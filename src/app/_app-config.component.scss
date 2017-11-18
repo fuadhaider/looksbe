@@ -1,0 +1,13 @@
+$body-font-colour: darkslategrey;
+$body-font: 3vmin arial; //3% of the smaller side
+$menu-font-size: 4.5vh; //5% of viewport height
+$icon-color: white;
+
+@mixin display-flex {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  // display: -webkit-box;
+  // display: -moz-box;
+  // display: -ms-flexbox;
+}
