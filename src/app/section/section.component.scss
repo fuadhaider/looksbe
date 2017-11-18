@@ -1,0 +1,15 @@
+@import "../app-config.component";
+@import "section-config.component";
+
+section#flex-section {
+  @include display-flex;
+  @include flex-flow(column);
+  flex: auto;
+  height: 0;
+  #flex-nav {
+
+  }
+  #flex-main {
+
+  }
+}
