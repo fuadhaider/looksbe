@@ -1,6 +1,16 @@
 @import "app-config.component";
 
-div#app-container {
+div {
+  height: 100vh;
+  @include display-flex;
+  @include flex-flow(column);
   font: $body-font;
   color: $body-font-colour;
+  app-header {
+    // flex: 1;
+  }
+  app-section {
+    // @include display-flex;
+    // flex: 10;
+  }
 }

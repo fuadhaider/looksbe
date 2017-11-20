@@ -1,7 +1,10 @@
-$body-font-colour: darkslategrey;
 $body-font: 3vmin arial; //3% of the smaller side
+$body-font-colour: darkslategrey;
 $menu-font-size: 4.5vh; //5% of viewport height
 $icon-color: white;
+$header-color: #95a586;
+$nav-color: #6693c1;
+$aside-color: #c99d9d;
 
 @mixin display-flex {
   display: flex;
@@ -10,4 +13,12 @@ $icon-color: white;
   // display: -webkit-box;
   // display: -moz-box;
   // display: -ms-flexbox;
+}
+
+@mixin flex-flow($direction) {
+  flex-flow: $direction;
+  -webkit-flex-flow: $direction;
+  -moz-flex-flow: $direction;
+  // -ms-flex-flow: $direction;
+
 }
