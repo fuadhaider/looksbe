@@ -1,21 +1,19 @@
 @import "../app-config.component";
 // @import "section-config.component";
 
-section {
-  height: 100%;
+:host {
   @include display-flex;
   @include flex-flow(column);
-  // flex: auto;
+  flex: auto;
+}
+
+section {
+  @include display-flex;
+  @include flex-flow(column);
+  flex: auto;
   // height: 0;
   app-main {
-    // @include display-flex;
-    // flex: auto;
-
-  }
-  app-aside {
-
-  }
-  app-nav {
-
+    flex: auto;
+    overflow: scroll;
   }
 }

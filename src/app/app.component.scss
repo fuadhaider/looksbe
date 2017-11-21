@@ -6,11 +6,4 @@ div {
   @include flex-flow(column);
   font: $body-font;
   color: $body-font-colour;
-  app-header {
-    // flex: 1;
-  }
-  app-section {
-    // @include display-flex;
-    // flex: 10;
-  }
 }
