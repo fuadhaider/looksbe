@@ -1,4 +1,10 @@
 @import "src/app/app-config.component";
 
+:host {
+  @include display-flex;
+}
+
 main {
+  flex: auto;
+  overflow: scroll;
 }
