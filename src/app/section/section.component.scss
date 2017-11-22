@@ -3,7 +3,7 @@
 :host(.small-display) {
   @include display-flex;
   @include flex-flow(column);
-  // flex: auto;
+  flex: auto;
 }
 
 app-main {
@@ -12,12 +12,13 @@ app-main {
 
 @media all and (min-width: 769px) {
   :host(.big-display) {
+    height: 100%;
     @include display-flex;
     @include flex-flow(row);
-    // flex: auto;
   }
   app-nav {
     order: 1;
+    background-color: $nav-color;
   }
   app-main {
     order: 2;

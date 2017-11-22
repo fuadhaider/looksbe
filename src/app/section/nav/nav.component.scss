@@ -1,7 +1,7 @@
 @import "src/app/app-config.component";
 
 nav {
-  background: $nav-color;
+  background-color: $nav-color;
   @include display-flex;
   justify-content: space-around;
   a {
@@ -9,5 +9,11 @@ nav {
     color: $icon-color;
     font-size: $menu-font-size;
     padding: 3px;
+  }
+}
+
+@media all and (min-width: 769px) {
+  nav {
+    @include flex-flow(column);
   }
 }
