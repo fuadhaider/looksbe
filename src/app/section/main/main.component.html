@@ -1,4 +1,9 @@
 <main>
+  <ul>
+    <li *ngFor="let hero of heroes">
+      <span>{{hero.id}}</span>{{hero.name}}
+    </li>
+  </ul>
   <!-- <p>  main works! starts</p>
   <p>  main works!</p>
   <p>  main works!</p>
