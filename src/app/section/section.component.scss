@@ -1,7 +1,7 @@
 @import "../app-config.component";
 // @import "section-config.component";
 
-:host {
+:host(.small) {
   @include display-flex;
   @include flex-flow(column);
   flex: auto;
@@ -17,3 +17,20 @@
     // overflow: scroll;
   }
 // }
+
+@media all and (min-width: 769px) {
+  :host(.big) {
+    @include display-flex;
+    @include flex-flow(row);
+    flex: auto;
+  }
+  app-nav {
+    order: 1;
+  }
+  app-main {
+    order: 2;
+  }
+  app-aside {
+    order: 3;
+  }
+}
