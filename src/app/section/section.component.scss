@@ -1,28 +1,20 @@
 @import "../app-config.component";
-// @import "section-config.component";
 
-:host(.small) {
+:host(.small-display) {
   @include display-flex;
   @include flex-flow(column);
+  // flex: auto;
+}
+
+app-main {
   flex: auto;
 }
 
-// section {
-  // @include display-flex;
-  // @include flex-flow(column);
-  // flex: auto;
-  // height: 0;
-  app-main {
-    flex: auto;
-    // overflow: scroll;
-  }
-// }
-
 @media all and (min-width: 769px) {
-  :host(.big) {
+  :host(.big-display) {
     @include display-flex;
     @include flex-flow(row);
-    flex: auto;
+    // flex: auto;
   }
   app-nav {
     order: 1;

@@ -1,7 +1,6 @@
 @import "src/app/app-config.component";
-// @import "nav-config.component";
 
-nav#flex-nav {
+nav {
   background: $nav-color;
   @include display-flex;
   justify-content: space-around;
@@ -10,8 +9,5 @@ nav#flex-nav {
     color: $icon-color;
     font-size: $menu-font-size;
     padding: 3px;
-  }
-  #home-icon, #trend-icon, #explore-icon, #shop-icon, #more-icon {
-    font-size: $menu-font-size;
   }
 }
