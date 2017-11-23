@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { MainComponent } from './section/main/main.component';
+import { HomeComponent } from './section/main/home/home.component';
+import { TrendComponent } from './section/main/trend/trend.component';
+
 
 const routes: Routes = [
-  { path: 'heroes', component: MainComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'trend', component: TrendComponent }
 ];
 
 @NgModule({

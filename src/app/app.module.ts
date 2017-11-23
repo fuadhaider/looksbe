@@ -10,7 +10,8 @@ import { NavComponent } from './section/nav/nav.component';
 import { MainComponent } from './section/main/main.component';
 import { AsideComponent } from './section/aside/aside.component';
 import { ContentService } from './section/main/content.service';
-import { ContentComponent } from './section/main/content/content.component';
+import { HomeComponent } from './section/main/home/home.component';
+import { TrendComponent } from './section/main/trend/trend.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ContentComponent } from './section/main/content/content.component';
     NavComponent,
     MainComponent,
     AsideComponent,
-    ContentComponent
+    HomeComponent,
+    TrendComponent
   ],
   imports: [
     BrowserModule,
