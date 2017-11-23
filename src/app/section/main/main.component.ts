@@ -19,7 +19,8 @@ export class MainComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.heroes = this.contentService.sendHeroes();
+    // this.heroes = this.contentService.sendHeroes();
+    this.contentService.sendHeroes().subscribe(heroes => this.heroes = heroes);
   }
 
 }
