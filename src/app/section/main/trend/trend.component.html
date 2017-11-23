@@ -1,8 +1,4 @@
-<!-- <div ngRepeat="">
-
-</div> -->
-<ul>
-  <li *ngFor="let trend of trends">
-    {{trend.id}}{{trend.name}}{{trend.image}}
-  </li>
-</ul>
+<div *ngFor="let trend of trends">
+  <img src="{{trend.image}}" alt="{{trend.name}}"><br>
+  {{trend.id}}. {{trend.name}}
+</div>
