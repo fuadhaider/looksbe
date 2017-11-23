@@ -10,6 +10,7 @@ import { NavComponent } from './section/nav/nav.component';
 import { MainComponent } from './section/main/main.component';
 import { AsideComponent } from './section/aside/aside.component';
 import { ContentService } from './section/main/content.service';
+import { ContentComponent } from './section/main/content/content.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ContentService } from './section/main/content.service';
     SectionComponent,
     NavComponent,
     MainComponent,
-    AsideComponent
+    AsideComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
