@@ -9,6 +9,7 @@ import { SectionComponent } from './section/section.component';
 import { NavComponent } from './section/nav/nav.component';
 import { MainComponent } from './section/main/main.component';
 import { AsideComponent } from './section/aside/aside.component';
+import { ContentService } from './section/main/content.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { AsideComponent } from './section/aside/aside.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ContentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
