@@ -1,8 +1,8 @@
 import { ImageObject } from './image-object';
 
 export const HomeData: ImageObject[] = [
-  { id: 1, name: 'Gimp Logo', image: '../assets/gimp_logo.jpeg' },
-  { id: 2, name: 'Gimp', image: '../assets/gimp.jpeg'  },
+  { id: 1, name: 'Gimp Logo', tag:'', image: '../assets/gimp_logo.jpeg' },
+  { id: 2, name: 'Gimp', tag:'', image: '../assets/gimp.jpeg'  },
   // { id: 13, name: 'Bombasto' },
   // { id: 14, name: 'Celeritas' },
   // { id: 15, name: 'Magneta' },
