@@ -2,27 +2,41 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 
-import { Image } from '../../image';
-import { Homes } from '../../homes';
-import { Trends } from '../../trends';
-import { Hero } from '../../hero';
-import { HEROES } from '../../mock-heroes';
+import { ImageObject } from '../../image-object';
+import { HomeData } from '../../home-data';
+import { TrendData } from '../../trend-data';
+import { ExploreData } from '../../explore-data';
+import { ShopData } from '../../shop-data';
+// import { Hero } from '../../hero';
+// import { HEROES } from '../../mock-heroes';
 
 @Injectable()
 export class ContentService {
 
   constructor() { }
 
-  sendHeroes(): Observable<Hero[]> {
-    return of (HEROES);
+  // sendHeroes(): Observable<Hero[]> {
+  //   return of (HEROES);
+  // }
+
+  sendHome(): Observable<ImageObject[]> {
+    return of (HomeData);
   }
 
-  sendHome(): Observable<Image[]> {
-    return of (Homes);
+  sendTrend(): Observable<ImageObject[]> {
+    return of (TrendData);
   }
 
-  sendTrend(): Observable<Image[]> {
-    return of (Trends);
+  sendExplore(): Observable<ImageObject[]> {
+    return of (ExploreData);
+  }
+
+  sendShop(): Observable<ImageObject[]> {
+    return of (ShopData);
+  }
+
+  sendDetail(id: number): Observable<ImageObject> {
+    return of (ExploreData.find(detail => detail.id === id));
   }
 
 }

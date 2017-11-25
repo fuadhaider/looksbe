@@ -1,9 +1,5 @@
-:host {
-  display: flex;
-}
-
 div {
-  flex-direction: row;
+  display: inline-block;
   margin: 5vw;
   border: 1px solid lightgray;
   // border-radius: 15%;

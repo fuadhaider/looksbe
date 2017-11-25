@@ -12,6 +12,10 @@ import { AsideComponent } from './section/aside/aside.component';
 import { ContentService } from './section/main/content.service';
 import { HomeComponent } from './section/main/home/home.component';
 import { TrendComponent } from './section/main/trend/trend.component';
+import { ExploreComponent } from './section/main/explore/explore.component';
+import { ShopComponent } from './section/main/shop/shop.component';
+import { MoreComponent } from './section/main/more/more.component';
+import { DetailComponent } from './section/main/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { TrendComponent } from './section/main/trend/trend.component';
     MainComponent,
     AsideComponent,
     HomeComponent,
-    TrendComponent
+    TrendComponent,
+    ExploreComponent,
+    ShopComponent,
+    MoreComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

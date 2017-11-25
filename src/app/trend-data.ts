@@ -1,6 +1,6 @@
-import { Image } from './image';
+import { ImageObject } from './image-object';
 
-export const Trends: Image[] = [
+export const TrendData: ImageObject[] = [
   { id: 1, name: 'Baby Fuad', image: '../assets/baby-fuad.jpg' },
   { id: 2, name: 'Fuad Hair', image: '../assets/fuad-hair.jpg'  },
   // { id: 13, name: 'Bombasto' },

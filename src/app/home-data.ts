@@ -1,6 +1,6 @@
-import { Image } from './image';
+import { ImageObject } from './image-object';
 
-export const Homes: Image[] = [
+export const HomeData: ImageObject[] = [
   { id: 1, name: 'Gimp Logo', image: '../assets/gimp_logo.jpeg' },
   { id: 2, name: 'Gimp', image: '../assets/gimp.jpeg'  },
   // { id: 13, name: 'Bombasto' },

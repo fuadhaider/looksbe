@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Image } from '../../../image';
+import { ImageObject } from '../../../image-object';
 import { ContentService } from '../content.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ContentService } from '../content.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  homes: Image[];
+  homeArray: ImageObject[];
 
   constructor(private contentService: ContentService) { }
 
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   }
 
   getHome(): void {
-    this.contentService.sendHome().subscribe(homes => this.homes = homes);
+    this.contentService.sendHome().subscribe(homeArray => this.homeArray = homeArray);
   }
 
 }

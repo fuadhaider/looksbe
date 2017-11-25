@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Image } from '../../../image';
+import { ImageObject } from '../../../image-object';
 import { ContentService } from '../content.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ContentService } from '../content.service';
   styleUrls: ['./trend.component.scss']
 })
 export class TrendComponent implements OnInit {
-  trends: Image[];
+  trendArray: ImageObject[];
 
   constructor(private contentService: ContentService) { }
 
@@ -18,7 +18,7 @@ export class TrendComponent implements OnInit {
   }
 
   getTrend(): void {
-    this.contentService.sendTrend().subscribe(trends => this.trends = trends);
+    this.contentService.sendTrend().subscribe(trendArray => this.trendArray = trendArray);
 
   }
 
