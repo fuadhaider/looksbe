@@ -1,9 +1,11 @@
-:host {
-  display: flex;
-}
+// :host {
+//   display: flex;
+// }
 
 div {
-  flex-direction: row;
+  // flex-direction: column;
+  // flex-wrap: nowrap;
+  display: inline-block;
   margin: 5vw;
   border: 1px solid lightgray;
   // border-radius: 15%;

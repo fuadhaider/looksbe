@@ -28,5 +28,8 @@ export class DetailComponent implements OnInit {
     this.contentService.sendDetail(id).subscribe(
       detail => this.detail = detail);
   }
+  goBack(): void {
+    this.location.back();
+  }
 
 }

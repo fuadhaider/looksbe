@@ -10,6 +10,7 @@ import { ContentService } from '../content.service';
 })
 export class ExploreComponent implements OnInit {
   exploreArray: ImageObject[];
+  tag: string = 'explore';
 
   constructor(private contentService: ContentService) { }
 
@@ -18,7 +19,7 @@ export class ExploreComponent implements OnInit {
   }
 
   getExplore() {
-    this.contentService.sendExplore().subscribe(exploreArray =>
+    this.contentService.sendContent(this.tag).subscribe(exploreArray =>
       this.exploreArray = exploreArray)
   }
 
