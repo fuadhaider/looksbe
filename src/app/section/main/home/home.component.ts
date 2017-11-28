@@ -10,16 +10,17 @@ import { ContentService } from '../content.service';
 })
 export class HomeComponent implements OnInit {
   homeArray: ImageObject[];
+  tag: string = 'home';
 
   constructor(private contentService: ContentService) { }
 
   ngOnInit() {
-    this.getHome();
+    this.getAll();
   }
 
-  getHome(): void {
-    // this.contentService.sendHome().subscribe(
-    //   homeArray => this.homeArray = homeArray);
+  getAll(): void {
+    this.contentService.sendAll().subscribe(homeArray =>
+      this.homeArray = homeArray);
   }
 
 }

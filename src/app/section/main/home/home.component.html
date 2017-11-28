@@ -1,4 +1,6 @@
 <div *ngFor="let home of homeArray">
-  <img src="{{home.image}}" alt="{{home.name}}"><br>
-  {{home.name}}
+  <a routerLink="/detail/{{home.id}}">
+    <img src="{{home.path}}" alt="{{home.name}}"><br>
+    {{home.name}}
+  </a>
 </div>

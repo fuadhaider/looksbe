@@ -10,6 +10,7 @@ import { ContentService } from '../content.service';
 })
 export class ShopComponent implements OnInit {
   shopArray: ImageObject[];
+  tag: string = 'shop';
 
   constructor(private contentService: ContentService) { }
 
@@ -18,8 +19,8 @@ export class ShopComponent implements OnInit {
   }
 
   getShop() {
-    // this.contentService.sendShop().subscribe(shopArray =>
-    //   this.shopArray = shopArray);
+    this.contentService.sendContent(this.tag).subscribe(shopArray =>
+      this.shopArray = shopArray)
   }
 
 }

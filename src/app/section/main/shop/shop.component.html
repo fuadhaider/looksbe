@@ -1,4 +1,6 @@
 <div *ngFor="let shop of shopArray">
-  <img src="{{shop.image}}" alt="{{shop.name}}"><br>
-  {{shop.name}}
+  <a routerLink="/detail/{{shop.id}}">
+    <img src="{{shop.path}}" alt="{{shop.name}}"><br>
+    {{shop.name}}
+  </a>
 </div>

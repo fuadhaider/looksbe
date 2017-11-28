@@ -6,14 +6,11 @@ import { ImageObject } from '../../image-object';
 import { ContentData } from '../../content-data';
 import { HomeData } from '../../home-data';
 import { TrendData } from '../../trend-data';
-// import { ExploreData } from '../../explore-data';
 import { ShopData } from '../../shop-data';
-// import { Hero } from '../../hero';
-// import { HEROES } from '../../mock-heroes';
 
 @Injectable()
 export class ContentService {
-  exploreArray2: Observable<ImageObject[]>;
+  // exploreArray2: Observable<ImageObject[]>;
   content: Observable<ImageObject[]>;
 
   constructor() { }
@@ -38,12 +35,16 @@ export class ContentService {
   //   return of (ShopData);
   // }
 
+  sendAll(): Observable<ImageObject[]> {
+    return of (ContentData);
+  }
+
   sendContent(category: string): Observable<ImageObject[]> {
     return of (ContentData.filter(content => content.category === category));
   }
 
-  // sendDetail(id: number): Observable<ImageObject> {
-  //   return of (ExploreData.find(detail => detail.id === id));
-  // }
+  sendDetail(id: number): Observable<ImageObject> {
+    return of (ContentData.find(detail => detail.id === id));
+  }
 
 }

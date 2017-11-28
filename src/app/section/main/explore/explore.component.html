@@ -1,6 +1,6 @@
 <div *ngFor="let explore of exploreArray">
   <a routerLink="/detail/{{explore.id}}">
-    <img src="{{explore.image}}" alt="{{explore.name}}"><br>
+    <img src="{{explore.path}}" alt="{{explore.name}}"><br>
     {{explore.name}}
   </a>
 </div>

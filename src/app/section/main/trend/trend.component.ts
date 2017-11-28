@@ -10,6 +10,7 @@ import { ContentService } from '../content.service';
 })
 export class TrendComponent implements OnInit {
   trendArray: ImageObject[];
+  tag: string = 'trend';
 
   constructor(private contentService: ContentService) { }
 
@@ -17,9 +18,9 @@ export class TrendComponent implements OnInit {
     this.getTrend();
   }
 
-  getTrend(): void {
-    // this.contentService.sendTrend().subscribe(trendArray => this.trendArray = trendArray);
-
+  getTrend() {
+    this.contentService.sendContent(this.tag).subscribe(trendArray =>
+      this.trendArray = trendArray)
   }
 
 }

@@ -1,4 +1,6 @@
 <div *ngFor="let trend of trendArray">
-  <img src="{{trend.image}}" alt="{{trend.name}}"><br>
-  {{trend.name}}
+  <a routerLink="/detail/{{trend.id}}">
+    <img src="{{trend.path}}" alt="{{trend.name}}"><br>
+    {{trend.name}}
+  </a>
 </div>
