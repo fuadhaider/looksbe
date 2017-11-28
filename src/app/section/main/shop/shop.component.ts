@@ -18,8 +18,8 @@ export class ShopComponent implements OnInit {
   }
 
   getShop() {
-    this.contentService.sendShop().subscribe(shopArray =>
-      this.shopArray = shopArray);
+    // this.contentService.sendShop().subscribe(shopArray =>
+    //   this.shopArray = shopArray);
   }
 
 }

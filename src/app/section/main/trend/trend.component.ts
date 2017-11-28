@@ -18,7 +18,7 @@ export class TrendComponent implements OnInit {
   }
 
   getTrend(): void {
-    this.contentService.sendTrend().subscribe(trendArray => this.trendArray = trendArray);
+    // this.contentService.sendTrend().subscribe(trendArray => this.trendArray = trendArray);
 
   }
 

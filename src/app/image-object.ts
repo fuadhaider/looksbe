@@ -1,6 +1,6 @@
 export class ImageObject {
   id: number;
   name: string;
-  tag: string;
-  image: string;
+  category: string;
+  path: string;
 }

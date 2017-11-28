@@ -18,7 +18,8 @@ export class HomeComponent implements OnInit {
   }
 
   getHome(): void {
-    this.contentService.sendHome().subscribe(homeArray => this.homeArray = homeArray);
+    // this.contentService.sendHome().subscribe(
+    //   homeArray => this.homeArray = homeArray);
   }
 
 }
