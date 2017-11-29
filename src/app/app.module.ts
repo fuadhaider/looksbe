@@ -16,6 +16,11 @@ import { ExploreComponent } from './section/main/explore/explore.component';
 import { ShopComponent } from './section/main/shop/shop.component';
 import { MoreComponent } from './section/main/more/more.component';
 import { DetailComponent } from './section/main/detail/detail.component';
+import { AdDirective } from './section/aside/ad.directive';
+import { AdBannerComponent } from './section/aside/ad-banner/ad-banner.component';
+import { HeroJobAdComponent }   from './section/aside/hero-job-ad.component';
+import { HeroProfileComponent } from './section/aside/hero-profile.component';
+import { AdService }            from './section/aside/ad.service';
 
 @NgModule({
   declarations: [
@@ -30,13 +35,18 @@ import { DetailComponent } from './section/main/detail/detail.component';
     ExploreComponent,
     ShopComponent,
     MoreComponent,
-    DetailComponent
+    DetailComponent,
+    AdDirective,
+    AdBannerComponent,
+    HeroJobAdComponent,
+    HeroProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ContentService],
+  providers: [ContentService, AdService],
+  entryComponents: [ HeroJobAdComponent, HeroProfileComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
