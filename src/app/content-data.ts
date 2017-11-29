@@ -1,19 +1,19 @@
 import { ImageObject } from './image-object';
 
 export const ContentData: ImageObject[] = [
-  { id: 1, name: 'Jeans with Belt', category: 'trend', path: '../assets/belt-jeans.jpg' },
-  { id: 2, name: 'Blazer', category: 'trend', path: '../assets/blazer.jpg' },
+  { id: 1, name: 'Carnival', category: 'explore', path: '../assets/carnival.jpg' },
+  { id: 2, name: 'Fashion Set', category: 'shop', path: '../assets/fashion-set-01.jpg' },
   { id: 3, name: 'Blouses on Rail', category: 'shop', path: '../assets/blouses-on-rail.jpg' },
   { id: 4, name: 'Blue Shoe', category: 'trend', path: '../assets/blue-shoe.jpg' },
   { id: 5, name: 'Blue Suit Tie', category: 'trend', path: '../assets/blue-suit-tie.jpg' },
-  { id: 6, name: 'Carnival', category: 'explore', path: '../assets/carnival.jpg' },
+  { id: 6, name: 'Jeans with Belt', category: 'trend', path: '../assets/belt-jeans.jpg' },
   { id: 7, name: 'Colorful Cotton', category: 'shop', path: '../assets/colourful-cotton.jpg' },
   { id: 8, name: 'Colorful Jacket', category: 'explore', path: '../assets/colourful-jacket.jpg' },
   { id: 9, name: 'Curley Hair', category: 'trend', path: '../assets/curley-hair.jpg' },
   { id: 10, name: 'Denim Jacket', category: 'trend', path: '../assets/denim-jacket.jpg' },
   { id: 11, name: 'Disco Hat', category: 'explore', path: '../assets/disco-hat.png' },
   { id: 12, name: 'Egyptian Robe', category: 'explore', path: '../assets/egyptian.jpg' },
-  { id: 13, name: 'Fashion Set', category: 'shop', path: '../assets/fashion-set-01.jpg' },
+  { id: 13, name: 'Blazer', category: 'trend', path: '../assets/blazer.jpg' },
   { id: 14, name: 'Fashion Set', category: 'shop', path: '../assets/fashion-set-02.jpg' },
   { id: 15, name: 'Fur Jacket', category: 'trend', path: '../assets/fur-jacket.jpg' },
   { id: 16, name: 'Grey Jacket Tie', category: 'trend', path: '../assets/grey-jacket-tie.jpg' },
