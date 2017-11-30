@@ -5,6 +5,7 @@ import { AdComponent }      from './ad.component';
 @Component({
   template: `
     <div class="job-ad">
+      <img src="{{data.path}}">
       <h4>{{data.headline}}</h4>
 
       {{data.body}}

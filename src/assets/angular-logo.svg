@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.1 (35376) - http://www.bohemiancoding.com/sketch -->
+    <title>frameworks/logo_angular2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="frameworks/logo_angular2">
+            <g id="angularjs2" transform="translate(58.000000, 54.000000)">
+                <g id="Layer_1">
+                    <g id="Group">
+                        <polygon id="Shape" fill="#DD0031" points="70 0 70 0 70 0 0.670212766 24.734 11.2446809 116.4435 70 149 70 149 70 149 128.755319 116.4435 139.329787 24.734"></polygon>
+                        <polygon id="Shape" fill="#C3002F" points="70 0 70 16.539 70 16.4645 70 91.933 70 91.933 70 149 70 149 128.755319 116.4435 139.329787 24.734"></polygon>
+                        <path d="M70,16.4645 L26.6595745,113.687 L26.6595745,113.687 L42.8191489,113.687 L42.8191489,113.687 L51.5319149,91.933 L88.3191489,91.933 L97.0319149,113.687 L97.0319149,113.687 L113.191489,113.687 L113.191489,113.687 L70,16.4645 L70,16.4645 L70,16.4645 L70,16.4645 L70,16.4645 Z M82.6595745,78.523 L57.3404255,78.523 L70,48.0525 L82.6595745,78.523 Z" id="Shape" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -5,6 +5,7 @@ import { AdComponent }       from './ad.component';
 @Component({
   template: `
     <div class="hero-profile">
+      <img src="{{data.path}}">
       <h3>Featured Hero Profile</h3>
       <h4>{{data.name}}</h4>
 
