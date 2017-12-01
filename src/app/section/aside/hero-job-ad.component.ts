@@ -4,14 +4,14 @@ import { AdComponent }      from './ad.component';
 
 @Component({
   template: `
-    <div class="job-ad">
+    <div>
       <img src="{{data.path}}">
-      <h4>{{data.headline}}</h4>
-
-      {{data.body}}
+      <span>Learn</span>
+      <span>{{data.name}}</span>
+      <span>{{data.description}}</span>
     </div>
   `,
-  styles: ['img {width: 50%;}']
+  styles: ['img {width: 4em;}']
 })
 export class HeroJobAdComponent implements AdComponent {
   @Input() data: any;

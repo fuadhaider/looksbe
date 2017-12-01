@@ -8,17 +8,21 @@ import { AdItem }               from './ad-item';
 export class AdService {
   getAds() {
     return [
-      new AdItem(HeroProfileComponent, {name: 'Bombasto', bio: 'Brave as they come',
-       path: '../../assets/HTML5-logo.png'}),
+      new AdItem(HeroProfileComponent, {name: 'HTML5',
+        description: 'One and only web Templating',
+        path: '../../assets/HTML5.png'}),
 
-      new AdItem(HeroProfileComponent, {name: 'Dr IQ', bio: 'Smart as they come',
-        path: '../../assets/javascript-logo.svg'}),
+      new AdItem(HeroProfileComponent, {name: 'CSS3',
+        description: 'Only name for WebStyling',
+        path: '../../assets/css3.png'}),
 
-      new AdItem(HeroJobAdComponent,   {headline: 'Hiring for several positions',
-        path: '../../assets/angular-logo.svg', body: 'Submit your resume today!',}),
+      new AdItem(HeroJobAdComponent, {name: 'JavaScript',
+        description: 'Scripting guru',
+        path: '../../assets/javascript.png',}),
 
-      new AdItem(HeroJobAdComponent,   {headline: 'Openings in all departments',
-        path: '../../assets/angular-logo.svg', body: 'Apply today'}),
+      new AdItem(HeroJobAdComponent, {name: 'Angular',
+        description: 'Most popular Framework!',
+        path: '../../assets/angular.png',})
     ];
   }
 }
