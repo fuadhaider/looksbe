@@ -13,7 +13,8 @@ import { AdComponent }       from './ad.component';
 
       <strong>Hire this hero today!</strong>
     </div>
-  `
+  `,
+  styles: ['img {width: 50%;}']
 })
 export class HeroProfileComponent implements AdComponent {
   @Input() data: any;

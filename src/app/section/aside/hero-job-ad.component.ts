@@ -10,7 +10,8 @@ import { AdComponent }      from './ad.component';
 
       {{data.body}}
     </div>
-  `
+  `,
+  styles: ['img {width: 50%;}']
 })
 export class HeroJobAdComponent implements AdComponent {
   @Input() data: any;
