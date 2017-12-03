@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -21,6 +23,7 @@ import { AdBannerComponent } from './section/aside/ad-banner/ad-banner.component
 import { HeroJobAdComponent }   from './section/aside/hero-job-ad.component';
 import { HeroProfileComponent } from './section/aside/hero-profile.component';
 import { AdService }            from './section/aside/ad.service';
+import { NotificationsComponent } from './section/main/notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -39,10 +42,13 @@ import { AdService }            from './section/aside/ad.service';
     AdDirective,
     AdBannerComponent,
     HeroJobAdComponent,
-    HeroProfileComponent
+    HeroProfileComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    MatSidenavModule,
     AppRoutingModule
   ],
   providers: [ContentService, AdService],
