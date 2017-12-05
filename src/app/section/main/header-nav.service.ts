@@ -6,7 +6,7 @@ import { Subject } from 'rxjs/Subject';
 export class HeaderNavService {
   private sidenav = new Subject<any>();
   constructor() { }
-  storeSidenav(which) {
+  storeSidenav(which: string) {
     this.sidenav.next(which);
   }
   //  get events$ () {

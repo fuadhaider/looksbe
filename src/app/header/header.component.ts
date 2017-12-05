@@ -9,8 +9,8 @@ import { HeaderNavService } from '../section/main/header-nav.service';
 export class HeaderComponent implements OnInit {
   constructor(private headerNavService: HeaderNavService ) { }
 
-  showSidenav() {
-    this.headerNavService.storeSidenav('which');
+  showSidenav(which: string) {
+    this.headerNavService.storeSidenav(which);
   }
 
   ngOnInit() {

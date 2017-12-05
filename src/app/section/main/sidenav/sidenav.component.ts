@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import {MatSidenav} from '@angular/material/sidenav';
+// import { Observable } from 'rxjs';
+
 
 import { HeaderNavService } from '../header-nav.service';
 
@@ -12,6 +14,9 @@ import { HeaderNavService } from '../header-nav.service';
 export class SidenavComponent implements OnInit {
   subscription: Subscription;
   @ViewChild('sidenav') sidenav: MatSidenav;
+  current1: String = 'message';
+  current2: String = 'notification';
+
   constructor(private headerNavService: HeaderNavService) {
     // this.headerNavService.getMessage().subscribe(message => {
     //   console.log(message);
@@ -21,13 +26,17 @@ export class SidenavComponent implements OnInit {
   ngOnInit() {
     // this.headerNavService.events$.forEach(event => console.log(event));
     this.subscription = this.headerNavService.toggleSidenav().subscribe(which => {
-      console.log(which);
-      this.sidenav.toggle();
+      if ( this.current1 == which || this.current2 == which) {
+        this.current1 = this.current2 = which;
+        console.log(which);
+        this.sidenav.toggle();
+      }
+
     });
   }
 
   ngOnDestroy() {
-     // unsubscribe to ensure no memory leaks
+    // unsubscribe to ensure no memory leaks
     this.subscription.unsubscribe();
   }
 
