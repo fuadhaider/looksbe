@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
   constructor(private headerNavService: HeaderNavService ) { }
 
   showSidenav() {
-    this.headerNavService.storeSidenav('notification');
+    this.headerNavService.storeSidenav('which');
   }
 
   ngOnInit() {

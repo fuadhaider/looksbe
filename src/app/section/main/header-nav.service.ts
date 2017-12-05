@@ -9,10 +9,10 @@ export class HeaderNavService {
   storeSidenav(which) {
     this.sidenav.next(which);
   }
- //  get events$ () {
- //   return this.subject.asObservable();
- // }
-   toggleSidenav(): Observable<any> {
-      return this.sidenav.asObservable();
-   }
+  //  get events$ () {
+  //   return this.subject.asObservable();
+  // }
+  toggleSidenav(): Observable<any> {
+    return this.sidenav.asObservable();
+  }
 }

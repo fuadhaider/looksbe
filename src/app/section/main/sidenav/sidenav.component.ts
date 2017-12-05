@@ -27,9 +27,8 @@ export class SidenavComponent implements OnInit {
   }
 
   ngOnDestroy() {
-         // unsubscribe to ensure no memory leaks
-        this.subscription.unsubscribe();
-      }
-
+     // unsubscribe to ensure no memory leaks
+    this.subscription.unsubscribe();
+  }
 
 }
