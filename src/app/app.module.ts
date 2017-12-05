@@ -23,7 +23,9 @@ import { AdBannerComponent } from './section/aside/ad-banner/ad-banner.component
 import { HeroJobAdComponent }   from './section/aside/hero-job-ad.component';
 import { HeroProfileComponent } from './section/aside/hero-profile.component';
 import { AdService }            from './section/aside/ad.service';
-import { NotificationsComponent } from './section/main/notifications/notifications.component';
+import { SidenavComponent } from './section/main/sidenav/sidenav.component';
+import { HeaderNavService } from './section/main/header-nav.service';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +45,7 @@ import { NotificationsComponent } from './section/main/notifications/notificatio
     AdBannerComponent,
     HeroJobAdComponent,
     HeroProfileComponent,
-    NotificationsComponent
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,7 @@ import { NotificationsComponent } from './section/main/notifications/notificatio
     MatSidenavModule,
     AppRoutingModule
   ],
-  providers: [ContentService, AdService],
+  providers: [ContentService, AdService, HeaderNavService ],
   entryComponents: [ HeroJobAdComponent, HeroProfileComponent ],
   bootstrap: [AppComponent]
 })

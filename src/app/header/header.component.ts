@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderNavService } from '../section/main/header-nav.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss', './_header-config.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  constructor(private headerNavService: HeaderNavService ) { }
 
-  constructor() { }
+  onClick() {
+    this.headerNavService.newEvent('notification');
+  }
 
   ngOnInit() {
   }
+
 
 }
