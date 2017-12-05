@@ -4,20 +4,3 @@
 :host {
   @include display-flex;
 }
-app-sidenav {
-  main {
-    flex: auto;
-    // @include display-flex;
-    display: block;
-    height: auto;
-    overflow: scroll;
-    // background-color: azure;
-    // router-outlet {
-    //   @include display-flex;
-    //
-    //   overflow: scroll;
-    // }
-
-  }
-
-}
