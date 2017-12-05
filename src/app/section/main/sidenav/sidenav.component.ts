@@ -26,11 +26,11 @@ export class SidenavComponent implements OnInit {
   ngOnInit() {
     // this.headerNavService.events$.forEach(event => console.log(event));
     this.subscription = this.headerNavService.toggleSidenav().subscribe(which => {
-      if ( this.current1 == which || this.current2 == which) {
-        this.current1 = this.current2 = which;
+      // if ( this.current1 == which || this.current2 == which) {
+      //   this.current1 = this.current2 = which;
         console.log(which);
         this.sidenav.toggle();
-      }
+      // }
 
     });
   }
