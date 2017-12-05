@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
+import {MatSidenav} from '@angular/material/sidenav';
 
 import { HeaderNavService } from '../header-nav.service';
 
@@ -9,8 +10,8 @@ import { HeaderNavService } from '../header-nav.service';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
-
-  un: Subscription;
+  subscription: Subscription;
+  @ViewChild('sidenav') sidenav: MatSidenav;
   constructor(private headerNavService: HeaderNavService) {
     // this.headerNavService.getMessage().subscribe(message => {
     //   console.log(message);
@@ -19,14 +20,15 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit() {
     // this.headerNavService.events$.forEach(event => console.log(event));
-    this.un = this.headerNavService.getMessage().subscribe(message => {
-      console.log(message);
+    this.subscription = this.headerNavService.toggleSidenav().subscribe(which => {
+      console.log(which);
+      this.sidenav.toggle();
     });
   }
 
   ngOnDestroy() {
          // unsubscribe to ensure no memory leaks
-        this.un.unsubscribe();
+        this.subscription.unsubscribe();
       }
 
 

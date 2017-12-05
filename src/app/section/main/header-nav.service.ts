@@ -4,15 +4,15 @@ import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class HeaderNavService {
-  private subject = new Subject<any>();
+  private sidenav = new Subject<any>();
   constructor() { }
-  newEvent(event) {
-    this.subject.next(event);
+  storeSidenav(which) {
+    this.sidenav.next(which);
   }
  //  get events$ () {
  //   return this.subject.asObservable();
  // }
-   getMessage(): Observable<any> {
-      return this.subject.asObservable();
+   toggleSidenav(): Observable<any> {
+      return this.sidenav.asObservable();
    }
 }

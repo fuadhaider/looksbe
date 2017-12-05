@@ -9,8 +9,8 @@ import { HeaderNavService } from '../section/main/header-nav.service';
 export class HeaderComponent implements OnInit {
   constructor(private headerNavService: HeaderNavService ) { }
 
-  onClick() {
-    this.headerNavService.newEvent('notification');
+  showSidenav() {
+    this.headerNavService.storeSidenav('notification');
   }
 
   ngOnInit() {
