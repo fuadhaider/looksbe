@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+
+import { HeaderTopnavService } from '../header-topnav.service';
 
 @Component({
   selector: 'app-topnav',
@@ -23,9 +26,18 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     ])
   ]
 })
-export class TopnavComponent {
+export class TopnavComponent implements OnInit {
   topnavState: string = 'out';
-  constructor() { }
+  subscription: Subscription;
+
+  constructor(private headerTopnavService: HeaderTopnavService) { }
+
+  ngOnInit() {
+    this.subscription = this.headerTopnavService.toggleTopnav().subscribe(which => {
+      console.log(which);
+      this.toggleTopnav();
+    })
+  }
 
   toggleTopnav() {
     this.topnavState = (this.topnavState === 'out' ? 'in' : 'out');

@@ -26,7 +26,7 @@ import { AdService }            from './section/aside/ad.service';
 import { SidenavComponent } from './section/main/sidenav/sidenav.component';
 import { HeaderNavService } from './section/main/header-nav.service';
 import { TopnavComponent } from './section/main/topnav/topnav.component';
-
+import { HeaderTopnavService } from './section/main/header-topnav.service';
 
 @NgModule({
   declarations: [
@@ -55,7 +55,7 @@ import { TopnavComponent } from './section/main/topnav/topnav.component';
     MatSidenavModule,
     AppRoutingModule
   ],
-  providers: [ContentService, AdService, HeaderNavService ],
+  providers: [ContentService, AdService, HeaderNavService, HeaderTopnavService ],
   entryComponents: [ HeroJobAdComponent, HeroProfileComponent ],
   bootstrap: [AppComponent]
 })
