@@ -1,9 +1,11 @@
+<!-- <app-topnav></app-topnav> -->
+
 <mat-sidenav-container>
-  <mat-sidenav #sidenav position="end">
+  <mat-sidenav #sidenav position="end" role="navigation">
     Sidenav
   </mat-sidenav>
-  <mat-sidenav-content>
-    <button mat-button (click)="sidenav.toggle()">Sidenav</button><br>
+  <mat-sidenav-content role="main">
+    <!-- <button mat-button (click)="sidenav.toggle()">Sidenav</button><br> -->
     <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>

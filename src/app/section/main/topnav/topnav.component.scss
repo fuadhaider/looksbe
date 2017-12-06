@@ -1,0 +1,13 @@
+@import "src/app/app-config.component";
+
+:host {
+  @include display-flex;
+}
+
+nav {
+  // display: block;
+  height: 1em;
+  width: 100%;
+  background-color: $header-color;
+  z-index: 4;
+}

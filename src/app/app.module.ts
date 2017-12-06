@@ -25,6 +25,7 @@ import { HeroProfileComponent } from './section/aside/hero-profile.component';
 import { AdService }            from './section/aside/ad.service';
 import { SidenavComponent } from './section/main/sidenav/sidenav.component';
 import { HeaderNavService } from './section/main/header-nav.service';
+import { TopnavComponent } from './section/main/topnav/topnav.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { HeaderNavService } from './section/main/header-nav.service';
     AdBannerComponent,
     HeroJobAdComponent,
     HeroProfileComponent,
-    SidenavComponent
+    SidenavComponent,
+    TopnavComponent
   ],
   imports: [
     BrowserModule,
