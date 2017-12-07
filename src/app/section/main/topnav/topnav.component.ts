@@ -20,7 +20,7 @@ import { HeaderTopnavService } from '../header-topnav.service';
         // transform: 'scale(2)'
         // height: '2em',
         opacity: 1,
-        display: 'block'
+        display: 'inline-block'
       })),
       transition('in <=> out', animate('200ms ease-in-out'))
     ])

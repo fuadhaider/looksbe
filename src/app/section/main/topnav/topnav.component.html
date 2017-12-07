@@ -1,11 +1,13 @@
 <nav *ngIf="bool" [@topnavToggle]="topnavState">
-  <mat-form-field hideRequiredMarker>
-    <input matInput type="email" placeholder="Input" required>
-  </mat-form-field>
-  <mat-form-field hideRequiredMarker>
-    <input matInput type="password" placeholder="Password" required>
-  </mat-form-field>
-  <button type="button" name="button">enter</button>
+  <form id="topForm">
+    <mat-form-field hideRequiredMarker>
+      <input matInput type="email" placeholder="Input" required>
+    </mat-form-field>
+    <mat-form-field hideRequiredMarker>
+      <input matInput type="password" placeholder="Password" required>
+    </mat-form-field>
+    <button type="button" name="button">enter</button>
+  </form>
 </nav>
 <!-- <ng-template #searchBlock>
   <mat-form-field>

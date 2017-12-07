@@ -5,5 +5,27 @@
 }
 
 nav {
-  margin: auto;
+  width: 100%;
+  background-color: rgba(149, 165, 134, 0.5);
+  // @include display-flex;
+  // margin: auto;
+  @include display-flex;
+  justify-content: center;
+  // flex-wrap: wrap;
+
+  form#topForm {
+    @include display-flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    // margin: 5%;
+    // > * {
+    //   margin: 0 5%;
+    // }
+    // float: none;
+    // display: inline-block;
+    // width: 200px;
+    // margin: auto;
+  }
+
 }
