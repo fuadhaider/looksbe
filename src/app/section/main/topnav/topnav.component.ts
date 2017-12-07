@@ -12,13 +12,13 @@ import { HeaderTopnavService } from '../header-topnav.service';
     trigger('topnavToggle', [
       state('in', style({
         // transform: 'scale(1)'
-        height: 0,
+        // height: 0,
         opacity: 0,
         display: 'none'
       })),
       state('out', style({
         // transform: 'scale(2)'
-        height: '2em',
+        // height: '2em',
         opacity: 1,
         display: 'block'
       })),
@@ -27,19 +27,26 @@ import { HeaderTopnavService } from '../header-topnav.service';
   ]
 })
 export class TopnavComponent implements OnInit {
-  topnavState: string = 'out';
+  topnavState: string = 'in';
   subscription: Subscription;
+  public bool: boolean = null;
 
   constructor(private headerTopnavService: HeaderTopnavService) { }
 
   ngOnInit() {
     this.subscription = this.headerTopnavService.toggleTopnav().subscribe(which => {
       console.log(which);
+      if (which='login') {
+        this.bool = true;
+      }
+      else {
+        this.bool = false;
+      }
       this.toggleTopnav();
     })
   }
 
   toggleTopnav() {
-    this.topnavState = (this.topnavState === 'out' ? 'in' : 'out');
+    this.topnavState = (this.topnavState === 'in' ? 'out' : 'in');
   }
 }

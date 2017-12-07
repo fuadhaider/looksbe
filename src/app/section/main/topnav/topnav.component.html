@@ -1,4 +1,21 @@
-<nav [@topnavToggle]="topnavState">
-  <button (click)="toggleTopnav()">Topnav</button>
-  <p>topnav</p>
+<nav *ngIf="bool" [@topnavToggle]="topnavState">
+  <mat-form-field hideRequiredMarker>
+    <input matInput type="email" placeholder="Input" required>
+  </mat-form-field>
+  <mat-form-field hideRequiredMarker>
+    <input matInput type="password" placeholder="Password" required>
+  </mat-form-field>
+  <button type="button" name="button">enter</button>
+</nav>
+<!-- <ng-template #searchBlock>
+  <mat-form-field>
+    <input matInput type="text" placeholder="Search">
+  </mat-form-field>
+  <button type="button" name="button">enter</button>
+</ng-template> -->
+<nav *ngIf="!bool" [@topnavToggle]="topnavState">
+  <mat-form-field>
+    <input matInput type="text" placeholder="Search">
+  </mat-form-field>
+  <button type="button" name="button">enter</button>
 </nav>

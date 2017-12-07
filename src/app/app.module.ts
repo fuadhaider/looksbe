@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -53,6 +55,8 @@ import { HeaderTopnavService } from './section/main/header-topnav.service';
     BrowserModule,
     BrowserAnimationsModule,
     MatSidenavModule,
+    MatFormFieldModule,
+    MatInputModule,
     AppRoutingModule
   ],
   providers: [ContentService, AdService, HeaderNavService, HeaderTopnavService ],
