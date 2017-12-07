@@ -1,0 +1,57 @@
+<h3>Sign Up</h3>
+<p>Please enter your details below</p>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Account
+      </mat-panel-title>
+      <!-- <mat-panel-description>
+        Type your name and age
+      </mat-panel-description> -->
+    </mat-expansion-panel-header>
+    <mat-form-field>
+      <input matInput type="email" placeholder="Email">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="password" placeholder="Password">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="password" placeholder="Confirm">
+    </mat-form-field>
+  </mat-expansion-panel>
+  <mat-expansion-panel> <!-- (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false"-->
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Personal
+      </mat-panel-title>
+      <!-- <mat-panel-description>
+        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+      </mat-panel-description> -->
+    </mat-expansion-panel-header>
+    <mat-form-field>
+      <input matInput type="text" placeholder="First Names">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Last Name">
+    </mat-form-field>
+  </mat-expansion-panel>
+  <mat-expansion-panel> <!-- (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false"-->
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Contact
+      </mat-panel-title>
+      <!-- <mat-panel-description>
+        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+      </mat-panel-description> -->
+    </mat-expansion-panel-header>
+    <mat-form-field>
+      <textarea matInput type="text" placeholder="Address"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="number" placeholder="Phone">
+    </mat-form-field>
+  </mat-expansion-panel>
+</mat-accordion>

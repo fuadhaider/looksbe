@@ -9,19 +9,24 @@ nav {
   background-color: rgba(149, 165, 134, 0.5);
   // @include display-flex;
   // margin: auto;
-  @include display-flex;
-  justify-content: center;
+  // @include display-flex;
+  // justify-content: center;
   // flex-wrap: wrap;
 
-  form#topForm {
+  form {
     @include display-flex;
     justify-content: center;
     flex-wrap: wrap;
 
     // margin: 5%;
-    // > * {
-    //   margin: 0 5%;
-    // }
+    > * {
+      margin: 0 1%;
+      // width: 23%;
+      span {
+        margin: auto;
+        vertical-align: bottom;
+      }
+    }
     // float: none;
     // display: inline-block;
     // width: 200px;

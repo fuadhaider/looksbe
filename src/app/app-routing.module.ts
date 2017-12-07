@@ -6,6 +6,8 @@ import { TrendComponent } from './section/main/trend/trend.component';
 import { ExploreComponent } from './section/main/explore/explore.component';
 import { ShopComponent } from './section/main/shop/shop.component';
 import { DetailComponent } from './section/main/detail/detail.component';
+import { SignUpComponent } from './section/main/sign-up/sign-up.component';
+import { AboutComponent } from './section/main/about/about.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -13,7 +15,9 @@ const routes: Routes = [
   { path: 'trend', component: TrendComponent },
   { path: 'explore', component: ExploreComponent },
   { path: 'detail/:id', component: DetailComponent },
-  { path: 'shop', component: ShopComponent }
+  { path: 'shop', component: ShopComponent },
+  { path: 'signup', component: SignUpComponent },
+  { path: 'about', component: AboutComponent }
 ];
 
 @NgModule({

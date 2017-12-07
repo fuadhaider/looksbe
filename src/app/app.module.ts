@@ -4,6 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -29,6 +31,8 @@ import { SidenavComponent } from './section/main/sidenav/sidenav.component';
 import { HeaderNavService } from './section/main/header-nav.service';
 import { TopnavComponent } from './section/main/topnav/topnav.component';
 import { HeaderTopnavService } from './section/main/header-topnav.service';
+import { SignUpComponent } from './section/main/sign-up/sign-up.component';
+import { AboutComponent } from './section/main/about/about.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +53,9 @@ import { HeaderTopnavService } from './section/main/header-topnav.service';
     HeroJobAdComponent,
     HeroProfileComponent,
     SidenavComponent,
-    TopnavComponent
+    TopnavComponent,
+    SignUpComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +63,8 @@ import { HeaderTopnavService } from './section/main/header-topnav.service';
     MatSidenavModule,
     MatFormFieldModule,
     MatInputModule,
+    MatExpansionModule,
+    MatCardModule,
     AppRoutingModule
   ],
   providers: [ContentService, AdService, HeaderNavService, HeaderTopnavService ],
