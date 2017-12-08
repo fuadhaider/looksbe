@@ -1,0 +1,32 @@
+@import "src/app/app-config.component";
+
+mat-card {
+  font: $body-font;
+  mat-card-header {
+    margin: 1%;
+    padding: 1%;
+    box-shadow: inset 1px 1px 5px 1px lightgrey;
+    mat-card-title-group {
+      margin: auto;
+      text-align: center;
+      img {
+        // width: 20%;
+      }
+    }
+  }
+  div {
+    padding: 1%;
+    margin: 1%;
+    box-shadow: inset 1px 1px 5px 1px lightgrey;
+    img {
+      width: 100%;
+  }
+
+
+  }
+  mat-card-content {
+    margin: 1%;
+    padding: 1%;
+    box-shadow: inset 1px 1px 5px 1px lightgrey;
+  }
+}
