@@ -3,5 +3,11 @@
 
 :host {
   @include display-flex;
-  @include flex-flow(column);
+  // @include flex-flow(column);
+}
+
+app-sidenav {
+  // @include display-flex;
+  flex: auto;
+  // height: 100%;
 }
