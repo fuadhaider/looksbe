@@ -7,24 +7,35 @@
 nav {
   width: 100%;
   background-color: rgba(149, 165, 134, 0.5);
-  // @include display-flex;
-  // margin: auto;
-  // @include display-flex;
-  // justify-content: center;
-  // flex-wrap: wrap;
-
   form {
     @include display-flex;
+    @include flex-flow(row);
     justify-content: center;
-    flex-wrap: wrap;
-
-    // margin: 5%;
+    div {
+      @include display-flex;
+      justify-content: center;
+      @include flex-flow(column);
+      i {
+        // vertical-align: text-bottom ;
+        // display: inline-block;
+        margin: auto;
+      }
+      mat-form-field {
+        margin: 0 1%;
+      }
+    }
     > * {
       margin: 0 1%;
       // width: 23%;
       span {
-        margin: auto;
-        vertical-align: bottom;
+        // margin: auto;
+        // vertical-align: bottom;
+      }
+    }
+    @media all and (min-width: 769px) {
+      div {
+        @include flex-flow(row);
+
       }
     }
     // float: none;

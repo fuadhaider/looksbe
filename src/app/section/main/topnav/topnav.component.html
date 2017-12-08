@@ -1,14 +1,20 @@
 <nav *ngIf="bool" [@topnavToggle]="topnavState">
   <form>
-    <span routerLink="/signup" class="material-icons">person_add</span>
-    <mat-form-field hideRequiredMarker>
-      <input matInput type="email" placeholder="Email" required>
-    </mat-form-field>
-    <mat-form-field hideRequiredMarker>
-      <input matInput type="password" placeholder="Password" required>
-    </mat-form-field>
-    <!-- <button type="button" name="button">enter</button> -->
-    <span class="material-icons">input</span>
+    <div class="">
+      <i routerLink="/signup" class="material-icons">person_add</i>
+    </div>
+    <div class="">
+      <mat-form-field hideRequiredMarker>
+        <input matInput type="email" placeholder="Email" required>
+      </mat-form-field>
+      <mat-form-field hideRequiredMarker>
+        <input matInput type="password" placeholder="Password" required>
+      </mat-form-field>
+    </div>
+    <div class="">
+      <!-- <button type="button" name="button">enter</button> -->
+      <i class="material-icons">input</i>
+    </div>
   </form>
 </nav>
 <!-- <ng-template #searchBlock>
