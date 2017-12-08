@@ -30,5 +30,7 @@ app-main {
   }
   app-aside {
     order: 3;
+    max-width: 15%;
+    background-color: $aside-color;
   }
 }

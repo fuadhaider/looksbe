@@ -3,7 +3,9 @@
 :host {
   @include display-flex;
 }
-
+mat-sidenav-container {
+  width: 100%;
+}
 mat-sidenav {
   border: 2px solid black;
 }

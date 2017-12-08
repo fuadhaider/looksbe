@@ -1,11 +1,16 @@
+@import "src/app/app-config.component";
+
 div {
   // float: left;
-  display: inline-block;
+  // display: inline-block;
+  @include display-flex;
+  @include flex-flow(column wrap);
+
   margin: 5vw;
   border: 1px solid lightgray;
   // border-radius: 15%;
   text-align: center;
   img {
-    width: 30vw;
+    width: 20vw;
   }
 }
