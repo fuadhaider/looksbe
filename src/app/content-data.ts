@@ -50,7 +50,6 @@ export const ContentData: ImageObject[] = [
   { id: 47, name: 'Stripes', category: 'explore', path: '../assets/wood-dress.jpg' },
   { id: 48, name: 'Sunglasses', category: 'shop', path: '../assets/wood-sunglasses.jpg' },
   { id: 49, name: 'Wool Balls', category: 'shop', path: '../assets/wool-balls.jpg' },
-  { id: 49, name: 'Red Hijab', category: 'explore', path: '../assets/red-hijab.jpg' },
   { id: 50, name: 'Accesories Shop', category: 'shop', path: '../assets/bright-shop.jpeg' },
   { id: 51, name: 'Converse Shades', category: 'trend', path: '../assets/converse-shades.jpg' },
   { id: 52, name: 'Converse', category: 'trend', path: '../assets/converse.jpg' },
@@ -67,5 +66,6 @@ export const ContentData: ImageObject[] = [
   { id: 63, name: 'Nail Polish', category: 'shop', path: '../assets/nail-polishes.jpeg' },
   { id: 64, name: 'Heels and Bag', category: 'shop', path: '../assets/shop-shelf.jpeg' },
   { id: 65, name: 'Shopaholic', category: 'shop', path: '../assets/shopaholic.jpeg' },
-  { id: 66, name: 'Trainers', category: 'trend', path: '../assets/sports-shoes.jpg' }
+  { id: 66, name: 'Trainers', category: 'trend', path: '../assets/sports-shoes.jpg' },
+  { id: 49, name: 'Red Hijab', category: 'explore', path: '../assets/red-hijab.jpg' }
 ]

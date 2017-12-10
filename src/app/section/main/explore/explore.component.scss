@@ -1,7 +1,9 @@
+@import "src/app/app-config.component";
+
 div {
   column-count: 2;
-  // column-gap: 1em;
-  margin: 2vh;
+  column-gap: .5em;
+  margin: .5em;
   a {
     display: inline-block;
     margin: auto;
@@ -10,11 +12,31 @@ div {
     box-shadow: 1px 1px 3px lightgrey;
     text-align: center;
     text-decoration: none;
-    // margin: 0 0 1em;
+    font: $body-font;
+    color: $body-font-colour;
+    margin: 0 0 1em;
     width: 100%;
     overflow: hidden;
     img {
       width: 100%;
     }
+  }
+}
+
+@media all and (min-width: 599px) {
+  div {
+    column-count: 3;
+  }
+}
+
+@media all and (min-width: 960px) {
+  div {
+    column-count: 4;
+  }
+}
+
+@media all and (min-width: 1920px) {
+  div {
+    column-count: 5;
   }
 }
