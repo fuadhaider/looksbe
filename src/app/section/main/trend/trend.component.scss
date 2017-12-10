@@ -1,16 +1,16 @@
-// :host {
-//   display: flex;
-// }
+@import "src/app/app-config.component";
 
-div {
-  // flex-direction: column;
-  // flex-wrap: nowrap;
-  display: inline-block;
-  margin: 5vw;
-  border: 1px solid lightgray;
-  // border-radius: 15%;
-  text-align: center;
-  img {
-    width: 30vw;
+span {
+  @include display-flex;
+  flex-wrap: wrap;
+  a {
+    width: 220px;
+    border: 1px solid lightgray;
+    text-align: center;
+    text-decoration: none;
+    img {
+      width: 200px;
+    }
   }
+
 }

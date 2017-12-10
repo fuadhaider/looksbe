@@ -1,6 +1,6 @@
-<div *ngFor="let trend of trendArray">
-  <a routerLink="/detail/{{trend.id}}">
+<span>
+  <a *ngFor="let trend of trendArray" routerLink="/detail/{{trend.id}}">
     <img src="{{trend.path}}" alt="{{trend.name}}"><br>
     {{trend.name}}
   </a>
-</div>
+</span>
