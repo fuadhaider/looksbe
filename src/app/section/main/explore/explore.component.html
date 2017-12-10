@@ -1,5 +1,5 @@
-<div *ngFor="let explore of exploreArray">
-  <a routerLink="/detail/{{explore.id}}">
+<div>
+  <a *ngFor="let explore of exploreArray" routerLink="/detail/{{explore.id}}">
     <img src="{{explore.path}}" alt="{{explore.name}}"><br>
     {{explore.name}}
   </a>

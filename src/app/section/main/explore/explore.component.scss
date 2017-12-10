@@ -1,10 +1,20 @@
 div {
-  display: inline-block;
-  margin: 5vw;
-  border: 1px solid lightgray;
-  // border-radius: 15%;
-  text-align: center;
-  img {
-    width: 30vw;
+  column-count: 2;
+  // column-gap: 1em;
+  margin: 2vh;
+  a {
+    display: inline-block;
+    margin: auto;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    box-shadow: 1px 1px 3px lightgrey;
+    text-align: center;
+    text-decoration: none;
+    // margin: 0 0 1em;
+    width: 100%;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
   }
 }
