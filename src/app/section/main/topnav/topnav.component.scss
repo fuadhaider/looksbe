@@ -25,9 +25,23 @@ nav {
 
       i {
         margin: auto;
+        font-size: $menu-font-size;
+
       }
       mat-form-field {
         margin: 0 1%;
+        /deep/ .mat-input-underline {
+           background-color: $icon-color;
+        }
+
+        /deep/ .mat-input-element {
+          font-size: $menu-font-size;
+
+        }
+
+        /deep/ .mat-form-field-placeholder {
+          color: $icon-color;
+        }
       }
 
     }
@@ -41,11 +55,3 @@ nav {
     }
   }
 }
-
-// /deep/ .mat-input-underline {
-//    background-color: $icon-color;
-// }
-//
-// /deep/ .mat-form-field-placeholder {
-//   color: $icon-color;
-// }

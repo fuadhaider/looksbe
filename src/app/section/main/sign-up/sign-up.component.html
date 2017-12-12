@@ -6,19 +6,20 @@
       <mat-panel-title>
         Account
       </mat-panel-title>
-      <!-- <mat-panel-description>
-        Type your name and age
-      </mat-panel-description> -->
     </mat-expansion-panel-header>
-    <mat-form-field style="width:100%">
+    <mat-form-field>
       <input matInput type="email" placeholder="Email">
     </mat-form-field>
     <mat-form-field>
       <input matInput type="password" placeholder="Password">
     </mat-form-field>
     <mat-form-field>
-      <input matInput type="password" placeholder="Confirm">
+      <input matInput type="password" placeholder="Confirm Password">
     </mat-form-field>
+    <div>
+        <button mat-button>Submit</button>
+        <button mat-button>Reset</button>
+    </div>
   </mat-expansion-panel>
   <mat-expansion-panel> <!-- (opened)="panelOpenState = true"
                        (closed)="panelOpenState = false"-->
@@ -36,6 +37,21 @@
     <mat-form-field>
       <input matInput type="text" placeholder="Last Name">
     </mat-form-field>
+    <mat-form-field>
+      <input matInput type="date" placeholder="Date of Birth">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Gender">
+        <mat-option value="option">Male</mat-option>
+        <mat-option value="option">Female</mat-option>
+        <mat-option value="option">Other</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div>
+      <button mat-button>Submit</button>
+      <button mat-button>Reset</button>
+    </div>
   </mat-expansion-panel>
   <mat-expansion-panel> <!-- (opened)="panelOpenState = true"
                        (closed)="panelOpenState = false"-->
@@ -48,10 +64,32 @@
       </mat-panel-description> -->
     </mat-expansion-panel-header>
     <mat-form-field>
-      <textarea matInput type="text" placeholder="Address"></textarea>
+      <input matInput type="text" placeholder="Unit">
     </mat-form-field>
     <mat-form-field>
-      <input matInput type="number" placeholder="Phone">
+      <input matInput type="text" placeholder="Building Name">
     </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Street">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Street">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" placeholder="City/Town">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Zip/Post Code">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="tel" placeholder="Mobile">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="tel" placeholder="Land Phone">
+    </mat-form-field>
+    <div>
+      <button mat-button>Submit</button>
+      <button mat-button>Reset</button>
+    </div>
   </mat-expansion-panel>
 </mat-accordion>
