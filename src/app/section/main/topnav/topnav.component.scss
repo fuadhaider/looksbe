@@ -1,14 +1,16 @@
 @import "src/app/app-config.component";
 
 :host {
-  @include display-flex;
-  width: 100%;
+  // @include display-flex;
+  // width: 100%;
+  // position: absolute;
 }
 
 nav {
-  width: 100%;
+  // width: inherit;
+  // flex: auto;
   background-color: rgba(149, 165, 134, 0.95);
-  position: fixed;
+  // position: fixed;
   color: $icon-color;
   form {
     @include display-flex;
@@ -16,31 +18,34 @@ nav {
     justify-content: center;
     div {
       @include display-flex;
-      justify-content: center;
       @include flex-flow(column);
+
+      justify-content: center;
+      margin: 0 1%;
+
       i {
         margin: auto;
       }
       mat-form-field {
         margin: 0 1%;
       }
+
     }
-    > * {
-      margin: 0 1%;
-    }
+    // > * {
+    //   margin: 0 1%;
+    // }
     @media all and (min-width: 769px) {
       div {
         @include flex-flow(row);
-
       }
     }
   }
 }
 
-/deep/ .mat-input-underline {
-   background-color: $icon-color;
-}
-
-/deep/ .mat-form-field-placeholder {
-  color: $icon-color;
-}
+// /deep/ .mat-input-underline {
+//    background-color: $icon-color;
+// }
+//
+// /deep/ .mat-form-field-placeholder {
+//   color: $icon-color;
+// }

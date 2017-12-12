@@ -4,12 +4,15 @@
   @include display-flex;
 }
 mat-sidenav-container {
-  width: 100%;
-}
-mat-sidenav {
-  border: 2px solid black;
-}
-
-ng-content {
-  overflow: scroll;
+  // width: 100%;
+  // flex: auto;
+  mat-sidenav {
+    border: 2px solid black;
+  }
+  mat-sidenav-content {
+    ng-content {
+      width: 100%;
+      // overflow: scroll;
+    }
+  }
 }
