@@ -3,7 +3,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { MatSidenav } from '@angular/material/sidenav';
 // import { Observable } from 'rxjs';
 
-import { HeaderNavService } from '../header-nav.service';
+import { HeaderSidenavService } from '../header-sidenav.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -16,7 +16,7 @@ export class SidenavComponent implements OnInit {
   current1: String = 'message';
   current2: String = 'notification';
 
-  constructor(private headerNavService: HeaderNavService) {
+  constructor(private headerSidenavService: HeaderSidenavService) {
     // this.headerNavService.getMessage().subscribe(message => {
     //   console.log(message);
     // });
@@ -24,7 +24,7 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit() {
     // this.headerNavService.events$.forEach(event => console.log(event));
-    this.subscription = this.headerNavService.toggleSidenav().subscribe(which => {
+    this.subscription = this.headerSidenavService.toggleSidenav().subscribe(which => {
       // if ( this.current1 == which || this.current2 == which) {
       //   this.current1 = this.current2 = which;
         console.log(which);

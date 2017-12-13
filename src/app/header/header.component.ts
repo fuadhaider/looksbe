@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HeaderNavService } from '../section/main/header-nav.service';
+import { HeaderSidenavService } from '../section/main/header-sidenav.service';
 import { HeaderTopnavService } from '../section/main/header-topnav.service';
 
 @Component({
@@ -8,12 +8,12 @@ import { HeaderTopnavService } from '../section/main/header-topnav.service';
   styleUrls: ['./header.component.scss', './_header-config.component.scss']
 })
 export class HeaderComponent {
-  constructor(private headerNavService: HeaderNavService,
+  constructor(private headerSidenavService: HeaderSidenavService,
     private HeaderTopnavService: HeaderTopnavService
   ) { }
 
   showSidenav(which: string) {
-    this.headerNavService.storeSidenav(which);
+    this.headerSidenavService.storeSidenav(which);
   }
 
   showTopnav(which: string) {

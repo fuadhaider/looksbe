@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { HeaderNavService } from './header-nav.service';
+import { HeaderSidenavService } from './header-sidenav.service';
 
 describe('HeaderNavService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [HeaderNavService]
+      providers: [HeaderSidenavService]
     });
   });
 
-  it('should be created', inject([HeaderNavService], (service: HeaderNavService) => {
+  it('should be created', inject([HeaderSidenavService], (service: HeaderSidenavService) => {
     expect(service).toBeTruthy();
   }));
 });

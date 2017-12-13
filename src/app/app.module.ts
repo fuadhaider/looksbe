@@ -32,7 +32,7 @@ import { BackEndDevComponent } from './section/aside/back-end-dev.component';
 import { SoftDevComponent } from './section/aside/soft-dev.component';
 import { AdService } from './section/aside/ad.service';
 import { SidenavComponent } from './section/main/sidenav/sidenav.component';
-import { HeaderNavService } from './section/main/header-nav.service';
+import { HeaderSidenavService } from './section/main/header-sidenav.service';
 import { TopnavComponent } from './section/main/topnav/topnav.component';
 import { HeaderTopnavService } from './section/main/header-topnav.service';
 import { SignUpComponent } from './section/main/sign-up/sign-up.component';
@@ -75,7 +75,7 @@ import { AboutComponent } from './section/main/about/about.component';
     MatCardModule,
     AppRoutingModule
   ],
-  providers: [ContentService, AdService, HeaderNavService, HeaderTopnavService ],
+  providers: [ContentService, AdService, HeaderSidenavService, HeaderTopnavService ],
   entryComponents: [ WebDesignComponent, FrontEndDevComponent, BackEndDevComponent, SoftDevComponent ],
   bootstrap: [AppComponent]
 })
