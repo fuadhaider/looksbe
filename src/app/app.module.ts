@@ -26,9 +26,11 @@ import { MoreComponent } from './section/main/more/more.component';
 import { DetailComponent } from './section/main/detail/detail.component';
 import { AdDirective } from './section/aside/ad.directive';
 import { AdBannerComponent } from './section/aside/ad-banner/ad-banner.component';
-import { HeroJobAdComponent }   from './section/aside/hero-job-ad.component';
-import { HeroProfileComponent } from './section/aside/hero-profile.component';
-import { AdService }            from './section/aside/ad.service';
+import { WebDesignComponent }   from './section/aside/web-design.component';
+import { FrontEndDevComponent } from './section/aside/front-end-dev.component';
+import { BackEndDevComponent } from './section/aside/back-end-dev.component';
+import { SoftDevComponent } from './section/aside/soft-dev.component';
+import { AdService } from './section/aside/ad.service';
 import { SidenavComponent } from './section/main/sidenav/sidenav.component';
 import { HeaderNavService } from './section/main/header-nav.service';
 import { TopnavComponent } from './section/main/topnav/topnav.component';
@@ -52,8 +54,10 @@ import { AboutComponent } from './section/main/about/about.component';
     DetailComponent,
     AdDirective,
     AdBannerComponent,
-    HeroJobAdComponent,
-    HeroProfileComponent,
+    WebDesignComponent,
+    FrontEndDevComponent,
+    BackEndDevComponent,
+    SoftDevComponent,
     SidenavComponent,
     TopnavComponent,
     SignUpComponent,
@@ -72,7 +76,7 @@ import { AboutComponent } from './section/main/about/about.component';
     AppRoutingModule
   ],
   providers: [ContentService, AdService, HeaderNavService, HeaderTopnavService ],
-  entryComponents: [ HeroJobAdComponent, HeroProfileComponent ],
+  entryComponents: [ WebDesignComponent, FrontEndDevComponent, BackEndDevComponent, SoftDevComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
