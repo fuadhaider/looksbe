@@ -1,5 +1,4 @@
 @import "src/app/app-config.component";
-// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 :host {
   @include display-flex;
@@ -7,15 +6,7 @@
 }
 
 app-sidenav {
-  // @include display-flex;
   flex: auto;
-  // height: 100%;
-  // width: 100%;
-
-  // app-topnav {
-    // width: 100%;
-    // flex: auto;
-  // }
   router-outlet {
     overflow: scroll;
   }

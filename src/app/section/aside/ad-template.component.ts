@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { AdComponent } from './ad.component';
+import { AdComponent }      from './ad.component';
 
 @Component({
   template: `
@@ -14,6 +14,7 @@ import { AdComponent } from './ad.component';
   `,
   styles: ['img {width: 8vw;}']
 })
-export class FrontEndDevComponent implements AdComponent {
+export class AdTemplateComponent implements AdComponent {
   @Input() data: any;
+
 }

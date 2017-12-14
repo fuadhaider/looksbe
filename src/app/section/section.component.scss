@@ -8,15 +8,11 @@
 
 app-main {
   flex: auto;
-  // @include display-flex;
-  // overflow: scroll;
 
 }
 
 @media all and (min-width: 769px) {
   :host(.big-display) {
-    // height: 100%;
-    // @include display-flex;
     @include flex-flow(row);
   }
   app-nav {
@@ -25,7 +21,6 @@ app-main {
   }
   app-main {
     order: 2;
-    // @include display-flex;
 
   }
   app-aside {

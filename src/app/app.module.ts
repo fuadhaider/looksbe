@@ -17,30 +17,26 @@ import { SectionComponent } from './section/section.component';
 import { NavComponent } from './section/nav/nav.component';
 import { MainComponent } from './section/main/main.component';
 import { AsideComponent } from './section/aside/aside.component';
-import { ContentService } from './section/main/content.service';
 import { HomeComponent } from './section/main/home/home.component';
 import { TrendComponent } from './section/main/trend/trend.component';
 import { ExploreComponent } from './section/main/explore/explore.component';
 import { ShopComponent } from './section/main/shop/shop.component';
-import { MoreComponent } from './section/main/more/more.component';
+// import { MoreComponent } from './section/main/more/more.component';
 import { DetailComponent } from './section/main/detail/detail.component';
 import { AdDirective } from './section/aside/ad.directive';
 import { AdBannerComponent } from './section/aside/ad-banner/ad-banner.component';
-import { WebDesignComponent }   from './section/aside/web-design.component';
-import { FrontEndDevComponent } from './section/aside/front-end-dev.component';
-import { BackEndDevComponent } from './section/aside/back-end-dev.component';
-import { SoftDevComponent } from './section/aside/soft-dev.component';
-import { AdService } from './section/aside/ad.service';
+import { AdTemplateComponent }   from './section/aside/ad-template.component';
 import { LoginNavComponent } from './section/main/login-nav/login-nav.component';
 import { SidenavComponent } from './section/main/sidenav/sidenav.component'
-import { HeaderTopnavService } from './section/main/header-topnav.service';
-import { HeaderSidenavService } from './section/main/header-sidenav.service';
 import { SignUpComponent } from './section/main/sign-up/sign-up.component';
 import { AboutComponent } from './section/main/about/about.component';
-import { DrawerNavService } from './drawer-nav.service';
 import { SearchNavComponent } from './section/main/search-nav/search-nav.component';
+
+import { AdService } from './section/aside/ad.service';
+import { DrawerNavService } from './drawer-nav.service';
 import { NotificationComponent } from './section/main/notification/notification.component';
 import { NotificationService } from './section/main/notification.service';
+import { ContentService } from './section/main/content.service';
 
 @NgModule({
   declarations: [
@@ -54,14 +50,11 @@ import { NotificationService } from './section/main/notification.service';
     TrendComponent,
     ExploreComponent,
     ShopComponent,
-    MoreComponent,
+    // MoreComponent,
     DetailComponent,
     AdDirective,
     AdBannerComponent,
-    WebDesignComponent,
-    FrontEndDevComponent,
-    BackEndDevComponent,
-    SoftDevComponent,
+    AdTemplateComponent,
     LoginNavComponent,
     SignUpComponent,
     AboutComponent,
@@ -81,9 +74,8 @@ import { NotificationService } from './section/main/notification.service';
     MatCardModule,
     AppRoutingModule
   ],
-  providers: [ContentService, AdService, DrawerNavService, HeaderSidenavService, HeaderTopnavService, NotificationService],
-  entryComponents: [ WebDesignComponent, FrontEndDevComponent,
-    BackEndDevComponent, SoftDevComponent ],
+  providers: [ContentService, AdService, DrawerNavService, NotificationService],
+  entryComponents: [ AdTemplateComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

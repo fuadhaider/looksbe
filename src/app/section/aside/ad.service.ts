@@ -1,16 +1,13 @@
 import { Injectable }           from '@angular/core';
 
-import { WebDesignComponent }   from './web-design.component';
-import { FrontEndDevComponent } from './front-end-dev.component';
-import { BackEndDevComponent } from './back-end-dev.component';
-import { SoftDevComponent } from './soft-dev.component';
+import { AdTemplateComponent }   from './ad-template.component';
 import { AdItem } from './ad-item';
 
 @Injectable()
 export class AdService {
   getAds() {
     return [
-      new AdItem(WebDesignComponent, {name: 'Web Design',
+      new AdItem(AdTemplateComponent, {name: 'Web Design',
         // description: 'For beautiful websites',
         path1: '../../assets/photoshop-logo.png',
         link1: 'https://www.adobe.com/uk/products/photoshop.html',
@@ -19,7 +16,7 @@ export class AdService {
         path3: '../../assets/google-web-designer-logo.png',
         link3: 'https://www.google.co.uk/webdesigner/'
       }),
-      new AdItem(FrontEndDevComponent, {name: 'Front End',
+      new AdItem(AdTemplateComponent, {name: 'Front End',
         // description: 'Only names for web face',
         path1: '../../assets/html5-logo.png',
         link1: 'https://www.w3.org/html/',
@@ -28,7 +25,7 @@ export class AdService {
         path3: '../../assets/javascript-logo.png',
         link3: 'https://www.javascript.com/'
       }),
-      new AdItem(BackEndDevComponent, {name: 'Back End',
+      new AdItem(AdTemplateComponent, {name: 'Back End',
         // description: 'The scene behind the curtain',
         path1: '../../assets/php-logo.png',
         link1: 'https://secure.php.net/',
@@ -37,7 +34,7 @@ export class AdService {
         path3: '../../assets/mysql-logo.png',
         link3: 'https://www.mysql.com/'
       }),
-      new AdItem(SoftDevComponent, {name: 'Extras',
+      new AdItem(AdTemplateComponent, {name: 'Extras',
         // description: 'Most popular tools',
         path1: '../../assets/angular-logo.png',
         link1: 'https://angular.io/',
