@@ -39,6 +39,8 @@ import { SignUpComponent } from './section/main/sign-up/sign-up.component';
 import { AboutComponent } from './section/main/about/about.component';
 import { DrawerNavService } from './drawer-nav.service';
 import { SearchNavComponent } from './section/main/search-nav/search-nav.component';
+import { NotificationComponent } from './section/main/notification/notification.component';
+import { NotificationService } from './section/main/notification.service';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,8 @@ import { SearchNavComponent } from './section/main/search-nav/search-nav.compone
     SignUpComponent,
     AboutComponent,
     SearchNavComponent,
-    SidenavComponent
+    SidenavComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +81,7 @@ import { SearchNavComponent } from './section/main/search-nav/search-nav.compone
     MatCardModule,
     AppRoutingModule
   ],
-  providers: [ContentService, AdService, DrawerNavService, HeaderSidenavService, HeaderTopnavService],
+  providers: [ContentService, AdService, DrawerNavService, HeaderSidenavService, HeaderTopnavService, NotificationService],
   entryComponents: [ WebDesignComponent, FrontEndDevComponent,
     BackEndDevComponent, SoftDevComponent ],
   bootstrap: [AppComponent]
