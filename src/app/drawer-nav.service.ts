@@ -13,8 +13,6 @@ export class DrawerNavService {
 
   getDrawerNav(): Observable<any> {
     return this.drawerNav.asObservable();
-
   }
-
 
 }

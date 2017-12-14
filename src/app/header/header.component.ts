@@ -13,13 +13,6 @@ export class HeaderComponent {
 
   toggleDrawerNav(which: string) {
     this.drawerNavServive.storeDrawerNav(which);
-    // this.headerTopnavService.storeTopnav(which);
-    // this.headerSidenavService.storeSidenav(null);
   }
-  //
-  // showSidenav(which: string) {
-  //   this.headerSidenavService.storeSidenav(which);
-  //   this.headerTopnavService.storeTopnav(null);
-  // }
 
 }

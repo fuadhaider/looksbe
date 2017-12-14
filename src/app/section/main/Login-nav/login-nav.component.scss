@@ -1,7 +1,7 @@
 @import "src/app/app-config.component";
 
 nav {
-  background-color: rgba(149, 165, 134, 0.95);
+  background-color: $drawer-nav-color;
   color: $icon-color;
   form {
     @include display-flex;
