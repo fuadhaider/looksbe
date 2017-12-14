@@ -1,16 +1,7 @@
 @import "src/app/app-config.component";
 
-:host {
-  // @include display-flex;
-  // width: 100%;
-  // position: absolute;
-}
-
 nav {
-  // width: inherit;
-  // flex: auto;
   background-color: rgba(149, 165, 134, 0.95);
-  // position: fixed;
   color: $icon-color;
   form {
     @include display-flex;
@@ -26,7 +17,6 @@ nav {
       i {
         margin: auto;
         font-size: $menu-font-size;
-
       }
       mat-form-field {
         margin: 0 1%;
@@ -35,7 +25,7 @@ nav {
         }
 
         /deep/ .mat-input-element {
-          font-size: $menu-font-size;
+          font-size: $body-font-size;
 
         }
 

@@ -11,24 +11,23 @@ import { DrawerNavService } from '../../../drawer-nav.service';
   animations: [
     trigger('loginNavToggle', [
       state('in', style({
-        // transform: 'scale(1)'
-        // height: 0,
         opacity: 0,
         display: 'none'
       })),
       state('out', style({
-        // transform: 'scale(2)'
-        // height: '2em',
         opacity: 1,
         display: 'block'
       })),
-      transition('in <=> out', animate('200ms ease-in-out'))
+      transition('in => out', animate('200ms ease-in')),
+      transition('out => in', animate('0ms'))
+
     ])
   ]
 })
 export class LoginNavComponent implements OnInit {
-  loginNavState: string = 'in';
   subscription: Subscription;
+  loginNavState: string = 'in';
+
   constructor(private drawerNavService: DrawerNavService) { }
 
   ngOnInit() {

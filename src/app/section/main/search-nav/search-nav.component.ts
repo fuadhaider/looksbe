@@ -18,7 +18,9 @@ import { DrawerNavService } from '../../../drawer-nav.service';
         opacity: 1,
         display: 'block'
       })),
-      transition('in <=> out', animate('200ms ease-in-out'))
+      transition('in => out', animate('200ms ease-out')),
+      transition('out => in', animate('0ms ease-out'))
+
     ])
   ]
 })

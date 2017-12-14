@@ -1,11 +1,11 @@
 @import "src/app/app-config.component";
 
 aside {
-  @include display-flex;
   background: $aside-color;
   height: 100%;
   padding: 0 5%;
   app-ad-banner {
     margin: 0 auto;
-  }
+    font-size: $body-font-size;
+    }
 }
