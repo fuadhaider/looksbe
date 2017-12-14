@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { HeaderSidenavService } from '../section/main/header-sidenav.service';
-import { HeaderTopnavService } from '../section/main/header-topnav.service';
+// import { HeaderSidenavService } from '../section/main/header-sidenav.service';
+// import { HeaderTopnavService } from '../section/main/header-topnav.service';
+import { DrawerNavService } from '../drawer-nav.service';
 
 @Component({
   selector: 'app-header',
@@ -8,15 +9,17 @@ import { HeaderTopnavService } from '../section/main/header-topnav.service';
   styleUrls: ['./header.component.scss', './_header-config.component.scss']
 })
 export class HeaderComponent {
-  constructor(private headerSidenavService: HeaderSidenavService,
-    private HeaderTopnavService: HeaderTopnavService
-  ) { }
+  constructor(private drawerNavServive: DrawerNavService) { }
 
-  showSidenav(which: string) {
-    this.headerSidenavService.storeSidenav(which);
+  toggleDrawerNav(which: string) {
+    this.drawerNavServive.storeDrawerNav(which);
+    // this.headerTopnavService.storeTopnav(which);
+    // this.headerSidenavService.storeSidenav(null);
   }
+  //
+  // showSidenav(which: string) {
+  //   this.headerSidenavService.storeSidenav(which);
+  //   this.headerTopnavService.storeTopnav(null);
+  // }
 
-  showTopnav(which: string) {
-    this.HeaderTopnavService.storeTopnav(which);
-  }
 }

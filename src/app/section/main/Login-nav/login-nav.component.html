@@ -1,0 +1,18 @@
+<nav [@loginNavToggle]="loginNavState">
+  <form>
+    <div class="">
+      <i routerLink="/signup" class="material-icons">person_add</i>
+    </div>
+    <div class="">
+      <mat-form-field hideRequiredMarker>
+        <input matInput type="email" placeholder="Email" required>
+      </mat-form-field>
+      <mat-form-field hideRequiredMarker>
+        <input matInput type="password" placeholder="Password" required>
+      </mat-form-field>
+    </div>
+    <div class="">
+      <i class="material-icons">input</i>
+    </div>
+  </form>
+</nav>

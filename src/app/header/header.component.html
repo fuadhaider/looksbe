@@ -1,11 +1,11 @@
 <header id="flex-header">
   <a routerLink="/about">looksbe</a>
-  <a (click)="showTopnav('search')" id="search-icon" class="material-icons" data-toggle="tooltip"
+  <a (click)="toggleDrawerNav('search')" id="search-icon" class="material-icons" data-toggle="tooltip"
     data-placement="auto" title="Search">&#xe8b6;</a>
   <a (click)="showSidenav('message')" id="message-icon" class="material-icons" data-toggle="tooltip"
     data-placement="auto" title="Message">&#xe0ca;</a>
   <a (click)="showSidenav('notification')" id="notification-icon" class="material-icons" data-toggle="tooltip"
     data-placement="auto" title="Notification">notifications</a>
-  <a (click)="showTopnav('login')" id="login-icon" class="material-icons" data-toggle="tooltip"
+  <a (click)="toggleDrawerNav('login')" id="login-icon" class="material-icons" data-toggle="tooltip"
     data-placement="auto" title="Login">&#xe7fd;</a>
 </header>

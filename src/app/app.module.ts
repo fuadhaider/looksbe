@@ -31,12 +31,14 @@ import { FrontEndDevComponent } from './section/aside/front-end-dev.component';
 import { BackEndDevComponent } from './section/aside/back-end-dev.component';
 import { SoftDevComponent } from './section/aside/soft-dev.component';
 import { AdService } from './section/aside/ad.service';
-import { SidenavComponent } from './section/main/sidenav/sidenav.component';
-import { HeaderSidenavService } from './section/main/header-sidenav.service';
-import { TopnavComponent } from './section/main/topnav/topnav.component';
+import { LoginNavComponent } from './section/main/login-nav/login-nav.component';
+import { SidenavComponent } from './section/main/sidenav/sidenav.component'
 import { HeaderTopnavService } from './section/main/header-topnav.service';
+import { HeaderSidenavService } from './section/main/header-sidenav.service';
 import { SignUpComponent } from './section/main/sign-up/sign-up.component';
 import { AboutComponent } from './section/main/about/about.component';
+import { DrawerNavService } from './drawer-nav.service';
+import { SearchNavComponent } from './section/main/search-nav/search-nav.component';
 
 @NgModule({
   declarations: [
@@ -58,10 +60,11 @@ import { AboutComponent } from './section/main/about/about.component';
     FrontEndDevComponent,
     BackEndDevComponent,
     SoftDevComponent,
-    SidenavComponent,
-    TopnavComponent,
+    LoginNavComponent,
     SignUpComponent,
-    AboutComponent
+    AboutComponent,
+    SearchNavComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
@@ -75,8 +78,9 @@ import { AboutComponent } from './section/main/about/about.component';
     MatCardModule,
     AppRoutingModule
   ],
-  providers: [ContentService, AdService, HeaderSidenavService, HeaderTopnavService ],
-  entryComponents: [ WebDesignComponent, FrontEndDevComponent, BackEndDevComponent, SoftDevComponent ],
+  providers: [ContentService, AdService, DrawerNavService, HeaderSidenavService, HeaderTopnavService],
+  entryComponents: [ WebDesignComponent, FrontEndDevComponent,
+    BackEndDevComponent, SoftDevComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,6 +8,7 @@ export class HeaderTopnavService {
   constructor() { }
   storeTopnav(which: string) {
     this.topnav.next(which);
+    // console.log(which);
   }
 
   toggleTopnav(): Observable<any> {

@@ -27,8 +27,17 @@ export class SidenavComponent implements OnInit {
     this.subscription = this.headerSidenavService.toggleSidenav().subscribe(which => {
       // if ( this.current1 == which || this.current2 == which) {
       //   this.current1 = this.current2 = which;
-        console.log(which);
-        this.sidenav.toggle();
+      if (which != null) {
+        console.log('side nav: ' + which);
+        this.sidenav.open();
+      }
+      else {
+        console.log('side nav: ' + which);
+        this.sidenav.close();
+      }
+      // console.log(which);
+      // this.sidenav.toggle();
+
       // }
 
     });
