@@ -4,12 +4,11 @@
   @include display-flex;
 }
 mat-sidenav-container {
-  // width: 100%;
   flex: auto;
   mat-sidenav {
     width: 30%;
     border: 5px solid $drawer-nav-color;
-    // border-radius: 15px 0 0 15px;
+    background-color: whitesmoke;
   }
   mat-sidenav-content {
     ng-content {

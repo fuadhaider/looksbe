@@ -1,0 +1,14 @@
+@import "src/app/app-config.component";
+
+h2 {
+  text-align: center;
+  color: $nav-color;
+}
+#notification {
+  background-color: gainsboro;
+  border-radius: 5px;
+  margin: 1%;
+  padding: 5% 1%;
+  color: $body-font-colour;
+  font-size: $body-font-size;
+}

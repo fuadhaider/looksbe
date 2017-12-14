@@ -1,6 +1,6 @@
 <h2>Notification</h2>
 <div *ngIf="notificationService.notifications.length">
-  <div *ngFor='let notification of notificationService.notifications'>
+  <div id="notification" *ngFor='let notification of notificationService.notifications'>
     {{notification}}
   </div>
 </div>
