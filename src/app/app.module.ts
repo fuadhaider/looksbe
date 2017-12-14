@@ -21,7 +21,7 @@ import { HomeComponent } from './section/main/home/home.component';
 import { TrendComponent } from './section/main/trend/trend.component';
 import { ExploreComponent } from './section/main/explore/explore.component';
 import { ShopComponent } from './section/main/shop/shop.component';
-// import { MoreComponent } from './section/main/more/more.component';
+import { MoreComponent } from './section/main/more/more.component';
 import { DetailComponent } from './section/main/detail/detail.component';
 import { AdDirective } from './section/aside/ad.directive';
 import { AdBannerComponent } from './section/aside/ad-banner/ad-banner.component';
@@ -50,7 +50,7 @@ import { ContentService } from './section/main/content.service';
     TrendComponent,
     ExploreComponent,
     ShopComponent,
-    // MoreComponent,
+    MoreComponent,
     DetailComponent,
     AdDirective,
     AdBannerComponent,
