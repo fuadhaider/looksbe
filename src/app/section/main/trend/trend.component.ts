@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ImageObject } from '../../../image-object';
 import { ContentService } from '../content.service';
+import { NotificationService } from '../notification.service';
 
 @Component({
   selector: 'app-trend',
@@ -12,10 +13,12 @@ export class TrendComponent implements OnInit {
   trendArray: ImageObject[];
   tag: string = 'trend';
 
-  constructor(private contentService: ContentService) { }
+  constructor(private contentService: ContentService,
+    private notificationService: NotificationService) { }
 
   ngOnInit() {
     this.getTrend();
+    this.notificationService.add('Visited: trend!');
   }
 
   getTrend() {

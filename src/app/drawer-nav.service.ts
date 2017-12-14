@@ -10,7 +10,7 @@ export class DrawerNavService {
 
   constructor(private notificationService: NotificationService) { }
   storeDrawerNav(which: string) {
-    this.notificationService.add('Clicked ' + which);
+    this.notificationService.add('Clicked: ' + which);
     this.drawerNav.next(which);
   }
 
