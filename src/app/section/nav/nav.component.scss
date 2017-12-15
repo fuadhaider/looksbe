@@ -4,6 +4,7 @@ nav {
   background-color: $nav-color;
   @include display-flex;
   justify-content: space-around;
+  padding: 1vw 0;
   a {
     text-decoration: none;
     color: $icon-color;
