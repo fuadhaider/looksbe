@@ -1,11 +1,11 @@
 import { ImageObject } from './app/image-object';
 
 export const ContentData: ImageObject[] = [
-  { id: 1, name: 'Carnival', category: 'explore', path: './assets/carnival.jpg' },
-  { id: 2, name: 'Jeans', category: 'shop', path: './assets/jeans.jpg' },
+  { id: 1, name: 'Carnival', category: 'explore', path: '/assets/carnival.jpg' },
+  { id: 2, name: 'Jeans', category: 'shop', path: '/assets/jeans.jpg' },
   { id: 3, name: 'Fashion Set', category: 'shop', path: './assets/fashion-set-01.jpg' },
   { id: 4, name: 'Blouses on Rail', category: 'shop', path: './assets/blouses-on-rail.jpg' },
-  { id: 5, name: 'Blue Suit Tie', category: 'trend', path: './assets/blue-suit-tie.jpg' },
+  { id: 5, name: 'Blue Suit Tie', category: 'trend', path: '/assets/blue-suit-tie.jpg' },
   { id: 6, name: 'Jeans with Belt', category: 'trend', path: './assets/belt-jeans.jpg' },
   { id: 7, name: 'Colorful Cotton', category: 'shop', path: './assets/colourful-cotton.jpg' },
   { id: 8, name: 'Colorful Jacket', category: 'explore', path: './assets/colourful-jacket.jpg' },
