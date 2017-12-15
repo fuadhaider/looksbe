@@ -12,7 +12,7 @@ import { AdComponent }      from './ad.component';
       <a href="{{data.link3}}" target="_blank"><img src="{{data.path3}}"></a>
     </div>
   `,
-  styles: ['img {width: 8vw;}']
+  styles: ['img {width: 10vw;}']
 })
 export class AdTemplateComponent implements AdComponent {
   @Input() data: any;
