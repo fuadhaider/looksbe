@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 
 import { ImageObject } from '../../image-object';
-import { ContentData } from '../../content-data';
+import { ContentData } from '../../../content-data';
 
 @Injectable()
 export class ContentService {

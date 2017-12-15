@@ -11,7 +11,6 @@ import { NotificationService } from '../notification.service';
 })
 export class HomeComponent implements OnInit {
   homeArray: ImageObject[];
-  tag: string = 'home';
 
   constructor(private contentService: ContentService,
     private notificationService: NotificationService) { }
