@@ -23,4 +23,15 @@ export class ContentService {
     return of (ContentData.find(detail => detail.id === id));
   }
 
+  searchContent(term: string): Observable<ImageObject[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+    return of (ContentData.filter(content => content.name === term));
+    // return this.http.get<Hero[]>(`api/heroes/?name=${term}`).pipe(
+    //   tap(_ => this.log(`found heroes matching "${term}"`)),
+    //   catchError(this.handleError<Hero[]>('searchHeroes', []))
+    // );
+  }
+
 }

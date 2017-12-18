@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { FormsModule }   from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -37,6 +38,7 @@ import { DrawerNavService } from './drawer-nav.service';
 import { NotificationComponent } from './section/main/notification/notification.component';
 import { NotificationService } from './section/main/notification.service';
 import { ContentService } from './section/main/content.service';
+import { SearchContentComponent } from './section/main/search-content/search-content.component';
 
 @NgModule({
   declarations: [
@@ -60,12 +62,14 @@ import { ContentService } from './section/main/content.service';
     AboutComponent,
     SearchNavComponent,
     SidenavComponent,
-    NotificationComponent
+    NotificationComponent,
+    SearchContentComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatSidenavModule,
+    FormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
