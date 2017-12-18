@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'shop', component: ShopComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'search', component: SearchContentComponent }
+  { path: 'search/:term', component: SearchContentComponent }
 ];
 
 @NgModule({

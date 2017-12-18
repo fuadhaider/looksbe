@@ -6,7 +6,8 @@ import { of }         from 'rxjs/observable/of';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 import { DrawerNavService } from '../../../drawer-nav.service';
-import { ContentService } from '../content.service';
+// import { ContentService } from '../content.service';
+import { SearchTermService } from '../search-term.service';
 
 @Component({
   selector: 'app-search-nav',
@@ -31,9 +32,10 @@ import { ContentService } from '../content.service';
 export class SearchNavComponent implements OnInit {
   subscription: Subscription;
   searchNavState: string = 'in';
+  searchTerm: string;
 
   constructor(private drawerNavService: DrawerNavService,
-    private contentServie: ContentService) { }
+    private searchTermService: SearchTermService) { }
 
   ngOnInit() {
     this.subscription = this.drawerNavService.getDrawerNav().subscribe(which => {
@@ -45,10 +47,9 @@ export class SearchNavComponent implements OnInit {
       }
     })
   }
-  term: string = '';
 
   searchContent(term: string) {
-    console.log(this.term);
+    this.searchTermService.storeSearchTerm(term);
   }
 
 }

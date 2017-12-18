@@ -23,7 +23,7 @@ export class ContentService {
     return of (ContentData.find(detail => detail.id === id));
   }
 
-  searchContent(term: string): Observable<ImageObject[]> {
+  sendSearchContent(term: string): Observable<ImageObject[]> {
     if (!term.trim()) {
       return of([]);
     }

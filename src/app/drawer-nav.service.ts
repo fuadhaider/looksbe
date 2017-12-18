@@ -9,6 +9,7 @@ export class DrawerNavService {
   private drawerNav = new Subject<any>();
 
   constructor(private notificationService: NotificationService) { }
+
   storeDrawerNav(which: string) {
     this.notificationService.add('Clicked: ' + which);
     this.drawerNav.next(which);

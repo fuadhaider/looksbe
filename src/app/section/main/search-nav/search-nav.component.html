@@ -1,15 +1,15 @@
 <nav [@searchNavToggle]="searchNavState">
-  <form #searchForm="ngForm">
+  <form>
     <div>
       <mat-form-field>
-        <input #navSearch matInput type="search" name="search"
-        placeholder="Search">
+        <input #navSearch matInput type="search"
+        name="search" placeholder="Search"
+        (keyup.enter)="searchContent(navSearch.value); navSearch.value=''">
       </mat-form-field>
     </div>
     <div>
       <i class="material-icons" name="submit"
-      (click)="searchContent(navSearch.value)">input</i>
-      <!-- <button type="submit" name="submit"><i class="material-icons">input</i></button> -->
+      (click)="searchContent(navSearch.value); navSearch.value=''">input</i>
     </div>
   </form>
 </nav>
