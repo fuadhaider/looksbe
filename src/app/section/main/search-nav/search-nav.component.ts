@@ -51,6 +51,7 @@ export class SearchNavComponent implements OnInit {
 
   searchContent(term: string) {
     this.searchTermService.storeSearchTerm(term);
+    console.log(term);
   }
 
 }
