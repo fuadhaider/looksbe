@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
+// import { Pipe, PipeTransform } from '@angular/core';
 
 import { ImageObject } from '../../image-object';
 import { ContentData } from '../../../content-data';
@@ -24,14 +25,16 @@ export class ContentService {
   }
 
   sendSearchContent(term: string): Observable<ImageObject[]> {
-    // if (!term.trim()) {
-    //   return of([]);
-    // }
-    return of (ContentData.filter(content => content.tag[0] === term));
-    // return this.http.get<Hero[]>(`api/heroes/?name=${term}`).pipe(
-    //   tap(_ => this.log(`found heroes matching "${term}"`)),
-    //   catchError(this.handleError<Hero[]>('searchHeroes', []))
-    // );
+    if (!term.trim()) {
+      console.log('empty');
+      return of([]);
+    }
+    else {
+      term = term.toLowerCase();
+      return of (ContentData.filter(content => {
+        return content.tag.includes(term);
+      }));
+    }
   }
 
 }
