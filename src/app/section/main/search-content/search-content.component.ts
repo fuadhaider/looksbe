@@ -20,10 +20,10 @@ export class SearchContentComponent implements OnInit {
   ngOnInit() {
     // this.router.navigate(['/', 'search']);
 
-    this.getSearch();
+    this.getSearchContent();
   }
 
-  getSearch() {
+  getSearchContent() {
     // this.router.navigate(['/', 'search']);
 
     this.searchTermService.sendSearchTerm().subscribe(term => {
