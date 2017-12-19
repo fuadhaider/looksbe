@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
-// import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { ImageObject } from '../../../image-object';
 import { ContentService } from '../content.service';
@@ -13,18 +13,22 @@ import { SearchTermService } from '../search-term.service';
 })
 export class SearchContentComponent implements OnInit {
   searchArray: ImageObject[];
+  x: string;
 
   constructor(private contentService: ContentService,
-    private searchTermService: SearchTermService) { }
-    // ,private router: Router
+    private searchTermService: SearchTermService,
+    private route: ActivatedRoute) { }
+
   ngOnInit() {
-    // this.router.navigate(['/', 'search']);
 
     this.getSearchContent();
   }
 
   getSearchContent() {
-    // this.router.navigate(['/', 'search']);
+    this.x = this.route.snapshot.paramMap.get('term');
+    this.contentService.sendSearchContent(this.x).subscribe(searchArray =>
+    this.searchArray = searchArray);
+    console.log(this.x);
 
     this.searchTermService.sendSearchTerm().subscribe(term => {
       this.contentService.sendSearchContent(term).subscribe(searchArray =>
