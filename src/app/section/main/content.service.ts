@@ -27,7 +27,7 @@ export class ContentService {
     // if (!term.trim()) {
     //   return of([]);
     // }
-    return of (ContentData.filter(content => content.name === term));
+    return of (ContentData.filter(content => content.tag[0] === term));
     // return this.http.get<Hero[]>(`api/heroes/?name=${term}`).pipe(
     //   tap(_ => this.log(`found heroes matching "${term}"`)),
     //   catchError(this.handleError<Hero[]>('searchHeroes', []))

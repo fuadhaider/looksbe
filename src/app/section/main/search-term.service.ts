@@ -17,7 +17,6 @@ export class SearchTermService {
   }
 
   sendSearchTerm(): Observable<any> {
-    console.log(this.searchTerm);
     return this.searchTerm.asObservable();
   }
 }

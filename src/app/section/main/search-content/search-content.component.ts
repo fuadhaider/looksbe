@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
+// import { Router } from '@angular/router';
 
 import { ImageObject } from '../../../image-object';
 import { ContentService } from '../content.service';
-// import { NotificationService } from '../notification.service';
 import { SearchTermService } from '../search-term.service';
 
 @Component({
@@ -12,21 +12,22 @@ import { SearchTermService } from '../search-term.service';
   styleUrls: ['./search-content.component.scss']
 })
 export class SearchContentComponent implements OnInit {
-  // subscription: Subscription;
   searchArray: ImageObject[];
-  // tag: string = 'search';
 
   constructor(private contentService: ContentService,
     private searchTermService: SearchTermService) { }
-
+    // ,private router: Router
   ngOnInit() {
+    // this.router.navigate(['/', 'search']);
+
     this.getSearch();
-    // this.notificationService.add('Visited: search!');
   }
 
   getSearch() {
+    // this.router.navigate(['/', 'search']);
+
     this.searchTermService.sendSearchTerm().subscribe(term => {
-      this.contentService.sendContent(term).subscribe(searchArray =>
+      this.contentService.sendSearchContent(term).subscribe(searchArray =>
         this.searchArray = searchArray);
         console.log(term);
     });

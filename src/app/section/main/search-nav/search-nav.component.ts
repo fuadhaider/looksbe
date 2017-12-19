@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
-import { Subject }    from 'rxjs/Subject';
-import { of }         from 'rxjs/observable/of';
+import { Subject } from 'rxjs/Subject';
+import { of } from 'rxjs/observable/of';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+// import { Router } from '@angular/router';
 
 import { DrawerNavService } from '../../../drawer-nav.service';
-// import { ContentService } from '../content.service';
 import { SearchTermService } from '../search-term.service';
 
 @Component({
@@ -36,7 +36,7 @@ export class SearchNavComponent implements OnInit {
 
   constructor(private drawerNavService: DrawerNavService,
     private searchTermService: SearchTermService) { }
-
+    // ,private router: Router
   ngOnInit() {
     // this.subscription =
     this.drawerNavService.getDrawerNav().subscribe(which => {
@@ -50,8 +50,9 @@ export class SearchNavComponent implements OnInit {
   }
 
   searchContent(term: string) {
+    // this.router.navigate(['/', 'search']);
+
     this.searchTermService.storeSearchTerm(term);
-    console.log(term);
   }
 
 }
