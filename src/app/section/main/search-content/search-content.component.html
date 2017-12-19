@@ -1,0 +1,6 @@
+<div>
+  <a *ngFor="let search of searchArray" routerLink="/detail/{{search.id}}">
+    <img src="{{search.path}}" alt="{{search.name}}"><br>
+    {{search.name}}
+  </a>
+</div>

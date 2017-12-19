@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
+import { of } from 'rxjs/observable/of';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Router } from '@angular/router';
 
 import { DrawerNavService } from '../../../drawer-nav.service';
+import { SearchTermService } from '../search-term.service';
 
 @Component({
   selector: 'app-search-nav',
@@ -25,13 +30,13 @@ import { DrawerNavService } from '../../../drawer-nav.service';
   ]
 })
 export class SearchNavComponent implements OnInit {
-  subscription: Subscription;
   searchNavState: string = 'in';
 
-  constructor(private drawerNavService: DrawerNavService) { }
+  constructor(private drawerNavService: DrawerNavService,
+    private searchTermService: SearchTermService,private router: Router) { }
 
   ngOnInit() {
-    this.subscription = this.drawerNavService.getDrawerNav().subscribe(which => {
+    this.drawerNavService.getDrawerNav().subscribe(which => {
       if ( which == 'search') {
         this.searchNavState = (this.searchNavState === 'in' ? 'out' : 'in');
       }
@@ -39,6 +44,12 @@ export class SearchNavComponent implements OnInit {
         this.searchNavState = 'in';
       }
     })
+  }
+
+  searchContent(term: string) {
+    this.router.navigate(['/','search', term]);
+
+    this.searchTermService.storeSearchTerm(term);
   }
 
 }

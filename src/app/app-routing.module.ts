@@ -8,6 +8,7 @@ import { ShopComponent } from './section/main/shop/shop.component';
 import { DetailComponent } from './section/main/detail/detail.component';
 import { SignUpComponent } from './section/main/sign-up/sign-up.component';
 import { AboutComponent } from './section/main/about/about.component';
+import { SearchContentComponent } from './section/main/search-content/search-content.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'detail/:id', component: DetailComponent },
   { path: 'shop', component: ShopComponent },
   { path: 'signup', component: SignUpComponent },
-  { path: 'about', component: AboutComponent }
+  { path: 'about', component: AboutComponent },
+  { path: 'search/:term', component: SearchContentComponent }
 ];
 
 @NgModule({
