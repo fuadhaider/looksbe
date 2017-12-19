@@ -12,9 +12,9 @@ import { SearchTermService } from '../search-term.service';
   styleUrls: ['./search-content.component.scss']
 })
 export class SearchContentComponent implements OnInit {
-  subscription: Subscription;
+  // subscription: Subscription;
   searchArray: ImageObject[];
-  tag: string = 'search';
+  // tag: string = 'search';
 
   constructor(private contentService: ContentService,
     private searchTermService: SearchTermService) { }
@@ -25,10 +25,11 @@ export class SearchContentComponent implements OnInit {
   }
 
   getSearch() {
-    this.subscription = this.searchTermService.sendSearchTerm().subscribe(term => {
+    this.searchTermService.sendSearchTerm().subscribe(term => {
       this.contentService.sendContent(term).subscribe(searchArray =>
-        this.searchArray = searchArray)
-    })
+        this.searchArray = searchArray);
+        console.log(term);
+    });
 
   }
 

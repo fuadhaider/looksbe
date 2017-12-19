@@ -30,7 +30,7 @@ import { SearchTermService } from '../search-term.service';
   ]
 })
 export class SearchNavComponent implements OnInit {
-  subscription: Subscription;
+  // subscription: Subscription;
   searchNavState: string = 'in';
   searchTerm: string;
 
@@ -38,7 +38,8 @@ export class SearchNavComponent implements OnInit {
     private searchTermService: SearchTermService) { }
 
   ngOnInit() {
-    this.subscription = this.drawerNavService.getDrawerNav().subscribe(which => {
+    // this.subscription =
+    this.drawerNavService.getDrawerNav().subscribe(which => {
       if ( which == 'search') {
         this.searchNavState = (this.searchNavState === 'in' ? 'out' : 'in');
       }
