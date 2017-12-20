@@ -3,7 +3,7 @@
 nav {
   background-color: $drawer-nav-color;
   color: $icon-color;
-  form {
+  // form {
     @include display-flex;
     @include flex-flow(row);
     justify-content: center;
@@ -29,5 +29,5 @@ nav {
         }
       }
     }
-  }
+  // }
 }

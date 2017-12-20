@@ -33,7 +33,7 @@ export class SearchNavComponent implements OnInit {
   searchNavState: string = 'in';
 
   constructor(private drawerNavService: DrawerNavService,
-    private searchTermService: SearchTermService,private router: Router) { }
+    private searchTermService: SearchTermService, private router: Router) { }
 
   ngOnInit() {
     this.drawerNavService.getDrawerNav().subscribe(which => {
@@ -47,8 +47,8 @@ export class SearchNavComponent implements OnInit {
   }
 
   searchContent(term: string) {
-    this.router.navigate(['/','search', term]);
-
+    // console.log('nav '+term);
+    this.router.navigate(['/search', term]);
     this.searchTermService.storeSearchTerm(term);
   }
 

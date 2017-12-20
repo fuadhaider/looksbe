@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 import { DrawerNavService } from '../../../drawer-nav.service';
+import { Logon } from '../../../logon';
 
 @Component({
   selector: 'app-login-nav',
@@ -25,13 +26,15 @@ import { DrawerNavService } from '../../../drawer-nav.service';
   ]
 })
 export class LoginNavComponent implements OnInit {
-  subscription: Subscription;
   loginNavState: string = 'in';
-
+  // login = new Login('fuad','haider');
+  submitted = false;
   constructor(private drawerNavService: DrawerNavService) { }
 
   ngOnInit() {
-    this.subscription = this.drawerNavService.getDrawerNav().subscribe(which => {
+    let logon = new Logon('fuad','haider');
+
+    this.drawerNavService.getDrawerNav().subscribe(which => {
       if ( which == 'login') {
         this.loginNavState = (this.loginNavState === 'in' ? 'out' : 'in');
       }
@@ -39,6 +42,10 @@ export class LoginNavComponent implements OnInit {
         this.loginNavState = 'in';
       }
     })
+  }
+
+  onSubmit() {
+    this.submitted = true;
   }
 
 }

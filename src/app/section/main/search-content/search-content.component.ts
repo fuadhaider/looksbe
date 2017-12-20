@@ -13,7 +13,7 @@ import { SearchTermService } from '../search-term.service';
 })
 export class SearchContentComponent implements OnInit {
   searchArray: ImageObject[];
-  x: string;
+  searchTerm: string;
 
   constructor(private contentService: ContentService,
     private searchTermService: SearchTermService,
@@ -25,15 +25,15 @@ export class SearchContentComponent implements OnInit {
   }
 
   getSearchContent() {
-    this.x = this.route.snapshot.paramMap.get('term');
-    this.contentService.sendSearchContent(this.x).subscribe(searchArray =>
+    this.searchTerm = this.route.snapshot.paramMap.get('term');
+    // console.log('content route ' + this.x);
+    this.contentService.sendSearchContent(this.searchTerm).subscribe(searchArray =>
     this.searchArray = searchArray);
-    console.log(this.x);
 
     this.searchTermService.sendSearchTerm().subscribe(term => {
+      // console.log('content subs ' + term);
       this.contentService.sendSearchContent(term).subscribe(searchArray =>
         this.searchArray = searchArray);
-        console.log(term);
     });
 
   }

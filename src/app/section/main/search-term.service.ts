@@ -11,12 +11,13 @@ export class SearchTermService {
   constructor(private notificationService: NotificationService) { }
 
   storeSearchTerm(term: string) {
+    // console.log('service store '+ term);
     this.notificationService.add('Searched: ' + term);
     this.searchTerm.next(term);
-    console.log(term);
   }
 
   sendSearchTerm(): Observable<any> {
+    // console.log('service send '+ this.searchTerm.asObservable());
     return this.searchTerm.asObservable();
   }
 }
