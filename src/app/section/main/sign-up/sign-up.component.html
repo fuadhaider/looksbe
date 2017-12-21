@@ -1,101 +1,146 @@
+{{diagnostic}}
 <h3>Sign Up</h3>
 <p>Please enter your details below</p>
 <mat-accordion>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Account
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <mat-form-field>
-      <input matInput type="email" name="email" placeholder="Email" required>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="password" placeholder="Password">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="password" placeholder="Confirm Password">
-    </mat-form-field>
-    <div>
-        <button mat-button>Submit</button>
-        <button mat-button>Reset</button>
-    </div>
-  </mat-expansion-panel>
-  <mat-expansion-panel> <!-- (opened)="panelOpenState = true"
+  <form #accountForm="ngForm" (ngSubmit)="onSubmit()">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Account</mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-form-field>
+        <input matInput type="email" name="email" placeholder="Email"
+        [(ngModel)]="account.name" #email="ngModel" required>
+        <div [hidden]="email.valid || email.pristine">
+          Valid email required
+        </div>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" name="password" placeholder="Password"
+        [(ngModel)]="account.password" #password="ngModel" required>
+        <div [hidden]="password.valid || password.pristine">
+          New password required
+        </div>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" name="confirm" placeholder="Confirm Password"
+        [(ngModel)]="account.confirm" #confirm="ngModel" required>
+        <div [hidden]="confirm.valid || confirm.pristine">
+          Confirm password
+        </div>
+      </mat-form-field>
+      <div>
+        <button mat-button type="submit"
+        (click)="newAccount(); accountForm.reset()"
+        [disabled]="!accountForm.form.valid">Submit</button>
+        <button mat-button type="reset"
+        (click)="accountForm.reset()">Reset</button>
+      </div>
+    </mat-expansion-panel>
+  </form>
+  <form #personalForm="ngForm" (ngSubmit)="onSubmit()">
+    <mat-expansion-panel> <!-- (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false"-->
+      <mat-expansion-panel-header>
+        <mat-panel-title>Personal</mat-panel-title>
+        <!-- <mat-panel-description>
+          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        </mat-panel-description> -->
+      </mat-expansion-panel-header>
+      <mat-form-field>
+        <input matInput type="text" name="firstName" placeholder="First Names"
+        [(ngModel)]="personalDetail.firstName" #firstName="ngModel">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" name="lastName" placeholder="Last Name"
+        [(ngModel)]="personalDetail.lastname" #lastName="ngModel" required>
+        <div [hidden]="lastName.valid || lastName.pristine">
+          Last name required
+        </div>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="date" name="dob" placeholder="Date of Birth"
+        [(ngModel)]="personalDetail.dob" #dob="ngModel" max="datetime">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Gender" name="gender"
+        [(ngModel)]="personalDetail.gender" #gender="ngModel">
+          <mat-option value="option">Male</mat-option>
+          <mat-option value="option">Female</mat-option>
+          <mat-option value="option">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div>
+        <button mat-button type="submit"
+        (click)="newPersonal(); personalForm.reset()"
+        [disabled]="!personalForm.form.valid">Submit</button>
+        <button mat-button type="reset"
+        (click)="personalForm.reset()">Reset</button>
+      </div>
+    </mat-expansion-panel>
+  </form>
+  <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+    <mat-expansion-panel> <!-- (opened)="panelOpenState = true"
                        (closed)="panelOpenState = false"-->
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Personal
-      </mat-panel-title>
-      <!-- <mat-panel-description>
-        Currently I am {{panelOpenState ? 'open' : 'closed'}}
-      </mat-panel-description> -->
-    </mat-expansion-panel-header>
-    <mat-form-field>
-      <input matInput type="text" placeholder="First Names">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="text" placeholder="Last Name">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="date" placeholder="Date of Birth">
-    </mat-form-field>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Contact</mat-panel-title>
+        <!-- <mat-panel-description>
+          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        </mat-panel-description> -->
+      </mat-expansion-panel-header>
+      <mat-form-field>
+        <input matInput type="text" name="unit" placeholder="Unit"
+        [(ngModel)]="contactDetail.unit" #unit="ngModel">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" name="building" placeholder="Building Name"
+        [(ngModel)]="contactDetail.building" #building="ngModel">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" name="street1" placeholder="Street"
+        [(ngModel)]="contactDetail.street1" #street1="ngModel">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" name="street2" placeholder="Street"
+        [(ngModel)]="contactDetail.street2" #street2="ngModel">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" name="town" placeholder="City/Town"
+        [(ngModel)]="contactDetail.town" #town="ngModel">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" name="zip" placeholder="Zip/Post Code"
+        [(ngModel)]="contactDetail.zip" #zip="ngModel">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" name="state" placeholder="State/Region"
+        [(ngModel)]="contactDetail.state" #state="ngModel">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" name="country" placeholder="Country"
+        [(ngModel)]="contactDetail.country" #country="ngModel" required>
+        <div [hidden]="country.valid || country.pristine">
+          Country required
+        </div>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="tel" name="phone1" placeholder="Phone"
+        [(ngModel)]="contactDetail.phone1" #phone1="ngModel">
+        <!-- <div [hidden]="phone1.valid || phone1.pristine">
+          Mobile required
+        </div> -->
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="tel" name="phone2" placeholder="Phone"
+        [(ngModel)]="contactDetail.phone2" #phone2="ngModel">
+      </mat-form-field>
+      <div>
+        <button mat-button type="submit"
+        (click)="newContactDetail(); contactForm.reset()"
+        [disabled]="!contactForm.form.valid">Submit</button>
+        <button mat-button type="reset"
+        (click)="contactForm.reset()">Reset</button>
+      </div>
+    </mat-expansion-panel>
+  </form>
 
-    <mat-form-field>
-      <mat-select placeholder="Gender">
-        <mat-option value="option">Male</mat-option>
-        <mat-option value="option">Female</mat-option>
-        <mat-option value="option">Other</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <div>
-      <button mat-button>Submit</button>
-      <button mat-button>Reset</button>
-    </div>
-  </mat-expansion-panel>
-  <mat-expansion-panel> <!-- (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false"-->
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Contact
-      </mat-panel-title>
-      <!-- <mat-panel-description>
-        Currently I am {{panelOpenState ? 'open' : 'closed'}}
-      </mat-panel-description> -->
-    </mat-expansion-panel-header>
-    <mat-form-field>
-      <input matInput type="text" placeholder="Unit">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="text" placeholder="Building Name">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="text" placeholder="Street">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="text" placeholder="Street">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="text" placeholder="City/Town">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="text" placeholder="Zip/Post Code">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="text" placeholder="State/Region">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="text" placeholder="Country">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="tel" placeholder="Mobile">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="tel" placeholder="Land Phone">
-    </mat-form-field>
-    <div>
-      <button mat-button>Submit</button>
-      <button mat-button>Reset</button>
-    </div>
-  </mat-expansion-panel>
 </mat-accordion>

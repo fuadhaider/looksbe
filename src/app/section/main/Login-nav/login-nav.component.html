@@ -1,20 +1,23 @@
 <nav [@loginNavToggle]="loginNavState">
-  <form #loginForm="ngForm">
+  <form #loginForm>
+    <!-- ="ngForm" -->
     <div>
       <i routerLink="/signup" class="material-icons">person_add</i>
     </div>
     <div>
       <mat-form-field hideRequiredMarker>
         <input #emailNav matInput type="email" name="email" placeholder="Email"
-        required [(ngModel)]="logon.email">
+        required>
+         <!-- [(ngModel)]="logon.email" -->
       </mat-form-field>
-      {{logon.email}}
+      <!-- {{logon.email}} -->
       <mat-form-field hideRequiredMarker>
         <input #passwordNav matInput type="password" name="password"
         placeholder="Password"
-        required [(ngModel)]="logon.password">
+        required>
+         <!-- [(ngModel)]="logon.password" -->
       </mat-form-field>
-      {{logon.password}}
+      <!-- {{logon.password}} -->
     </div>
     <div>
       <i type="submit" class="material-icons">input</i>
