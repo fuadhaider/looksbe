@@ -40,7 +40,7 @@ export class SignUpComponent implements OnInit {
     this.personalDetail = new PersonalDetail('','',0,'');
   }
 
-  sumbitContactDetail() {
+  submitContactDetail() {
     this.contactDetailSubmitted = true;
   }
 

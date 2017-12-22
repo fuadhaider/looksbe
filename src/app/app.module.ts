@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { FormsModule }   from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -69,6 +70,7 @@ import { SearchTermService } from './section/main/search-term.service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatToolbarModule,
     MatSidenavModule,
     FormsModule,
     MatFormFieldModule,
