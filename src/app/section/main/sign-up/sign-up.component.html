@@ -1,43 +1,49 @@
-{{diagnostic}}
 <h3>Sign Up</h3>
 <p>Please enter your details below</p>
+<div [hidden]="!accountDetailSubmitted">
+  Email: {{accountDetail.email}}
+
+</div>
 <mat-accordion>
-  <form #accountForm="ngForm" (ngSubmit)="onSubmit()">
+  <div [hidden]="accountDetailSubmitted">
+  <form #accountForm="ngForm" (ngSubmit)="submitAccountDetail()">
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>Account</mat-panel-title>
       </mat-expansion-panel-header>
       <mat-form-field>
         <input matInput type="email" name="email" placeholder="Email"
-        [(ngModel)]="account.name" #email="ngModel" required>
+        [(ngModel)]="accountDetail.email" #email="ngModel" required>
         <div [hidden]="email.valid || email.pristine">
           Valid email required
         </div>
       </mat-form-field>
       <mat-form-field>
         <input matInput type="password" name="password" placeholder="Password"
-        [(ngModel)]="account.password" #password="ngModel" required>
+        [(ngModel)]="accountDetail.password" #password="ngModel" required>
         <div [hidden]="password.valid || password.pristine">
           New password required
         </div>
       </mat-form-field>
       <mat-form-field>
         <input matInput type="password" name="confirm" placeholder="Confirm Password"
-        [(ngModel)]="account.confirm" #confirm="ngModel" required>
+        [(ngModel)]="accountDetail.confirm" #confirm="ngModel" required>
         <div [hidden]="confirm.valid || confirm.pristine">
           Confirm password
         </div>
       </mat-form-field>
       <div>
         <button mat-button type="submit"
-        (click)="newAccount(); accountForm.reset()"
+        (submit)="newAccountDetail(); accountForm.reset()"
         [disabled]="!accountForm.form.valid">Submit</button>
         <button mat-button type="reset"
         (click)="accountForm.reset()">Reset</button>
       </div>
     </mat-expansion-panel>
   </form>
-  <form #personalForm="ngForm" (ngSubmit)="onSubmit()">
+</div>
+
+  <form #personalForm="ngForm" (ngSubmit)="submitPersonalDetail()">
     <mat-expansion-panel> <!-- (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false"-->
       <mat-expansion-panel-header>
@@ -48,7 +54,10 @@
       </mat-expansion-panel-header>
       <mat-form-field>
         <input matInput type="text" name="firstName" placeholder="First Names"
-        [(ngModel)]="personalDetail.firstName" #firstName="ngModel">
+        [(ngModel)]="personalDetail.firstName" #firstName="ngModel" required>
+        <div [hidden]="firstName.valid || firstName.pristine">
+          First name required
+        </div>
       </mat-form-field>
       <mat-form-field>
         <input matInput type="text" name="lastName" placeholder="Last Name"
@@ -71,14 +80,14 @@
       </mat-form-field>
       <div>
         <button mat-button type="submit"
-        (click)="newPersonal(); personalForm.reset()"
+        (click)="newPersonalDetail(); personalForm.reset()"
         [disabled]="!personalForm.form.valid">Submit</button>
         <button mat-button type="reset"
         (click)="personalForm.reset()">Reset</button>
       </div>
     </mat-expansion-panel>
   </form>
-  <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+  <form #contactForm="ngForm" (ngSubmit)="submitContactDetail()">
     <mat-expansion-panel> <!-- (opened)="panelOpenState = true"
                        (closed)="panelOpenState = false"-->
       <mat-expansion-panel-header>
@@ -123,15 +132,15 @@
         </div>
       </mat-form-field>
       <mat-form-field>
-        <input matInput type="tel" name="phone1" placeholder="Phone"
-        [(ngModel)]="contactDetail.phone1" #phone1="ngModel">
-        <!-- <div [hidden]="phone1.valid || phone1.pristine">
+        <input matInput type="tel" name="mobile" placeholder="Phone"
+        [(ngModel)]="contactDetail.mobile" #mobile="ngModel">
+        <!-- <div [hidden]="mobile.valid || mobile.pristine">
           Mobile required
         </div> -->
       </mat-form-field>
       <mat-form-field>
-        <input matInput type="tel" name="phone2" placeholder="Phone"
-        [(ngModel)]="contactDetail.phone2" #phone2="ngModel">
+        <input matInput type="tel" name="phone" placeholder="Phone"
+        [(ngModel)]="contactDetail.phone" #phone="ngModel">
       </mat-form-field>
       <div>
         <button mat-button type="submit"

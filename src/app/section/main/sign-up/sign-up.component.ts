@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Logon } from '../../../logon';
+import { Account } from '../../../account';
 import { PersonalDetail } from '../../../personal-detail';
 import { ContactDetail } from '../../../contact-detail';
 
@@ -11,32 +11,41 @@ import { ContactDetail } from '../../../contact-detail';
 })
 export class SignUpComponent implements OnInit {
   panelOpenState: boolean = false;
-  account = new Logon('','','');
+  accountDetailSubmitted = false;
+  accountDetail = new Account('','','');
   personalDetail = new PersonalDetail('','', 0 ,'');
   contactDetail = new ContactDetail('','','','','','','','',0,0);
-  submitted = false;
+  personalDetailSubmitted = false;
+  contactDetailSubmitted = false;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onSubmit() {
-    this.submitted = true;
+  submitAccountDetail() {
+    this.accountDetailSubmitted = true;
+    console.log(this.accountDetailSubmitted);
   }
 
-  newAccount() {
-    this.account = new Logon('','','');
+  newAccountDetail() {
+    this.accountDetail = new Account('','','');
   }
 
-  newPersonal() {
+  submitPersonalDetail() {
+    this.personalDetailSubmitted = true;
+  }
+
+  newPersonalDetail() {
     this.personalDetail = new PersonalDetail('','',0,'');
+  }
+
+  sumbitContactDetail() {
+    this.contactDetailSubmitted = true;
   }
 
   newContactDetail() {
     this.contactDetail = new ContactDetail('','','','','','','','',0,0);
   }
-
-  get diagnostic() { return JSON.stringify(this.account); }
 
 }

@@ -3,7 +3,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 import { DrawerNavService } from '../../../drawer-nav.service';
-import { Logon } from '../../../logon';
+import { Account } from '../../../account';
 
 @Component({
   selector: 'app-login-nav',
@@ -32,7 +32,7 @@ export class LoginNavComponent implements OnInit {
   constructor(private drawerNavService: DrawerNavService) { }
 
   ngOnInit() {
-    let logon = new Logon('fuad','haider');
+    let account = new Account('fuad','haider');
 
     this.drawerNavService.getDrawerNav().subscribe(which => {
       if ( which == 'login') {
