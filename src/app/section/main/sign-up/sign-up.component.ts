@@ -11,12 +11,12 @@ import { ContactDetail } from '../../../contact-detail';
 })
 export class SignUpComponent implements OnInit {
   panelOpenState: boolean = false;
-  accountDetailSubmitted = false;
+  accountDetailSubmitted: boolean = false;
   accountDetail = new Account('','','');
-  personalDetail = new PersonalDetail('','', 0 ,'');
-  contactDetail = new ContactDetail('','','','','','','','',0,0);
   personalDetailSubmitted = false;
+  personalDetail = new PersonalDetail('','', undefined ,'');
   contactDetailSubmitted = false;
+  contactDetail = new ContactDetail('','','','','','','','','',undefined,undefined);
 
   constructor() { }
 
@@ -25,7 +25,6 @@ export class SignUpComponent implements OnInit {
 
   submitAccountDetail() {
     this.accountDetailSubmitted = true;
-    console.log(this.accountDetailSubmitted);
   }
 
   newAccountDetail() {
@@ -37,7 +36,7 @@ export class SignUpComponent implements OnInit {
   }
 
   newPersonalDetail() {
-    this.personalDetail = new PersonalDetail('','',0,'');
+    this.personalDetail = new PersonalDetail('','',undefined,'');
   }
 
   submitContactDetail() {
@@ -45,7 +44,7 @@ export class SignUpComponent implements OnInit {
   }
 
   newContactDetail() {
-    this.contactDetail = new ContactDetail('','','','','','','','',0,0);
+    this.contactDetail = new ContactDetail('','','','','','','','','',undefined,undefined);
   }
 
 }

@@ -2,6 +2,7 @@ export class ContactDetail {
   constructor(
     public unit: string,
     public building: string,
+    public buildingNumber: string,
     public street1: string,
     public street2: string,
     public town: string,

@@ -1,9 +1,11 @@
 <h3>Sign Up</h3>
-<p>Please enter your details below</p>
+<p>Your details below</p>
 <div [hidden]="!accountDetailSubmitted">
   <mat-card>
     <mat-card-title>Account</mat-card-title>
     <mat-card-content>	Email: {{accountDetail.email}}</mat-card-content>
+    <button mat-button type="button" name="editAccountDetail"
+    (click)="accountDetailSubmitted = false">Edit</button>
   </mat-card>
 </div>
 <div [hidden]="!personalDetailSubmitted">
@@ -13,6 +15,8 @@
     <mat-card-content>	Last Name: {{personalDetail.lastName}}</mat-card-content>
     <mat-card-content>	Date of Birth: {{personalDetail.dob}}</mat-card-content>
     <mat-card-content>	Gender: {{personalDetail.gender}}</mat-card-content>
+    <button mat-button type="button" name="editPersonalDetail"
+    (click)="personalDetailSubmitted=false">Edit</button>
   </mat-card>
 </div>
 <div [hidden]="!contactDetailSubmitted">
@@ -31,6 +35,8 @@
     <mat-card-subtitle>Phone</mat-card-subtitle>
     <mat-card-content>	Mobile: {{contactDetail.mobile}}</mat-card-content>
     <mat-card-content>	Landline: {{contactDetail.landline}}</mat-card-content>
+    <button mat-button type="button" name="editContactDetail"
+    (click)="contactDetailSubmitted=false">Edit</button>
   </mat-card>
 </div>
 <mat-accordion>
