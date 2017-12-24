@@ -8,13 +8,28 @@ nav {
   a {
     text-decoration: none;
     color: $icon-color;
-    font-size: $menu-font-size;
     padding: 3px;
+    #navWord {
+      display: none;
+    }
+    .material-icons {
+      display: block;
+      font-size: $menu-font-size;
+    }
   }
 }
 
 @media all and (min-width: 769px) {
   nav {
     @include flex-flow(column);
+    a {
+      .material-icons {
+        display: none;
+      }
+      #navWord {
+        display: block;
+        font-size: $nav-font-size;
+      }
+    }
   }
 }

@@ -3,14 +3,13 @@
 nav {
   background-color: $drawer-nav-color;
   color: $icon-color;
-  // form {
+  form {
     @include display-flex;
     @include flex-flow(row);
     justify-content: center;
     div {
       margin: 0 1%;
       @include display-flex;
-
       align-items: center;
       i {
         font-size: $menu-font-size;
@@ -29,5 +28,5 @@ nav {
         }
       }
     }
-  // }
+  }
 }
