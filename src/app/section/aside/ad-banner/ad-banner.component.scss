@@ -1,6 +1,12 @@
 span {
-  color: grey;
+  display: none;
 }
 div {
   text-align: center;
+}
+@media all and (min-width: 769px) {
+  span {
+    display: inline-block;
+    color: grey;
+  }
 }
