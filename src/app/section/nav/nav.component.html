@@ -1,11 +1,15 @@
 <nav>
-  <a routerLink="/home"><span class="material-icons">home</span>
+  <a routerLink="/home" [routerLinkActive]="'link-active'">
+    <span class="material-icons">home</span>
     <span id="navWord">Home</span></a>
-  <a routerLink="/trend"><span class="material-icons">&#xe8e5;</span>
+  <a routerLink="/trend" [routerLinkActive]="'link-active'">
+    <span class="material-icons">&#xe8e5;</span>
     <span id="navWord">Trend</span></a>
-  <a routerLink="/explore"><span class="material-icons">&#xe87a;</span>
+  <a routerLink="/explore" [routerLinkActive]="'link-active'">
+    <span class="material-icons">&#xe87a;</span>
     <span id="navWord">Explore</span></a>
-  <a routerLink="/shop"><span class="material-icons">&#xe8cc;</span>
+  <a routerLink="/shop" [routerLinkActive]="'link-active'">
+    <span class="material-icons">&#xe8cc;</span>
     <span id="navWord">Shop</span></a>
   <!-- <a href="#more" id="more-icon" class="material-icons" data-toggle="tooltip"
     data-placement="auto" title="More">&#xe5d3;</a> -->

@@ -1,7 +1,7 @@
 @import "../app-config.component";
 @import "header-config.component";
 
-header#flex-header {
+header {
   background: $header-color;
   @include display-flex;
   align-items: center;
@@ -16,7 +16,7 @@ header#flex-header {
   a:first-child {
     margin-right: auto;
   }
-  a:active {
-    // color: black;
+  .activeClass {
+    color: $body-font-colour;
   }
 }

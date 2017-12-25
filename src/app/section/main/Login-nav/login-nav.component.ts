@@ -28,11 +28,11 @@ import { Account } from '../../../account';
 export class LoginNavComponent implements OnInit {
   loginNavState: string = 'in';
   // login = new Login('fuad','haider');
-  submitted = false;
+  // submitted = false;
   constructor(private drawerNavService: DrawerNavService) { }
 
   ngOnInit() {
-    let account = new Account('fuad','haider');
+    let account = new Account('','');
 
     this.drawerNavService.getDrawerNav().subscribe(which => {
       if ( which == 'login') {
@@ -43,9 +43,9 @@ export class LoginNavComponent implements OnInit {
       }
     })
   }
-
-  onSubmit() {
-    this.submitted = true;
-  }
+  //
+  // onSubmit() {
+  //   this.submitted = true;
+  // }
 
 }

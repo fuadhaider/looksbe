@@ -33,3 +33,10 @@ nav {
     }
   }
 }
+
+.link-active {
+  // background-color: white;
+  span {
+    color: $body-font-colour;
+  }
+}

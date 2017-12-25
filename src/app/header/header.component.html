@@ -1,11 +1,11 @@
-<header id="flex-header">
+<header>
   <a routerLink="/about">looksbe</a>
-  <a (click)="toggleDrawerNav('search')" id="search-icon" class="material-icons" data-toggle="tooltip"
-    data-placement="auto" title="Search">&#xe8b6;</a>
+  <a (click)="toggleDrawerNav('search')" class="material-icons"
+  [ngClass]="{'activeClass':activeSearchIcon === true}">&#xe8b6;</a>
   <!-- <a (click)="showSidenav('message')" id="message-icon" class="material-icons" data-toggle="tooltip"
     data-placement="auto" title="Message">&#xe0ca;</a> -->
-  <a (click)="toggleDrawerNav('notification')" id="notification-icon" class="material-icons" data-toggle="tooltip"
-    data-placement="auto" title="Notification">notifications</a>
-  <a (click)="toggleDrawerNav('login')" id="login-icon" class="material-icons" data-toggle="tooltip"
-    data-placement="auto" title="Login">&#xe7fd;</a>
+  <a (click)="toggleDrawerNav('notification')" class="material-icons"
+  [ngClass]="{'activeClass':activeNotificationIcon === true}">notifications</a>
+  <a (click)="toggleDrawerNav('login')" class="material-icons"
+  [ngClass]="{'activeClass':activeLoginIcon === true}">&#xe7fd;</a>
 </header>
