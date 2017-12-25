@@ -5,12 +5,15 @@
 }
 mat-sidenav-container {
   flex: auto;
+  @include display-flex;
+
   mat-sidenav {
     width: 30%;
     border: 5px solid $drawer-nav-color;
     background-color: whitesmoke;
   }
   mat-sidenav-content {
+    flex: auto;
     ng-content {
       width: 100%;
       // overflow: scroll;
