@@ -27,13 +27,12 @@ import { Account } from '../../../account';
 })
 export class LoginNavComponent implements OnInit {
   loginNavState: string = 'in';
-  // login = new Login('fuad','haider');
-  // submitted = false;
+  account = new Account('','');
+  submitted = false;
+
   constructor(private drawerNavService: DrawerNavService) { }
 
   ngOnInit() {
-    let account = new Account('','');
-
     this.drawerNavService.getDrawerNav().subscribe(which => {
       if ( which == 'login') {
         this.loginNavState = (this.loginNavState === 'in' ? 'out' : 'in');
@@ -43,9 +42,14 @@ export class LoginNavComponent implements OnInit {
       }
     })
   }
-  //
-  // onSubmit() {
-  //   this.submitted = true;
-  // }
+
+  onSubmit() {
+    this.submitted = true;
+  }
+
+  login() {
+    this.account = new Account('','');
+    console.log("kk"+this.account);
+  }
 
 }

@@ -8,6 +8,9 @@
 
 app-main {
   flex: auto;
+}
+app-aside {
+  background-color: $aside-color;
 
 }
 
@@ -25,7 +28,6 @@ app-main {
   }
   app-aside {
     order: 3;
-    width: 25%;
-    background-color: $aside-color;
+    max-width: 15%;
   }
 }

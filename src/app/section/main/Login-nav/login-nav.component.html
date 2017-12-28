@@ -1,25 +1,31 @@
 <nav [@loginNavToggle]="loginNavState">
-  <form #loginForm>
-    <!-- ="ngForm" -->
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+     <!-- (ngSubmit)="" -->
     <div>
-      <i routerLink="/signup" class="material-icons">person_add</i>
+      <i routerLink="/signup" class="material-icons"
+      (click)="loginNavState='in'">person_add</i>
     </div>
     <div>
       <mat-form-field hideRequiredMarker>
-        <input #emailNav matInput type="email" name="email" placeholder="Email"
-        required>
-         <!-- [(ngModel)]="logon.email" -->
+        <input matInput type="email" name="email" placeholder="Email"
+        [(ngModel)]="account.email" #email="ngModel" required>
+        <div [hidden]="email.valid || email.pristine">
+          Email required
+        </div>
       </mat-form-field>
-      <!-- {{logon.email}} -->
       <mat-form-field hideRequiredMarker>
-        <input #passwordNav matInput type="password" name="password"
-        placeholder="Password" required>
-         <!-- [(ngModel)]="logon.password" -->
+        <input matInput type="password" name="password" placeholder="Password"
+        [(ngModel)]="account.password" #password="ngModel" required>
+        <div [hidden]="password.valid || password.pristine">
+          Password required
+        </div>
       </mat-form-field>
-      <!-- {{logon.password}} -->
     </div>
     <div>
-      <i type="submit" class="material-icons">input</i>
+      <button type="submit" class="material-icons"
+      (submit)="login(); loginForm.reset()">input</button>
+
+      <!-- [disabled]="!loginForm.form.valid" -->
     </div>
   </form>
 </nav>
