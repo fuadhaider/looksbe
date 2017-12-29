@@ -41,7 +41,6 @@ import { NotificationService } from './section/main/notification.service';
 import { ContentService } from './section/main/content.service';
 import { SearchContentComponent } from './section/main/search-content/search-content.component';
 import { SearchTermService } from './section/main/search-term.service';
-import { LoginComponent } from './section/main/login/login.component';
 
 @NgModule({
   declarations: [
@@ -66,8 +65,7 @@ import { LoginComponent } from './section/main/login/login.component';
     SearchNavComponent,
     SidenavComponent,
     NotificationComponent,
-    SearchContentComponent,
-    LoginComponent
+    SearchContentComponent
   ],
   imports: [
     BrowserModule,

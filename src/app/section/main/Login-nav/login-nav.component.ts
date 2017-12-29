@@ -27,8 +27,8 @@ import { Account } from '../../../account';
 })
 export class LoginNavComponent implements OnInit {
   loginNavState: string = 'in';
-  account = new Account('','');
-  submitted = false;
+  accountLogin = new Account('','');
+  // submitted = false;
 
   constructor(private drawerNavService: DrawerNavService) { }
 
@@ -44,12 +44,13 @@ export class LoginNavComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitted = true;
+    // this.submitted = true;
+    // console.log(this.accountLogin.email,this.accountLogin.password);
   }
 
-  login() {
-    this.account = new Account('','');
-    console.log("kk"+this.account);
+  loginAccount() {
+    // this.accountLogin = new Account('','');
+    console.log(this.accountLogin.email,this.accountLogin.password);
   }
 
 }
