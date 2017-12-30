@@ -1,8 +1,5 @@
 <nav [@loginNavToggle]="loginNavState">
-  <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
-    <!-- ; loginForm.reset(); -->
-     <!-- #loginForm="ngForm" (ngSubmit)="onSubmit()" -->
-     <!-- (ngSubmit)="onSubmit()" -->
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit(); loginForm.reset()">
     <div>
       <i routerLink="/signup" class="material-icons"
       (click)="loginNavState='in'">person_add</i>
@@ -10,28 +7,30 @@
     <div>
       <mat-form-field hideRequiredMarker>
         <input matInput type="email" name="email" placeholder="Email"
-        [(ngModel)]="accountLogin.email" #email="ngModel"  required>
-
-        <!-- [(ngModel)]="accountLogin.email" #email="ngModel"  -->
-        <!-- <div [hidden]="email.valid || email.pristin">
-          Email required
-        </div> -->
+        [(ngModel)]="accountLogin.email" #email="ngModel"
+        pattern="[^.]+@[^.]+" required>
+        <div *ngIf="email.invalid && email.dirty">
+          Valid email required
+        </div>
       </mat-form-field>
       <mat-form-field hideRequiredMarker>
         <input matInput type="password" name="password" placeholder="Password"
-        [(ngModel)]="accountLogin.password" #password="ngModel" required>
-
-        <!-- [(ngModel)]="accountLogin.password" #password="ngModel"  -->
-        <!-- <div [hidden]="password.valid || password.pristine">
-          Password required
-        </div> -->
+        [(ngModel)]="accountLogin.password" #password="ngModel"
+        minlength="6" required>
+        <div *ngIf="password.invalid && password.touched">
+          <div *ngIf="password.errors.required">
+            Password required
+          </div>
+          <div *ngIf="password.errors.minlength">
+            minimum 6 characters
+          </div>
+        </div>
       </mat-form-field>
     </div>
     <div>
       <button type="submit" class="material-icons"
-      (click)="loginAccount(); loginForm.reset(); loginNavState='in'">input</button>
-      <!-- ; loginForm.reset()" [disabled]="!loginForm.form.valid" -->
-      <!-- [disabled]="!loginForm.form.valid" -->
+      (click)="loginAccount(); loginNavState='in'"
+      [disabled]="loginForm.form.invalid">input</button>
     </div>
   </form>
 </nav>
