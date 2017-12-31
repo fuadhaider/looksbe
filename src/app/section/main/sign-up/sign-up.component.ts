@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
 import { Account } from '../../../account';
@@ -22,7 +21,7 @@ export class SignUpComponent implements OnInit {
   personalDetail = new PersonalDetail('','', undefined ,'');
   contactDetailSubmitted = false;
   contactDetail = new ContactDetail('','','','','','','','','',undefined,undefined);
-  // router: Router;
+
   constructor(
     private notificationService: NotificationService,
     private route: ActivatedRoute) { }
@@ -33,8 +32,6 @@ export class SignUpComponent implements OnInit {
     //   this.accountDetailSubmitted = true;
     //   this.accountDetail.email = data;
     // })
-    // let param = this.router.parseUrl(this.router.url);
-      // this.accountDetail.email = param.queryParams.id;
     this.user = this.route.snapshot.paramMap.get('user');
     if (this.user) {
       this.accountDetailSubmitted = true;
