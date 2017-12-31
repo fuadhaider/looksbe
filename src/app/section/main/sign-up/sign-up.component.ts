@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+// import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { Account } from '../../../account';
 import { PersonalDetail } from '../../../personal-detail';
 import { ContactDetail } from '../../../contact-detail';
-import { LoginDataService } from '../login-data.service';
+// import { LoginDataService } from '../login-data.service';
 import { NotificationService } from '../notification.service';
 
 @Component({
@@ -15,20 +17,29 @@ export class SignUpComponent implements OnInit {
   panelOpenState: boolean = false;
   accountDetailSubmitted: boolean = false;
   accountDetail = new Account('','','');
+  user: string;
   personalDetailSubmitted = false;
   personalDetail = new PersonalDetail('','', undefined ,'');
   contactDetailSubmitted = false;
   contactDetail = new ContactDetail('','','','','','','','','',undefined,undefined);
-
-  constructor(private loginDataService: LoginDataService,
-    private notificationService: NotificationService) { }
-
+  // router: Router;
+  constructor(
+    private notificationService: NotificationService,
+    private route: ActivatedRoute) { }
+// private loginDataService: LoginDataService,
   ngOnInit() {
     this.notificationService.add('Visited: Sign Up!');
-    this.loginDataService.sendLoginData().subscribe(data => {
+    // this.loginDataService.sendLoginData().subscribe(data => {
+    //   this.accountDetailSubmitted = true;
+    //   this.accountDetail.email = data;
+    // })
+    // let param = this.router.parseUrl(this.router.url);
+      // this.accountDetail.email = param.queryParams.id;
+    this.user = this.route.snapshot.paramMap.get('user');
+    if (this.user) {
       this.accountDetailSubmitted = true;
-      this.accountDetail.email = data;
-    })
+      this.accountDetail.email = this.user;
+    }
   }
 
   submitAccountDetail() {

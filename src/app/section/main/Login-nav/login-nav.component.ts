@@ -57,9 +57,9 @@ export class LoginNavComponent implements OnInit {
   loginAccount() {
     // this.accountLogin = new Account('','');
     // console.log(this.accountLogin.email,this.accountLogin.password);
-    this.router.navigate(['/signup']);
+    this.router.navigate(['/signup', this.accountLogin.email]);
     this.notificationService.add('Logged In!');
-    this.loginDataService.storeLoginData(this.accountLogin.email);
+    // this.loginDataService.storeLoginData(this.accountLogin.email);
 
   }
 

@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'detail/:id', component: DetailComponent },
   { path: 'shop', component: ShopComponent },
   { path: 'signup', component: SignUpComponent },
+  { path: 'signup/:user', component: SignUpComponent },
   { path: 'about', component: AboutComponent },
   { path: 'search/:term', component: SearchContentComponent }
 ];
