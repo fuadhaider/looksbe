@@ -1,8 +1,8 @@
 <nav [@loginNavToggle]="loginNavState">
   <form #loginForm="ngForm" (ngSubmit)="onSubmit(); loginForm.reset()">
     <div>
-      <i routerLink="/signup" class="material-icons"
-      (click)="loginNavState='in'">person_add</i>
+      <i routerLink="/signup" class="material-icons">person_add</i>
+      <!-- (click)="loginNavState='in'" -->
     </div>
     <div>
       <mat-form-field hideRequiredMarker>
@@ -31,7 +31,7 @@
       <button type="submit" class="material-icons"
       (click)="loginAccount(); loginForm.reset();"
       [disabled]="loginForm.form.invalid">input</button>
-       <!-- loginNavState='in' -->
+       <!-- routerLink="/signup" loginNavState='in' -->
     </div>
   </form>
 </nav>

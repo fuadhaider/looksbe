@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Account } from '../../../account';
 import { PersonalDetail } from '../../../personal-detail';
 import { ContactDetail } from '../../../contact-detail';
+import { LoginDataService } from '../login-data.service';
+import { NotificationService } from '../notification.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -18,13 +20,20 @@ export class SignUpComponent implements OnInit {
   contactDetailSubmitted = false;
   contactDetail = new ContactDetail('','','','','','','','','',undefined,undefined);
 
-  constructor() { }
+  constructor(private loginDataService: LoginDataService,
+    private notificationService: NotificationService) { }
 
   ngOnInit() {
+    this.notificationService.add('Visited: Sign Up!');
+    this.loginDataService.sendLoginData().subscribe(data => {
+      this.accountDetailSubmitted = true;
+      this.accountDetail.email = data;
+    })
   }
 
   submitAccountDetail() {
     this.accountDetailSubmitted = true;
+    this.notificationService.add('Submitted: Account Detail!');
   }
 
   newAccountDetail() {
@@ -33,6 +42,7 @@ export class SignUpComponent implements OnInit {
 
   submitPersonalDetail() {
     this.personalDetailSubmitted = true;
+    this.notificationService.add('Submitted: Personal Detail!');
   }
 
   newPersonalDetail() {
@@ -41,6 +51,7 @@ export class SignUpComponent implements OnInit {
 
   submitContactDetail() {
     this.contactDetailSubmitted = true;
+    this.notificationService.add('Submitted: Contact Detail!');
   }
 
   newContactDetail() {

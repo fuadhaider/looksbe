@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Router } from '@angular/router';
 
 import { DrawerNavService } from '../../../drawer-nav.service';
+import { LoginDataService } from '../login-data.service';
+import { NotificationService } from '../notification.service';
 import { Account } from '../../../account';
 
 @Component({
@@ -30,7 +33,10 @@ export class LoginNavComponent implements OnInit {
   accountLogin = new Account('','');
   // submitted = false;
 
-  constructor(private drawerNavService: DrawerNavService) { }
+  constructor(private drawerNavService: DrawerNavService,
+    private loginDataService: LoginDataService,
+    private notificationService: NotificationService,
+    private router: Router) { }
 
   ngOnInit() {
     this.drawerNavService.getDrawerNav().subscribe(which => {
@@ -50,7 +56,11 @@ export class LoginNavComponent implements OnInit {
 
   loginAccount() {
     // this.accountLogin = new Account('','');
-    console.log(this.accountLogin.email,this.accountLogin.password);
+    // console.log(this.accountLogin.email,this.accountLogin.password);
+    this.router.navigate(['/signup']);
+    this.notificationService.add('Logged In!');
+    this.loginDataService.storeLoginData(this.accountLogin.email);
+
   }
 
 }

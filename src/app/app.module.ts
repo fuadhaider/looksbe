@@ -41,6 +41,7 @@ import { NotificationService } from './section/main/notification.service';
 import { ContentService } from './section/main/content.service';
 import { SearchContentComponent } from './section/main/search-content/search-content.component';
 import { SearchTermService } from './section/main/search-term.service';
+import { LoginDataService } from './section/main/login-data.service';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import { SearchTermService } from './section/main/search-term.service';
     MatCardModule,
     AppRoutingModule
   ],
-  providers: [ContentService, AdService, DrawerNavService, NotificationService, SearchTermService],
+  providers: [ContentService, AdService, DrawerNavService, NotificationService,
+    SearchTermService, LoginDataService],
   entryComponents: [ AdTemplateComponent ],
   bootstrap: [AppComponent]
 })
