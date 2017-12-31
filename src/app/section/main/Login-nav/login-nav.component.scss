@@ -14,9 +14,19 @@ nav {
       justify-content: center;
       margin: 0 1%;
 
-      i, button {
+      i {
         margin: auto;
         font-size: $menu-font-size;
+      }
+      button {
+        margin: auto;
+        font-size: $menu-font-size;
+        background-color: transparent;
+        color: white;
+        border: none;
+      }
+      button[disabled] {
+        color: grey;
       }
       mat-form-field {
         margin: 0 1%;

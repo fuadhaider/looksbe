@@ -8,7 +8,7 @@
       <mat-form-field hideRequiredMarker>
         <input matInput type="email" name="email" placeholder="Email"
         [(ngModel)]="accountLogin.email" #email="ngModel"
-        pattern="[^.]+@[^.]+" required>
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
         <div *ngIf="email.invalid && email.dirty">
           Valid email required
         </div>
@@ -29,8 +29,9 @@
     </div>
     <div>
       <button type="submit" class="material-icons"
-      (click)="loginAccount(); loginNavState='in'"
+      (click)="loginAccount(); loginForm.reset();"
       [disabled]="loginForm.form.invalid">input</button>
+       <!-- loginNavState='in' -->
     </div>
   </form>
 </nav>
