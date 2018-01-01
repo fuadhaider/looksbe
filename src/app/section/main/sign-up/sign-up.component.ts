@@ -66,4 +66,8 @@ export class SignUpComponent implements OnInit {
     this.contactDetail = new ContactDetail('','','','','','','','','',undefined,undefined);
   }
 
+  hi() {
+    console.log('hi');
+  }
+
 }

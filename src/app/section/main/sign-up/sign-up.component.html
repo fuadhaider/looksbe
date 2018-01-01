@@ -42,7 +42,7 @@
 <mat-accordion>
   <div [hidden]="accountDetailSubmitted">
     <form #accountForm="ngForm" (ngSubmit)="submitAccountDetail()">
-      <mat-expansion-panel>
+      <mat-expansion-panel [expanded]="!accountDetailSubmitted">
         <mat-expansion-panel-header>
           <mat-panel-title>Account</mat-panel-title>
         </mat-expansion-panel-header>
