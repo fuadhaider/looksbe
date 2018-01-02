@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 // import { HeaderSidenavService } from '../section/main/header-sidenav.service';
 // import { HeaderTopnavService } from '../section/main/header-topnav.service';
 import { DrawerNavService } from '../drawer-nav.service';
@@ -8,12 +8,21 @@ import { DrawerNavService } from '../drawer-nav.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss', './_header-config.component.scss']
 })
-export class HeaderComponent {
-  constructor(private drawerNavServive: DrawerNavService) { }
+export class HeaderComponent implements OnInit {
   public activeSearchIcon: boolean = false;
   public activeNotificationIcon: boolean = false;
   public activeLoginIcon: boolean = false;
 
+  constructor(private drawerNavServive: DrawerNavService) { }
+
+  ngOnInit() {
+    this.drawerNavServive.getDrawerNav().subscribe(form => {
+      if(form == 'submit') {
+        this.activeLoginIcon = false;
+      }
+    })
+
+  }
   toggleDrawerNav(which: string) {
     this.drawerNavServive.storeDrawerNav(which);
     if ( which == 'search') {
@@ -30,9 +39,9 @@ export class HeaderComponent {
       this.activeSearchIcon = false;
       this.activeNotificationIcon = false;
     }
-    else {
+    // else {
       // this.active = false;
-    }
+    // }
   }
 
 }

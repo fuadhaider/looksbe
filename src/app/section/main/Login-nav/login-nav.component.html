@@ -1,5 +1,6 @@
 <nav [@loginNavToggle]="loginNavState">
-  <form #loginForm="ngForm" (ngSubmit)="onSubmit(); loginForm.reset()">
+  <form #loginForm="ngForm">
+    <!--  (ngSubmit)="onSubmit(); loginForm.reset();loginForm.blur();" -->
     <div>
       <i routerLink="/signup" class="material-icons">person_add</i>
       <!-- (click)="loginNavState='in'" -->
@@ -29,7 +30,7 @@
     </div>
     <div>
       <button type="submit" class="material-icons"
-      (click)="loginAccount(); loginForm.reset();"
+      (click)="loginAccount(); loginForm.reset(); loginNavState='in'"
       [disabled]="loginForm.form.invalid">input</button>
        <!-- routerLink="/signup" loginNavState='in' -->
     </div>

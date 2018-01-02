@@ -1,4 +1,5 @@
-import { Component, Input, AfterViewInit, ViewChild, ComponentFactoryResolver, OnDestroy } from '@angular/core';
+import { Component, Input, AfterViewInit, ViewChild, ComponentFactoryResolver,
+  OnDestroy } from '@angular/core';
 
 import { AdDirective } from '../ad.directive';
 import { AdItem }      from '../ad-item';
@@ -30,7 +31,8 @@ export class AdBannerComponent implements AfterViewInit, OnDestroy {
     this.currentAddIndex = (this.currentAddIndex + 1) % this.ads.length;
     let adItem = this.ads[this.currentAddIndex];
 
-    let componentFactory = this.componentFactoryResolver.resolveComponentFactory(adItem.component);
+    let componentFactory =
+    this.componentFactoryResolver.resolveComponentFactory(adItem.component);
 
     let viewContainerRef = this.adHost.viewContainerRef;
     viewContainerRef.clear();

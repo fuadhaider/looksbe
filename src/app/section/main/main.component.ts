@@ -1,5 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ViewContainerRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+// import { Subscription } from 'rxjs/Subscription';
+
+// import { LoginNavSubmitService } from '../../login-nav-submit.service';
+// , ViewChild
+// import { ViewContainerRef } from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -8,17 +12,25 @@ import { ViewContainerRef } from '@angular/core';
   // directives: ['app-login-nav']
 })
 export class MainComponent implements OnInit {
-  @ViewChild('appLoginNav') appLoginNav: ViewContainerRef;
-
+  // @ViewChild('appLoginNav') appLoginNav: ViewContainerRef;
+  // destroy: string = 'false';
   constructor() { }
-
+    // private loginNavSubmitService: LoginNavSubmitService
   ngOnInit() {
+    // console.log('initial');
+    // this.loginNavSubmitService.sendLoginNavSubmit().subscribe(submit => {
+      // if(submit == true) {
+        // this.destroy = submit;
+        // console.log(submit);
+        // console.log(this.destroy);
+      // }
+    // })
   }
 
-  destroyClick() {
-    if (this.appLoginNav) {
-      this.appLoginNav.remove();
-    }
-  }
+  // destroyClick() {
+  //   if (this.appLoginNav) {
+  //     this.appLoginNav.remove();
+  //   }
+  // }
 
 }
