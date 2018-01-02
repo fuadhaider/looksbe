@@ -21,8 +21,8 @@ export class HeaderComponent implements OnInit {
         this.activeLoginIcon = false;
       }
     })
-
   }
+
   toggleDrawerNav(which: string) {
     this.drawerNavServive.storeDrawerNav(which);
     if ( which == 'search') {
@@ -34,7 +34,8 @@ export class HeaderComponent implements OnInit {
       this.activeNotificationIcon = this.activeNotificationIcon === true ? false : true;
       this.activeSearchIcon = false;
       this.activeLoginIcon = false;
-    }if ( which == 'login') {
+    }
+    if ( which == 'login') {
       this.activeLoginIcon = this.activeLoginIcon === true ? false : true;
       this.activeSearchIcon = false;
       this.activeNotificationIcon = false;
