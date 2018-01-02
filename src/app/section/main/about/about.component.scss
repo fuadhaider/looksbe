@@ -20,6 +20,13 @@ mat-card {
     padding: 1%;
     box-shadow: 1px 1px 5px 1px lightgrey;
     border-radius: 15px;
+    p, h3 {
+      text-align: center;
+    }
+    ul {
+      text-align: center;
+      list-style-type: none;
+    }
   }
   div {
     padding: 1%;
@@ -30,6 +37,15 @@ mat-card {
     img {
       width: 100%;
       border-radius: 15px;
+    }
+  }
+}
+div {
+  p {
+    text-align: center;
+    // color: $body-font-colour;
+    a {
+      text-decoration: none;
     }
   }
 }

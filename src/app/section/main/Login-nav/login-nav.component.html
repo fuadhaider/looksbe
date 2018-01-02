@@ -17,7 +17,7 @@
         <input matInput type="password" name="password" placeholder="Password"
         [(ngModel)]="accountLogin.password" #password="ngModel"
         minlength="6" required>
-        <div *ngIf="password.invalid && password.touched">
+        <div *ngIf="password.invalid && password.dirty">
           <div *ngIf="password.errors.required">
             Password required
           </div>

@@ -1,5 +1,6 @@
-<app-login-nav></app-login-nav>
+<app-login-nav #appLoginNav></app-login-nav>
 <app-search-nav></app-search-nav>
 <app-sidenav>
+  <button (click)="destroyClick()" type="button" name="button">destroy</button>
   <router-outlet></router-outlet>
 </app-sidenav>
