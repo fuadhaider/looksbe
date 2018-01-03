@@ -6,10 +6,13 @@ import { AdComponent }      from './ad.component';
   template: `
     <div>
       <span>Learn</span>
-      <span>{{data.name}}</span>
+      <span>{{data.ad}}</span>
       <a href="{{data.link1}}" target="_blank"><img src="{{data.path1}}"></a>
+      <span>{{data.item1}}</span>
       <a href="{{data.link2}}" target="_blank"><img src="{{data.path2}}"></a>
+      <span>{{data.item2}}</span>
       <a href="{{data.link3}}" target="_blank"><img src="{{data.path3}}"></a>
+      <span>{{data.item3}}</span>
     </div>
   `,
   styles: [`
