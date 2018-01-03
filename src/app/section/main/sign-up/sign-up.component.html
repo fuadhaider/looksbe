@@ -3,9 +3,15 @@
 <div [hidden]="!accountDetailSubmitted">
   <mat-card>
     <mat-card-title>Account</mat-card-title>
-    <mat-card-content>	Email: {{accountDetail.email}}</mat-card-content>
+    <mat-card-content>Email: {{accountDetail.email}}</mat-card-content>
+    <mat-card-content>
+      <div *ngIf="mismatch">
+        Passwords mismatched
+      </div>
+    </mat-card-content>
     <button mat-button type="button" name="editAccountDetail"
     (click)="accountDetailSubmitted = false">Edit</button>
+    <!-- accountForm.reset() -->
   </mat-card>
 </div>
 <div [hidden]="!personalDetailSubmitted">
@@ -41,36 +47,52 @@
 </div>
 <mat-accordion>
   <div [hidden]="accountDetailSubmitted">
-    <form #accountForm="ngForm" (ngSubmit)="submitAccountDetail()">
+    <form #accountForm="ngForm"
+    (ngSubmit)="submitAccountDetail(password.value, confirm.value);
+    password.reset(); confirm.reset()">
       <mat-expansion-panel [expanded]="!accountDetailSubmitted">
         <mat-expansion-panel-header>
           <mat-panel-title>Account</mat-panel-title>
         </mat-expansion-panel-header>
         <mat-form-field>
           <input matInput type="email" name="email" placeholder="Email"
-          [(ngModel)]="accountDetail.email" #email="ngModel" required>
-          <div [hidden]="email.valid || email.pristine">
+          [(ngModel)]="accountDetail.email" #email="ngModel"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+          <div *ngIf="email.invalid && email.touched">
             Valid email required
           </div>
         </mat-form-field>
         <mat-form-field>
           <input matInput type="password" name="password" placeholder="Password"
-          [(ngModel)]="accountDetail.password" #password="ngModel" required>
-          <div [hidden]="password.valid || password.pristine">
-            New password required
+          [(ngModel)]="accountDetail.password" #password="ngModel"
+          minlength="6" required>
+          <div *ngIf="password.invalid && password.touched">
+            <div *ngIf="password.errors.required">
+              New password required
+            </div>
+            <div *ngIf="password.errors.minlength">
+              minimum 6 characters
+            </div>
           </div>
         </mat-form-field>
         <mat-form-field>
           <input matInput type="password" name="confirm" placeholder="Confirm Password"
-          [(ngModel)]="accountDetail.confirm" #confirm="ngModel" required>
-          <div [hidden]="confirm.valid || confirm.pristine">
-            Confirm password
+          [(ngModel)]="accountDetail.confirm" #confirm="ngModel"
+          minlength="6" required>
+          <div *ngIf="confirm.invalid && confirm.touched">
+            <div *ngIf="confirm.errors.required">
+              Confirm password
+            </div>
+            <!-- <div *ngIf="password.value != confirm.value">
+              Password mismatch
+            </div> -->
           </div>
         </mat-form-field>
         <div>
           <button mat-button type="submit"
-          (submit)="newAccountDetail(); accountForm.reset()"
+          (submit)="newAccountDetail()"
           [disabled]="!accountForm.form.valid">Submit</button>
+          <!-- ; accountForm.reset() -->
           <button mat-button type="reset"
           (click)="accountForm.reset()">Reset</button>
         </div>

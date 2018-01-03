@@ -15,6 +15,7 @@ import { NotificationService } from '../notification.service';
 export class SignUpComponent implements OnInit {
   panelOpenState: boolean = false;
   accountDetailSubmitted: boolean = false;
+  mismatch: boolean = false;
   accountDetail = new Account('','','');
   user: string;
   personalDetailSubmitted = false;
@@ -39,9 +40,15 @@ export class SignUpComponent implements OnInit {
     }
   }
 
-  submitAccountDetail() {
+  submitAccountDetail(password: string, confirm: string) {
     this.accountDetailSubmitted = true;
     this.notificationService.add('Submitted: Account Detail!');
+    if (password == confirm) {
+      this.mismatch = false;
+    }
+    else {
+      this.mismatch = true;
+    }
   }
 
   newAccountDetail() {
