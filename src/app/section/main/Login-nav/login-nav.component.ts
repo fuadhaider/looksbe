@@ -56,11 +56,15 @@ export class LoginNavComponent implements OnInit {
   loginAccount() {
     this.router.navigate(['/signup', this.accountLogin.email]);
     this.notificationService.add('Logged In!');
-    this.drawerNavService.storeDrawerNav('submit');
+    this.toSignUpPage();
     // this.loginDataService.storeLoginData(this.accountLogin.email);
     // this.submitted = 'true';
     // this.loginNavSubmitService.storeLoginNavSubmit(this.submitted);
     // console.log(this.submitted);
+  }
+
+  toSignUpPage() {
+    this.drawerNavService.storeDrawerNav('submit');
   }
 
 }

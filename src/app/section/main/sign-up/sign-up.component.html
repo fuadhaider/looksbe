@@ -1,4 +1,4 @@
-<h3>Signing Up</h3>
+<h2>Signing Up</h2>
 <p>Your details below</p>
 <div [hidden]="!accountDetailSubmitted">
   <mat-card>
@@ -28,7 +28,7 @@
 <div [hidden]="!contactDetailSubmitted">
   <mat-card>
     <mat-card-title>Contact</mat-card-title>
-    <mat-card-subtitle>Address</mat-card-subtitle>
+    <mat-card-subtitle><h3>Address</h3></mat-card-subtitle>
     <mat-card-content>	Unit: {{contactDetail.unit}}</mat-card-content>
     <mat-card-content>	Building Name: {{contactDetail.building}}</mat-card-content>
     <mat-card-content>	Building Number: {{contactDetail.buildingNumber}}</mat-card-content>
@@ -38,9 +38,9 @@
     <mat-card-content>	Zip/Post Code: {{contactDetail.zip}}</mat-card-content>
     <mat-card-content>	State/Region: {{contactDetail.state}}</mat-card-content>
     <mat-card-content>	Country: {{contactDetail.country}}</mat-card-content>
-    <mat-card-subtitle>Phone</mat-card-subtitle>
+    <mat-card-subtitle><h3>Phone</h3></mat-card-subtitle>
     <mat-card-content>	Mobile: {{contactDetail.mobile}}</mat-card-content>
-    <mat-card-content>	Landline: {{contactDetail.landline}}</mat-card-content>
+    <mat-card-content>	Land Line: {{contactDetail.landLine}}</mat-card-content>
     <button mat-button type="button" name="editContactDetail"
     (click)="contactDetailSubmitted=false">Edit</button>
   </mat-card>
@@ -112,16 +112,20 @@
         <mat-form-field>
           <input matInput type="text" name="firstName" placeholder="First Names"
           [(ngModel)]="personalDetail.firstName" #firstName="ngModel" required>
-          <div [hidden]="firstName.valid || firstName.pristine">
-            First name required
+          <div *ngIf="firstName.invalid && firstName.touched">
+            <div *ngIf="firstName.errors.required">
+              First name required
+            </div>
           </div>
         </mat-form-field>
         <mat-form-field>
           <input matInput type="text" name="lastName" placeholder="Last Name"
-          [(ngModel)]="personalDetail.lastname" #lastName="ngModel" required>
-          <div [hidden]="lastName.valid || lastName.pristine">
-            Last name required
-          </div>
+          [(ngModel)]="personalDetail.lastName" #lastName="ngModel" required>
+          <div *ngIf="lastName.invalid && lastName.touched">
+            <div *ngIf="lastName.errors.required">
+              Last name required
+            </div>
+        </div>
         </mat-form-field>
         <mat-form-field>
           <input matInput type="date" name="dob" placeholder="Date of Birth"
@@ -190,20 +194,31 @@
         <mat-form-field>
           <input matInput type="text" name="country" placeholder="Country"
           [(ngModel)]="contactDetail.country" #country="ngModel" required>
-          <div [hidden]="country.valid || country.pristine">
-            Country required
+          <div *ngIf="country.invalid && country.touched">
+            <div *ngIf="country.errors.required">
+              Country required
+            </div>
           </div>
         </mat-form-field>
         <mat-form-field>
           <input matInput type="tel" name="mobile" placeholder="Phone"
-          [(ngModel)]="contactDetail.mobile" #mobile="ngModel">
-          <!-- <div [hidden]="mobile.valid || mobile.pristine">
-            Mobile required
-          </div> -->
+          [(ngModel)]="contactDetail.mobile" #mobile="ngModel"
+          pattern="[0-9- ]+">
+          <div *ngIf="mobile.invalid && mobile.touched">
+            <div *ngIf="mobile.errors.pattern">
+              Valid number required
+            </div>
+          </div>
         </mat-form-field>
         <mat-form-field>
-          <input matInput type="tel" name="landline" placeholder="Landline"
-          [(ngModel)]="contactDetail.landline" #phone="ngModel">
+          <input matInput type="tel" name="landLine" placeholder="Land Line"
+          [(ngModel)]="contactDetail.landLine" #landLine="ngModel"
+          pattern="[0-9- ]+">
+          <div *ngIf="landLine.invalid && landLine.touched">
+            <div *ngIf="landLine.errors.pattern">
+              Valid number required
+            </div>
+          </div>
         </mat-form-field>
         <div>
           <button mat-button type="submit"

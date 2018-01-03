@@ -2,7 +2,8 @@
   <form #loginForm="ngForm">
     <!--  (ngSubmit)="onSubmit(); loginForm.reset();loginForm.blur();" -->
     <div>
-      <i routerLink="/signup" class="material-icons">person_add</i>
+      <i routerLink="/signup" class="material-icons"
+      (click)="toSignUpPage()">person_add</i>
       <!-- (click)="loginNavState='in'" -->
     </div>
     <div>
