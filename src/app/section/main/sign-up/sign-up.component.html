@@ -193,13 +193,25 @@
         </mat-form-field>
         <mat-form-field>
           <input matInput type="text" name="country" placeholder="Country"
-          [(ngModel)]="contactDetail.country" #country="ngModel" required>
+          [(ngModel)]="contactDetail.country" #country="ngModel"
+          (keyup)="searchCountry(country.value); typingKey = true"
+          required>
+          <!-- [value]="countrySelected" -->
           <div *ngIf="country.invalid && country.touched">
             <div *ngIf="country.errors.required">
               Country required
             </div>
           </div>
         </mat-form-field>
+        <div *ngIf="country.value && typingKey">
+          <ul>
+            <li *ngFor="let country of countryArray"
+            (click)="contactDetail.country = country.name; typingKey = false">
+            {{country.name}}</li>
+            <!-- countrySelected -->
+            <!-- selectCountry(country.name) -->
+          </ul>
+        </div>
         <mat-form-field>
           <input matInput type="tel" name="mobile" placeholder="Phone"
           [(ngModel)]="contactDetail.mobile" #mobile="ngModel"

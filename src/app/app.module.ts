@@ -43,6 +43,7 @@ import { SearchContentComponent } from './section/main/search-content/search-con
 import { SearchTermService } from './section/main/search-term.service';
 import { LoginDataService } from './section/main/login-data.service';
 import { LoginNavSubmitService } from './login-nav-submit.service';
+import { CountryService } from './section/main/country.service';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,7 @@ import { LoginNavSubmitService } from './login-nav-submit.service';
     AppRoutingModule
   ],
   providers: [ContentService, AdService, DrawerNavService, NotificationService,
-    SearchTermService, LoginDataService, LoginNavSubmitService],
+    SearchTermService, LoginDataService, LoginNavSubmitService, CountryService],
   entryComponents: [ AdTemplateComponent ],
   bootstrap: [AppComponent]
 })

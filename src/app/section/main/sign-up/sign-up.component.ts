@@ -4,8 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 import { Account } from '../../../account';
 import { PersonalDetail } from '../../../personal-detail';
 import { ContactDetail } from '../../../contact-detail';
+import { CountryObject } from '../../../country-object'
 // import { LoginDataService } from '../login-data.service';
 import { NotificationService } from '../notification.service';
+import { CountryService } from '../country.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -22,9 +24,12 @@ export class SignUpComponent implements OnInit {
   personalDetail = new PersonalDetail('','', undefined ,'');
   contactDetailSubmitted = false;
   contactDetail = new ContactDetail('','','','','','','','','',undefined,undefined);
+  countryArray: CountryObject[];
+  typingKey: boolean = false;
 
   constructor(
     private notificationService: NotificationService,
+    private countryService: CountryService,
     private route: ActivatedRoute) { }
 // private loginDataService: LoginDataService,
   ngOnInit() {
@@ -73,8 +78,12 @@ export class SignUpComponent implements OnInit {
     this.contactDetail = new ContactDetail('','','','','','','','','',undefined,undefined);
   }
 
-  hi() {
-    console.log('hi');
+  searchCountry(letter: string) {
+    this.countryService.sendCountry(letter).subscribe(countryArray =>
+    this.countryArray = countryArray);
   }
-
+  //
+  // selectCountry(country: string) {
+  //   this.contactDetail.country = country;
+  // }
 }
