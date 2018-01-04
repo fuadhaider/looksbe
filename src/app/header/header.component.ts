@@ -16,9 +16,12 @@ export class HeaderComponent implements OnInit {
   constructor(private drawerNavServive: DrawerNavService) { }
 
   ngOnInit() {
-    this.drawerNavServive.getDrawerNav().subscribe(form => {
-      if(form == 'submit') {
+    this.drawerNavServive.getDrawerNav().subscribe(icon => {
+      if(icon == 'submit') {
         this.activeLoginIcon = false;
+      }
+      if(icon == 'sidenav') {
+        this.activeNotificationIcon = false;
       }
     })
   }

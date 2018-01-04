@@ -40,6 +40,9 @@ export class SearchNavComponent implements OnInit {
       if ( which == 'search') {
         this.searchNavState = (this.searchNavState === 'in' ? 'out' : 'in');
       }
+      else if ( which == 'sidenav') {
+        this.searchNavState = this.searchNavState;
+      }
       else {
         this.searchNavState = 'in';
       }

@@ -26,6 +26,10 @@ export class SidenavComponent implements OnInit {
     });
   }
 
+  deactivateIcon() {
+    this.drawerNavServive.storeDrawerNav('sidenav');
+  }
+
   ngOnDestroy() {
     // unsubscribe to ensure no memory leaks
     this.subscription.unsubscribe();

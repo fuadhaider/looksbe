@@ -41,8 +41,11 @@ export class LoginNavComponent implements OnInit {
 
   ngOnInit() {
     this.drawerNavService.getDrawerNav().subscribe(which => {
-      if ( which == 'login') {
+      if ( which == 'login' ) {
         this.loginNavState = (this.loginNavState === 'in' ? 'out' : 'in');
+      }
+      else if ( which == 'sidenav' ) {
+        this.loginNavState = this.loginNavState;
       }
       else {
         this.loginNavState = 'in';
