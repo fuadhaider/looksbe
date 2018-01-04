@@ -10,7 +10,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -82,6 +83,8 @@ import { CountryService } from './section/main/country.service';
     MatExpansionModule,
     MatButtonModule,
     MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     AppRoutingModule
   ],
   providers: [ContentService, AdService, DrawerNavService, NotificationService,

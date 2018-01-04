@@ -4,7 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Account } from '../../../account';
 import { PersonalDetail } from '../../../personal-detail';
 import { ContactDetail } from '../../../contact-detail';
-import { CountryObject } from '../../../country-object'
+import { CountryObject } from '../../../country-object';
+
 // import { LoginDataService } from '../login-data.service';
 import { NotificationService } from '../notification.service';
 import { CountryService } from '../country.service';
@@ -22,6 +23,11 @@ export class SignUpComponent implements OnInit {
   user: string;
   personalDetailSubmitted = false;
   personalDetail = new PersonalDetail('','', undefined ,'');
+  startDob = new Date(2005, 0, 1);
+  date = new Date();
+  showDate: string;
+  maxDate = new Date(Date.now() - 4748 * 24 * 60 * 60 * 1000); //13 years and older
+  minDate = new Date(Date.now() - 36525 * 24 * 60 * 60 * 1000); //100 years and younger
   contactDetailSubmitted = false;
   contactDetail = new ContactDetail('','','','','','','','','',undefined,undefined);
   countryArray: CountryObject[];
@@ -43,6 +49,8 @@ export class SignUpComponent implements OnInit {
       this.accountDetailSubmitted = true;
       this.accountDetail.email = this.user;
     }
+    console.log(this.maxDate);
+    console.log(this.minDate);
   }
 
   submitAccountDetail(password: string, confirm: string) {
@@ -67,6 +75,10 @@ export class SignUpComponent implements OnInit {
 
   newPersonalDetail() {
     this.personalDetail = new PersonalDetail('','',undefined,'');
+  }
+
+  dateOnly(dateNoTime: Date) {
+    this.showDate = dateNoTime.toDateString();
   }
 
   submitContactDetail() {

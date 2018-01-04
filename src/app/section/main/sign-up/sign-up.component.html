@@ -19,7 +19,7 @@
     <mat-card-title>Personal</mat-card-title>
     <mat-card-content>	First Name: {{personalDetail.firstName}}</mat-card-content>
     <mat-card-content>	Last Name: {{personalDetail.lastName}}</mat-card-content>
-    <mat-card-content>	Date of Birth: {{personalDetail.dob}}</mat-card-content>
+    <mat-card-content>	Date of Birth: {{this.showDate}}</mat-card-content>
     <mat-card-content>	Gender: {{personalDetail.gender}}</mat-card-content>
     <button mat-button type="button" name="editPersonalDetail"
     (click)="personalDetailSubmitted=false">Edit</button>
@@ -128,9 +128,27 @@
         </div>
         </mat-form-field>
         <mat-form-field>
+          <input matInput name="dob" placeholder="Date of Birth"
+          [(ngModel)]="personalDetail.dob" #dob="ngModel"
+          [matDatepicker]="dobPicker" [max]="maxDate" [min]="minDate"
+          (dateChange)="dateOnly(personalDetail.dob)">
+          <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
+          <mat-datepicker #dobPicker startView="year" [startAt]="startDob"
+          touchUi="true"></mat-datepicker>
+        </mat-form-field>
+        <div *ngIf="dob.invalid || dob.touched">
+          <div *ngIf="dob.hasError('matDatepickerMax')">
+            Must be 13+
+          </div>
+          <div *ngIf="dob.invalid && !dob.hasError('matDatepickerMax')
+          && !dob.hasError('matDatepickerMin')">
+            Month/Date/Year only
+          </div>
+        </div>
+        <!-- <mat-form-field>
           <input matInput type="date" name="dob" placeholder="Date of Birth"
           [(ngModel)]="personalDetail.dob" #dob="ngModel" max="datetime">
-        </mat-form-field>
+        </mat-form-field> -->
         <mat-form-field>
           <mat-select placeholder="Gender" name="gender"
           [(ngModel)]="personalDetail.gender" #gender="ngModel">
