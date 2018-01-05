@@ -1,4 +1,4 @@
-import { ImageObject } from './app/image-object';
+import { ImageObject } from './app/section/main/image-object';
 
 export const ContentData: ImageObject[] = [
   { id: 1, name: 'Carnival', category: 'explore',

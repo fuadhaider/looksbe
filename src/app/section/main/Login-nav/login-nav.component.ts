@@ -51,8 +51,8 @@ export class LoginNavComponent implements OnInit {
 
   loginAccount() {
     this.router.navigate(['/signup', this.accountLogin.email]);
-    this.notificationService.add('Logged In!');
     this.toSignUpPage();
+    this.notificationService.add('Logged In!');
   }
 
   toSignUpPage() {
