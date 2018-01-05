@@ -88,7 +88,6 @@
           <button mat-button type="submit"
           (submit)="newAccountDetail()"
           [disabled]="!accountForm.form.valid">Submit</button>
-          <!-- ; accountForm.reset() -->
           <button mat-button type="reset"
           (click)="accountForm.reset()">Reset</button>
         </div>
@@ -198,7 +197,6 @@
           [(ngModel)]="contactDetail.country" #country="ngModel"
           (keyup)="searchCountry(country.value); typingKey = true"
           required>
-          <!-- [value]="countrySelected" -->
           <div *ngIf="country.invalid && country.touched">
             <div *ngIf="country.errors.required">
               Country required
@@ -210,8 +208,6 @@
             <li *ngFor="let country of countryArray"
             (click)="contactDetail.country = country.name; typingKey = false">
             {{country.name}}</li>
-            <!-- countrySelected -->
-            <!-- selectCountry(country.name) -->
           </ul>
         </div>
         <mat-form-field>

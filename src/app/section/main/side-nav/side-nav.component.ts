@@ -6,10 +6,10 @@ import { DrawerNavService } from '../../../drawer-nav.service';
 
 @Component({
   selector: 'app-sidenav',
-  templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss']
+  templateUrl: './side-nav.component.html',
+  styleUrls: ['./side-nav.component.scss']
 })
-export class SidenavComponent implements OnInit {
+export class SideNavComponent implements OnInit {
   subscription: Subscription;
   @ViewChild('sidenav') sidenav: MatSidenav;
 

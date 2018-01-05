@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { FormsModule }   from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -30,7 +29,7 @@ import { AdDirective } from './section/aside/ad.directive';
 import { AdBannerComponent } from './section/aside/ad-banner/ad-banner.component';
 import { AdTemplateComponent }   from './section/aside/ad-template.component';
 import { LoginNavComponent } from './section/main/login-nav/login-nav.component';
-import { SidenavComponent } from './section/main/sidenav/sidenav.component'
+import { SideNavComponent } from './section/main/side-nav/side-nav.component'
 import { SignUpComponent } from './section/main/sign-up/sign-up.component';
 import { AboutComponent } from './section/main/about/about.component';
 import { SearchNavComponent } from './section/main/search-nav/search-nav.component';
@@ -42,8 +41,6 @@ import { NotificationService } from './section/main/notification.service';
 import { ContentService } from './section/main/content.service';
 import { SearchContentComponent } from './section/main/search-content/search-content.component';
 import { SearchTermService } from './section/main/search-term.service';
-// import { LoginDataService } from './section/main/login-data.service';
-import { LoginNavSubmitService } from './login-nav-submit.service';
 import { CountryService } from './section/main/country.service';
 
 @NgModule({
@@ -67,14 +64,13 @@ import { CountryService } from './section/main/country.service';
     SignUpComponent,
     AboutComponent,
     SearchNavComponent,
-    SidenavComponent,
+    SideNavComponent,
     NotificationComponent,
     SearchContentComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
     MatSidenavModule,
     FormsModule,
     MatFormFieldModule,
@@ -87,10 +83,15 @@ import { CountryService } from './section/main/country.service';
     MatNativeDateModule,
     AppRoutingModule
   ],
-  providers: [ContentService, AdService, DrawerNavService, NotificationService,
-    SearchTermService, LoginNavSubmitService, CountryService],
-    //  LoginDataService,
+  providers: [
+    ContentService,
+    AdService,
+    DrawerNavService,
+    NotificationService,
+    SearchTermService,
+    CountryService
+  ],
   entryComponents: [ AdTemplateComponent ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

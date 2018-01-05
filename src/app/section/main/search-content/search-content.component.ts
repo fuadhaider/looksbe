@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { ActivatedRoute } from '@angular/router';
 
-import { ImageObject } from '../../../image-object';
+import { ImageObject } from '../image-object';
 import { ContentService } from '../content.service';
 import { SearchTermService } from '../search-term.service';
 
@@ -26,12 +26,10 @@ export class SearchContentComponent implements OnInit {
 
   getSearchContent() {
     this.searchTerm = this.route.snapshot.paramMap.get('term');
-    // console.log('content route ' + this.x);
     this.contentService.sendSearchContent(this.searchTerm).subscribe(searchArray =>
     this.searchArray = searchArray);
 
     this.searchTermService.sendSearchTerm().subscribe(term => {
-      // console.log('content subs ' + term);
       this.contentService.sendSearchContent(term).subscribe(searchArray =>
         this.searchArray = searchArray);
     });

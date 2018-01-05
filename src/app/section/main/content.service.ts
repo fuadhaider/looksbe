@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 // import { Pipe, PipeTransform } from '@angular/core';
 
-import { ImageObject } from '../../image-object';
+import { ImageObject } from './image-object';
 import { ContentData } from '../../../content-data';
 
 @Injectable()
@@ -26,7 +26,7 @@ export class ContentService {
 
   sendSearchContent(term: string): Observable<ImageObject[]> {
     if (!term.trim()) {
-      console.log('empty');
+      // console.log('empty');
       return of([]);
     }
     else {
