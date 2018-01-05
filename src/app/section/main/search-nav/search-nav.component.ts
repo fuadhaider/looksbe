@@ -50,7 +50,6 @@ export class SearchNavComponent implements OnInit {
   }
 
   searchContent(term: string) {
-    // console.log('nav '+term);
     this.router.navigate(['/search', term]);
     this.searchTermService.storeSearchTerm(term);
   }

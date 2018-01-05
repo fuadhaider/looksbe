@@ -1,17 +1,15 @@
 <nav [@loginNavToggle]="loginNavState">
   <form #loginForm="ngForm">
-    <!--  (ngSubmit)="onSubmit(); loginForm.reset();loginForm.blur();" -->
     <div>
       <i routerLink="/signup" class="material-icons"
       (click)="toSignUpPage()">person_add</i>
-      <!-- (click)="loginNavState='in'" -->
     </div>
     <div>
       <mat-form-field hideRequiredMarker>
         <input matInput type="email" name="email" placeholder="Email"
         [(ngModel)]="accountLogin.email" #email="ngModel"
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
-        <div *ngIf="email.invalid && email.dirty">
+        <div *ngIf="email.invalid && email.touched">
           Valid email required
         </div>
       </mat-form-field>
@@ -33,7 +31,6 @@
       <button type="submit" class="material-icons"
       (click)="loginAccount(); loginForm.reset(); loginNavState='in'"
       [disabled]="loginForm.form.invalid">input</button>
-       <!-- routerLink="/signup" loginNavState='in' -->
     </div>
   </form>
 </nav>

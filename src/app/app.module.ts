@@ -42,7 +42,7 @@ import { NotificationService } from './section/main/notification.service';
 import { ContentService } from './section/main/content.service';
 import { SearchContentComponent } from './section/main/search-content/search-content.component';
 import { SearchTermService } from './section/main/search-term.service';
-import { LoginDataService } from './section/main/login-data.service';
+// import { LoginDataService } from './section/main/login-data.service';
 import { LoginNavSubmitService } from './login-nav-submit.service';
 import { CountryService } from './section/main/country.service';
 
@@ -88,7 +88,8 @@ import { CountryService } from './section/main/country.service';
     AppRoutingModule
   ],
   providers: [ContentService, AdService, DrawerNavService, NotificationService,
-    SearchTermService, LoginDataService, LoginNavSubmitService, CountryService],
+    SearchTermService, LoginNavSubmitService, CountryService],
+    //  LoginDataService,
   entryComponents: [ AdTemplateComponent ],
   bootstrap: [AppComponent]
 })

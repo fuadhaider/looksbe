@@ -11,7 +11,6 @@
     </mat-card-content>
     <button mat-button type="button" name="editAccountDetail"
     (click)="accountDetailSubmitted = false">Edit</button>
-    <!-- accountForm.reset() -->
   </mat-card>
 </div>
 <div [hidden]="!personalDetailSubmitted">
@@ -83,9 +82,6 @@
             <div *ngIf="confirm.errors.required">
               Confirm password
             </div>
-            <!-- <div *ngIf="password.value != confirm.value">
-              Password mismatch
-            </div> -->
           </div>
         </mat-form-field>
         <div>
@@ -101,13 +97,9 @@
   </div>
   <div [hidden]="personalDetailSubmitted">
     <form #personalForm="ngForm" (ngSubmit)="submitPersonalDetail()">
-      <mat-expansion-panel> <!-- (opened)="panelOpenState = true"
-                           (closed)="panelOpenState = false"-->
+      <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>Personal</mat-panel-title>
-          <!-- <mat-panel-description>
-            Currently I am {{panelOpenState ? 'open' : 'closed'}}
-          </mat-panel-description> -->
         </mat-expansion-panel-header>
         <mat-form-field>
           <input matInput type="text" name="firstName" placeholder="First Names"
@@ -145,10 +137,6 @@
             Month/Date/Year only
           </div>
         </div>
-        <!-- <mat-form-field>
-          <input matInput type="date" name="dob" placeholder="Date of Birth"
-          [(ngModel)]="personalDetail.dob" #dob="ngModel" max="datetime">
-        </mat-form-field> -->
         <mat-form-field>
           <mat-select placeholder="Gender" name="gender"
           [(ngModel)]="personalDetail.gender" #gender="ngModel">
@@ -169,13 +157,9 @@
   </div>
   <div [hidden]="contactDetailSubmitted">
     <form #contactForm="ngForm" (ngSubmit)="submitContactDetail()">
-      <mat-expansion-panel> <!-- (opened)="panelOpenState = true"
-                         (closed)="panelOpenState = false"-->
+      <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>Contact</mat-panel-title>
-          <!-- <mat-panel-description>
-            Currently I am {{panelOpenState ? 'open' : 'closed'}}
-          </mat-panel-description> -->
         </mat-expansion-panel-header>
         <mat-form-field>
           <input matInput type="text" name="unit" placeholder="Unit"
@@ -234,7 +218,7 @@
           <input matInput type="tel" name="mobile" placeholder="Phone"
           [(ngModel)]="contactDetail.mobile" #mobile="ngModel"
           pattern="[0-9- ]+">
-          <div *ngIf="mobile.invalid && mobile.touched">
+          <div *ngIf="mobile.invalid && mobile.dirty">
             <div *ngIf="mobile.errors.pattern">
               Valid number required
             </div>
@@ -244,7 +228,7 @@
           <input matInput type="tel" name="landLine" placeholder="Land Line"
           [(ngModel)]="contactDetail.landLine" #landLine="ngModel"
           pattern="[0-9- ]+">
-          <div *ngIf="landLine.invalid && landLine.touched">
+          <div *ngIf="landLine.invalid && landLine.dirty">
             <div *ngIf="landLine.errors.pattern">
               Valid number required
             </div>

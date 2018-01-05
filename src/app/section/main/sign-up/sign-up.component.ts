@@ -6,7 +6,6 @@ import { PersonalDetail } from '../../../personal-detail';
 import { ContactDetail } from '../../../contact-detail';
 import { CountryObject } from '../../../country-object';
 
-// import { LoginDataService } from '../login-data.service';
 import { NotificationService } from '../notification.service';
 import { CountryService } from '../country.service';
 
@@ -16,7 +15,6 @@ import { CountryService } from '../country.service';
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
-  panelOpenState: boolean = false;
   accountDetailSubmitted: boolean = false;
   mismatch: boolean = false;
   accountDetail = new Account('','','');
@@ -37,20 +35,13 @@ export class SignUpComponent implements OnInit {
     private notificationService: NotificationService,
     private countryService: CountryService,
     private route: ActivatedRoute) { }
-// private loginDataService: LoginDataService,
   ngOnInit() {
     this.notificationService.add('Visited: Sign Up!');
-    // this.loginDataService.sendLoginData().subscribe(data => {
-    //   this.accountDetailSubmitted = true;
-    //   this.accountDetail.email = data;
-    // })
     this.user = this.route.snapshot.paramMap.get('user');
     if (this.user) {
       this.accountDetailSubmitted = true;
       this.accountDetail.email = this.user;
     }
-    console.log(this.maxDate);
-    console.log(this.minDate);
   }
 
   submitAccountDetail(password: string, confirm: string) {
@@ -94,8 +85,4 @@ export class SignUpComponent implements OnInit {
     this.countryService.sendCountry(letter).subscribe(countryArray =>
     this.countryArray = countryArray);
   }
-  //
-  // selectCountry(country: string) {
-  //   this.contactDetail.country = country;
-  // }
 }

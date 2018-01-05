@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { HeaderSidenavService } from '../section/main/header-sidenav.service';
-// import { HeaderTopnavService } from '../section/main/header-topnav.service';
+
 import { DrawerNavService } from '../drawer-nav.service';
 
 @Component({
@@ -43,9 +42,6 @@ export class HeaderComponent implements OnInit {
       this.activeSearchIcon = false;
       this.activeNotificationIcon = false;
     }
-    // else {
-      // this.active = false;
-    // }
   }
 
 }
