@@ -119,10 +119,10 @@
         </div>
         </mat-form-field>
         <mat-form-field>
-          <input matInput type="date" name="dob" placeholder="Date of Birth"
+          <input matInput name="dob" placeholder="Date of Birth"
           [(ngModel)]="personalDetail.dob" #dob="ngModel"
           [matDatepicker]="dobPicker" [max]="maxDate" [min]="minDate"
-          (dateChange)="dateOnly(personalDetail.dob)">
+          (dateInput)="dateOnly(personalDetail.dob)">
           <mat-datepicker-toggle matSuffix [for]="dobPicker"></mat-datepicker-toggle>
           <mat-datepicker #dobPicker startView="year" [startAt]="startDob"
           touchUi="true"></mat-datepicker>
