@@ -19,7 +19,7 @@ export class CountryService {
     else {
       letter = letter.toLowerCase();
       return of (CountryData.filter(content => {
-        return content.name.includes(letter);
+        return content.name.toLowerCase().includes(letter);
       }));
     }
   }
