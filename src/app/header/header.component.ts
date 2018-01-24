@@ -5,7 +5,7 @@ import { DrawerNavService } from '../drawer-nav.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss', './_header-config.component.scss']
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
   public activeSearchIcon: boolean = false;

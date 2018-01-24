@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ImageObject } from '../../../image-object';
+import { ImageObject } from '../image-object';
+
 import { ContentService } from '../content.service';
 import { NotificationService } from '../notification.service';
 

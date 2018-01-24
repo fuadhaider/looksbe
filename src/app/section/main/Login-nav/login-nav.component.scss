@@ -45,9 +45,6 @@ nav {
       }
 
     }
-    // > * {
-    //   margin: 0 1%;
-    // }
     @media all and (min-width: 769px) {
       div {
         @include flex-flow(row);

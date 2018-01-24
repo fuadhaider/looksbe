@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Account } from '../../../account';
-import { PersonalDetail } from '../../../personal-detail';
-import { ContactDetail } from '../../../contact-detail';
-import { CountryObject } from '../../../country-object';
+import { AccountDetail } from '../account-detail';
+import { PersonalDetail } from '../personal-detail';
+import { ContactDetail } from '../contact-detail';
+import { CountryObject } from '../country-object';
 
 import { NotificationService } from '../notification.service';
 import { CountryService } from '../country.service';
@@ -16,13 +16,12 @@ import { CountryService } from '../country.service';
 })
 export class SignUpComponent implements OnInit {
   accountDetailSubmitted: boolean = false;
+  accountDetail = new AccountDetail('','','');
   mismatch: boolean = false;
-  accountDetail = new Account('','','');
   user: string;
   personalDetailSubmitted = false;
   personalDetail = new PersonalDetail('','', undefined ,'');
   startDob = new Date(2005, 0, 1);
-  date = new Date();
   showDate: string;
   maxDate = new Date(Date.now() - 4748 * 24 * 60 * 60 * 1000); //13 years and older
   minDate = new Date(Date.now() - 36525 * 24 * 60 * 60 * 1000); //100 years and younger
@@ -35,6 +34,7 @@ export class SignUpComponent implements OnInit {
     private notificationService: NotificationService,
     private countryService: CountryService,
     private route: ActivatedRoute) { }
+
   ngOnInit() {
     this.notificationService.add('Visited: Sign Up!');
     this.user = this.route.snapshot.paramMap.get('user');
@@ -56,7 +56,7 @@ export class SignUpComponent implements OnInit {
   }
 
   newAccountDetail() {
-    this.accountDetail = new Account('','','');
+    this.accountDetail = new AccountDetail('','','');
   }
 
   submitPersonalDetail() {

@@ -8,6 +8,6 @@
 app-sidenav {
   flex: auto;
   router-outlet {
-    overflow: scroll;
+    // overflow: scroll;
   }
 }

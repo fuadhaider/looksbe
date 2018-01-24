@@ -4,6 +4,7 @@ import { Component, Input, AfterViewInit, ViewChild, ComponentFactoryResolver,
 import { AdDirective } from '../ad.directive';
 import { AdItem }      from '../ad-item';
 import { AdComponent } from '../ad.component';
+
 @Component({
   selector: 'app-ad-banner',
   templateUrl: './ad-banner.component.html',

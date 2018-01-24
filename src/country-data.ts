@@ -1,5 +1,5 @@
 
-import { CountryObject } from './app/country-object';
+import { CountryObject } from './app/section/main/country-object';
 
 export const CountryData: CountryObject[] = [
   {"name": "Afghanistan", "code": "AF"},

@@ -1,12 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Router } from '@angular/router';
 
-import { Account } from '../../../account';
+import { AccountDetail } from '../account-detail';
 
 import { DrawerNavService } from '../../../drawer-nav.service';
-import { LoginDataService } from '../login-data.service';
 import { NotificationService } from '../notification.service';
 
 @Component({
@@ -31,7 +30,7 @@ import { NotificationService } from '../notification.service';
 })
 export class LoginNavComponent implements OnInit {
   loginNavState: string = 'in';
-  accountLogin = new Account('','');
+  accountLogin = new AccountDetail('','');
   constructor(private drawerNavService: DrawerNavService,
     private notificationService: NotificationService,
     private router: Router) { }
@@ -52,8 +51,8 @@ export class LoginNavComponent implements OnInit {
 
   loginAccount() {
     this.router.navigate(['/signup', this.accountLogin.email]);
-    this.notificationService.add('Logged In!');
     this.toSignUpPage();
+    this.notificationService.add('Logged In!');
   }
 
   toSignUpPage() {

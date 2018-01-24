@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 
-import { CountryObject } from '../../country-object';
+import { CountryObject } from './country-object';
 import { CountryData } from '../../../country-data';
 
 @Injectable()
@@ -19,7 +19,7 @@ export class CountryService {
     else {
       letter = letter.toLowerCase();
       return of (CountryData.filter(content => {
-        return content.name.includes(letter);
+        return content.name.toLowerCase().includes(letter);
       }));
     }
   }
