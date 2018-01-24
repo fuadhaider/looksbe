@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 import { AccountDetail } from '../account-detail';
 import { PersonalDetail } from '../personal-detail';
@@ -22,7 +23,9 @@ export class SignUpComponent implements OnInit {
   personalDetailSubmitted = false;
   personalDetail = new PersonalDetail('','', undefined ,'');
   startDob = new Date(2005, 0, 1);
-  showDate: string;
+  // showDate: string;
+  // eventDate: MatDatepickerInputEvent<Date>;
+  // events: string[] = [];
   maxDate = new Date(Date.now() - 4748 * 24 * 60 * 60 * 1000); //13 years and older
   minDate = new Date(Date.now() - 36525 * 24 * 60 * 60 * 1000); //100 years and younger
   contactDetailSubmitted = false;
@@ -68,9 +71,13 @@ export class SignUpComponent implements OnInit {
     this.personalDetail = new PersonalDetail('','',undefined,'');
   }
 
-  dateOnly(dateNoTime: Date) {
-    this.showDate = dateNoTime.toDateString();
-  }
+  // dateOnly(dateNoTime: Date) {
+  //   this.showDate = dateNoTime.toDateString();
+  // }
+
+  // showingDate(event: MatDatepickerInputEvent<Date>) {
+  //   this.events.push('${event.value}')
+  // }
 
   submitContactDetail() {
     this.contactDetailSubmitted = true;
