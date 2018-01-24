@@ -10,6 +10,6 @@ export class ContactDetail {
     public state: string,
     public country: string,
     public mobile: number,
-    public phone: number
+    public landLine: number
   ) {}
 }
