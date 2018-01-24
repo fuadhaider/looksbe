@@ -5,7 +5,7 @@
     <mat-card-title>Account</mat-card-title>
     <mat-card-content>Email: {{accountDetail.email}}</mat-card-content>
     <mat-card-content>
-      <div *ngIf="mismatch">
+      <div class="error-message" *ngIf="mismatch">
         Passwords mismatched
       </div>
     </mat-card-content>
@@ -57,7 +57,7 @@
           <input matInput type="email" name="email" placeholder="Email"
           [(ngModel)]="accountDetail.email" #email="ngModel"
           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
-          <div *ngIf="email.invalid && email.touched">
+          <div class="error-message" *ngIf="email.invalid && email.touched">
             Valid email required
           </div>
         </mat-form-field>
@@ -66,10 +66,10 @@
           [(ngModel)]="accountDetail.password" #password="ngModel"
           minlength="6" required>
           <div *ngIf="password.invalid && password.touched">
-            <div *ngIf="password.errors.required">
+            <div class="error-message" *ngIf="password.errors.required">
               New password required
             </div>
-            <div *ngIf="password.errors.minlength">
+            <div class="error-message" *ngIf="password.errors.minlength">
               minimum 6 characters
             </div>
           </div>
@@ -79,7 +79,7 @@
           [(ngModel)]="accountDetail.confirm" #confirm="ngModel"
           minlength="6" required>
           <div *ngIf="confirm.invalid && confirm.touched">
-            <div *ngIf="confirm.errors.required">
+            <div class="error-message" *ngIf="confirm.errors.required">
               Confirm password
             </div>
           </div>
@@ -104,7 +104,7 @@
           <input matInput type="text" name="firstName" placeholder="First Names"
           [(ngModel)]="personalDetail.firstName" #firstName="ngModel" required>
           <div *ngIf="firstName.invalid && firstName.touched">
-            <div *ngIf="firstName.errors.required">
+            <div class="error-message" *ngIf="firstName.errors.required">
               First name required
             </div>
           </div>
@@ -113,7 +113,7 @@
           <input matInput type="text" name="lastName" placeholder="Last Name"
           [(ngModel)]="personalDetail.lastName" #lastName="ngModel" required>
           <div *ngIf="lastName.invalid && lastName.touched">
-            <div *ngIf="lastName.errors.required">
+            <div class="error-message" *ngIf="lastName.errors.required">
               Last name required
             </div>
         </div>
@@ -128,10 +128,10 @@
           touchUi="true"></mat-datepicker>
         </mat-form-field>
         <div *ngIf="dob.invalid || dob.touched">
-          <div *ngIf="dob.hasError('matDatepickerMax')">
+          <div class="error-message" *ngIf="dob.hasError('matDatepickerMax')">
             Must be 13+
           </div>
-          <div *ngIf="dob.invalid && !dob.hasError('matDatepickerMax')
+          <div class="error-message" *ngIf="dob.invalid && !dob.hasError('matDatepickerMax')
           && !dob.hasError('matDatepickerMin')">
             Month/Date/Year only
           </div>
@@ -198,7 +198,7 @@
           (keyup)="searchCountry(country.value); typingKey = true"
           required>
           <div *ngIf="country.invalid && country.touched">
-            <div *ngIf="country.errors.required">
+            <div class="error-message" *ngIf="country.errors.required">
               Country required
             </div>
           </div>
@@ -215,7 +215,7 @@
           [(ngModel)]="contactDetail.mobile" #mobile="ngModel"
           pattern="[0-9- ]+">
           <div *ngIf="mobile.invalid && mobile.dirty">
-            <div *ngIf="mobile.errors.pattern">
+            <div class="error-message" *ngIf="mobile.errors.pattern">
               Valid number required
             </div>
           </div>
@@ -225,7 +225,7 @@
           [(ngModel)]="contactDetail.landLine" #landLine="ngModel"
           pattern="[0-9- ]+">
           <div *ngIf="landLine.invalid && landLine.dirty">
-            <div *ngIf="landLine.errors.pattern">
+            <div class="error-message" *ngIf="landLine.errors.pattern">
               Valid number required
             </div>
           </div>
