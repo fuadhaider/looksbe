@@ -16,12 +16,14 @@ nav {
       }
       mat-form-field {
         margin: 0 1%;
+        input[type="search"] {
+          -webkit-appearance: none;
+        } //For Safari eliminating white input box
         /deep/ .mat-input-underline {
            background-color: $icon-color;
         }
         /deep/ .mat-input-element {
           font-size: $body-font-size;
-
         }
         /deep/ .mat-form-field-placeholder {
           color: $icon-color;
